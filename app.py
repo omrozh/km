@@ -2626,7 +2626,8 @@ def admin_panel_affiliate():
     affiliates = Affiliate.query.all()
     if not current_user.user_has_permission("general"):
         affiliates = Affiliate.query.filter_by(user_fk=current_user.id).all()
-    return flask.render_template("panel/affiliate.html", affiliates=affiliates)
+    current_domain = flask.request.base_url.replace("/admin/affiliate", "")
+    return flask.render_template("panel/affiliate.html", affiliates=affiliates, current_domain=current_domain)
 
 
 @app.route("/admin/home")
