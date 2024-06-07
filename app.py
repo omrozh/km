@@ -2921,13 +2921,13 @@ def admin_panel_users():
 
         db.session.add(new_user)
         db.session.commit()
-
-        new_user_assigned_permission = UserAssignedPermission(
-            user_fk=new_user.id,
-            permission_fk=new_user_permission.id
-        )
-        db.session.add(new_user_assigned_permission)
-        db.session.commit()
+        if not flask.request.values.get("user_permission", None) == "affiliate":
+            new_user_assigned_permission = UserAssignedPermission(
+                user_fk=new_user.id,
+                permission_fk=new_user_permission.id
+            )
+            db.session.add(new_user_assigned_permission)
+            db.session.commit()
 
         return flask.redirect("/admin/users")
 
