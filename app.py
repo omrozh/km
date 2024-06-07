@@ -200,7 +200,7 @@ class Affiliate(db.Model):
     @property
     def generated_income(self):
         commission_income = self.total_ggr_volume / 100 * self.affiliate_commission_percentage
-        cpa_income = len(self.players_brought_in_last_thirty_days) * self.affiliate_cpa
+        cpa_income = len(self.verified_players_brought_in_last_thirty_days) * self.affiliate_cpa
         return commission_income + cpa_income
 
 
