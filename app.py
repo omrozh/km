@@ -1877,7 +1877,7 @@ def signup():
 
         new_user = User(
             id=str(uuid4()),
-            affiliate_tag=flask.request.cookies.get('affiiate', None),
+            affiliate_tag=flask.request.cookies.get('affiliate', None),
             completed_first_deposit=False,
             casino_bonus_balance=0,
             sports_bonus_balance=0,
