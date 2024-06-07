@@ -146,7 +146,7 @@ class Affiliate(db.Model):
 
     @property
     def affiliate_players(self):
-        return User.query.filter_by(affiliate_tag=self.affiliate_tag)
+        return User.query.filter_by(affiliate_tag=self.affiliate_tag).all()
     
     @property
     def total_monthly_volume(self):
