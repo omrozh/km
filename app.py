@@ -2910,6 +2910,7 @@ def admin_panel_users():
         )
         if flask.request.values.get("user_permission", None) == "affiliate":
             new_affiliate = Affiliate(
+                id=str(uuid4()),
                 user_fk=new_user.id,
                 affiliate_tag=str(uuid4()),
                 affiliate_commission_percentage=float(flask.request.values.get("affiliate_commission_percentage")),
