@@ -54,6 +54,8 @@ def get_available_banks_kralpay():
 
 def get_iframe_vevopay(transaction, method):
     user = transaction.user
+    print(method)
+    print(deposit_keys_vevopay.get(method))
     data = {
             "islem": "iframeolustur",
             "firma_key": deposit_keys_vevopay.get(method),
