@@ -2940,7 +2940,8 @@ def remove_admin_user():
     if not current_user.user_has_permission("add_users"):
         return flask.redirect("/admin/home")
     affiliate = Affiliate.query.filter_by(user_fk=flask.request.args.get("user_id")).first()
-    db.session.delete(affiliate)
+    if affiliate:
+        db.session.delete(affiliate)
     db.session.delete(User.query.get(flask.request.args.get("user_id")))
     db.session.commit()
     return flask.redirect("/admin/users")
