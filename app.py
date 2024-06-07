@@ -2886,7 +2886,7 @@ def admin_panel_users():
         return flask.redirect("/admin/home")
     if flask.request.method == "POST":
         user_permission = flask.request.values.get("user_permission")
-        if user_permission == "new-class":
+        if user_permission == "new-class" and not flask.request.values.get("user_permission", None) == "affiliate":
             permissions_list = []
             for i in flask.request.values:
                 if "permissions_" in i:
