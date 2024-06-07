@@ -186,7 +186,7 @@ class Affiliate(db.Model):
         users_total = User.query.filter(
             User.registration_date >= datetime.datetime.today() - datetime.timedelta(days=30),
             User.id.in_([i.id for i in self.affiliate_players]),
-        )
+        ).all()
         users_processed = []
         
         for i in users_total:
