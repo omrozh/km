@@ -1532,6 +1532,7 @@ def index():
                               sliders_main=sliders_main, sliders_sub=sliders_sub))
     if flask.request.args.get("ref", False):
         resp.set_cookie('referrer', flask.request.args.get("ref"))
+    if flask.request.args.get("affiliate", False):
         resp.set_cookie('affiliate', flask.request.args.get("affiliate"))
     return resp
 
