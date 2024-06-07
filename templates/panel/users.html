@@ -133,7 +133,7 @@
                                         <form class="col" method="post" enctype="multipart/form-data">
                                             <h1 class="h3 font-bold mb-0">Kullanıcı Ekle</h1>
                                           <br>
-                                          <select name="user_permission" onchange="document.getElementById(this.value).style.display = 'block'; prepareAffiliate()" style="-webkit-appearance: none; border: 1px solid gray; padding: 5px; border-radius: 5px; outline: none">
+                                          <select name="user_permission" onchange="document.getElementById(this.value).style.display = 'block';" style="-webkit-appearance: none; border: 1px solid gray; padding: 5px; border-radius: 5px; outline: none">
                                             <option value="select-type">Kullanıcı Sınıfı</option>
                                             {% for i in permissions %}
                                                 <option value="{{ i.id }}">{{ i.permission_name }}</option>
@@ -143,17 +143,10 @@
                                               <br>
                                               <br>
                                           </select>
-                                            <div id="affiliate_form" style="display: none">
+                                            <div id="affiliate" style="display: none">
                                                 <input type="text" style="-webkit-appearance: none; border: 1px solid gray; padding: 5px; border-radius: 5px; outline: none" name="affiliate_commission_percentage" placeholder="Komisyon Oranı %">
                                                 <input type="text" style="-webkit-appearance: none; border: 1px solid gray; padding: 5px; border-radius: 5px; outline: none" name="affiliate_cpa" placeholder="CPA ₺">
                                             </div>
-                                            <script>
-                                                function prepareAffiliate(){
-                                                    if(document.getElementById("user_permission").value === "affiliate") {
-                                                        document.getElementById("affiliate_form").style.display = "block";
-                                                    }
-                                                }
-                                            </script>
 
                                             <br>
                                             <br>
