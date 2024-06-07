@@ -155,7 +155,7 @@ class Affiliate(db.Model):
             TransactionLog.transaction_date <= datetime.date.today(),
             TransactionLog.transaction_status == "Tamamlandı",
             TransactionLog.transaction_type == "yatirim",
-            TransactionLog.user_fk.in_(self.affiliate_players)
+            TransactionLog.user_fk.in_([i.id for i in self.affiliate_players])
         ).all()
         transaction_value = sum([t.transaction_amount for t in transactions])
         return transaction_value
