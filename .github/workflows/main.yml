@@ -13,16 +13,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Setup SSH
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: dumhed-hfsE4-skge+1
+    - name: Install SSH Client
+      run: sudo apt-get install -y sshpass
 
     - name: Deploy to VPS
       run: |
-        ssh -o StrictHostKeyChecking=no root@139.162.201.110 << 'EOF'
+        sshpass -p dumhed-hfsE4-skge+1 ssh -o StrictHostKeyChecking=no root@139.162.201.110 << 'EOF'
           cd km
-          git pull
+          git pull origin main
           killall gunicorn
           gunicorn -w 3 app:app
         EOF
