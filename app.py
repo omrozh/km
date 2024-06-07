@@ -166,7 +166,7 @@ class Affiliate(db.Model):
             TransactionLog.transaction_date >= datetime.date.today() - datetime.timedelta(days=30),
             TransactionLog.transaction_date <= datetime.date.today(),
             TransactionLog.transaction_status == "Tamamlandı",
-            TransactionLog.transaction_type.in_("place_bet", "casino_bet"),
+            TransactionLog.transaction_type.in_(["place_bet", "casino_bet"]),
             TransactionLog.user_fk.in_(self.affiliate_players)
         ).all()
     
@@ -174,7 +174,7 @@ class Affiliate(db.Model):
             TransactionLog.transaction_date >= datetime.date.today() - datetime.timedelta(days=30),
             TransactionLog.transaction_date <= datetime.date.today(),
             TransactionLog.transaction_status == "Tamamlandı",
-            TransactionLog.transaction_type.in_("bet_win", "casino_win"),
+            TransactionLog.transaction_type.in_(["bet_win", "casino_win"]),
             TransactionLog.user_fk.in_(self.affiliate_players)
         ).all()
         transaction_value = sum([t.transaction_amount for t in transactions])
