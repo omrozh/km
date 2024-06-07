@@ -3034,13 +3034,13 @@ def admin_panel_players():
     users = User.query
     if flask.request.args.get("user_ip", None):
         users = users.filter(User.ip_address == flask.request.args.get("user_ip", None))
-    users = users.all()
-    if flask.request.args.get("promo_code", None):
-        users = PromoCode.query.get(flask.request.args.get("promo_code", None)).players_using_promo_code
     if flask.request.args.get("affiliate_id", None):
         users = users.filter(
             User.affiliate_tag == flask.request.args.get("affiliate_id", None)
         )
+    users = users.all()
+    if flask.request.args.get("promo_code", None):
+        users = PromoCode.query.get(flask.request.args.get("promo_code", None)).players_using_promo_code
     number_of_users = len(users)
     return flask.render_template("panel/players.html", users=users, number_of_users=number_of_users)
 
