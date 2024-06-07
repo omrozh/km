@@ -133,6 +133,75 @@ def get_unread_email(username, password):
     return unread_emails
 
 
+class Affiliate(db.Model):
+    id = db.Column(db.String, primary_key=True)
+    user_fk = db.Column(db.String)
+    affiliate_tag = db.Column(db.String)
+    affiliate_commission_percentage = db.Column(db.Float)
+    affiliate_cpa = db.Column(db.Float)
+
+    @property
+    def user(self):
+        return User.query.get(self.user_fk)
+
+    @property
+    def affiliate_players(self):
+        return User.query.filter_by(affiliate_tag=self.affiliate_tag)
+    
+    @property
+    def total_monthly_volume(self):
+        transactions = TransactionLog.query.filter(
+            TransactionLog.transaction_date >= datetime.date.today() - datetime.timedelta(days=30),
+            TransactionLog.transaction_date <= datetime.date.today(),
+            TransactionLog.transaction_status == "Tamamlandı",
+            TransactionLog.transaction_type == "yatirim",
+            TransactionLog.user_fk.in_(self.affiliate_players)
+        ).all()
+        transaction_value = sum([t.transaction_amount for t in transactions])
+        return transaction_value
+
+    @property
+    def total_ggr_volume(self):
+        transactions = TransactionLog.query.filter(
+            TransactionLog.transaction_date >= datetime.date.today() - datetime.timedelta(days=30),
+            TransactionLog.transaction_date <= datetime.date.today(),
+            TransactionLog.transaction_status == "Tamamlandı",
+            TransactionLog.transaction_type.in_("place_bet", "casino_bet"),
+            TransactionLog.user_fk.in_(self.affiliate_players)
+        ).all()
+    
+        transactions_win = TransactionLog.query.filter(
+            TransactionLog.transaction_date >= datetime.date.today() - datetime.timedelta(days=30),
+            TransactionLog.transaction_date <= datetime.date.today(),
+            TransactionLog.transaction_status == "Tamamlandı",
+            TransactionLog.transaction_type.in_("bet_win", "casino_win"),
+            TransactionLog.user_fk.in_(self.affiliate_players)
+        ).all()
+        transaction_value = sum([t.transaction_amount for t in transactions])
+        win_transaction_value = sum([t.transaction_amount for t in transactions_win])
+        return transaction_value - win_transaction_value
+    
+    @property
+    def verified_players_brought_in_last_thirty_days(self):
+        users_total = User.query.filter(
+            User.registration_date >= datetime.datetime.today() - datetime.timedelta(days=30),
+            User.id.in_([i.id for i in self.affiliate_players]),
+        )
+        users_processed = []
+        
+        for i in users_total:
+            if i.user_information.id_verified:
+                users_processed.append(i)
+
+        return users_processed
+    
+    @property
+    def generated_income(self):
+        commission_income = self.total_ggr_volume / 100 * self.affiliate_commission_percentage
+        cpa_income = len(self.players_brought_in_last_thirty_days) * self.affiliate_cpa
+        return commission_income + cpa_income
+
+
 class PaymentSource(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     is_active_payment_source = db.Column(db.Boolean)
@@ -456,6 +525,7 @@ class User(db.Model, UserMixin):
     sports_bonus_balance = db.Column(db.Float)
     completed_first_deposit = db.Column(db.Boolean)
     site_partner_fk = db.Column(db.Integer)
+    affiliate_tag = db.Column(db.String)
 
     def send_password_reset_email(self, current_domain):
         msg = Message(
@@ -473,6 +543,8 @@ class User(db.Model, UserMixin):
 
     def user_has_permission(self, permission_to_check):
         assigned_permission = UserAssignedPermission.query.filter_by(user_fk=self.id).first()
+        if not assigned_permission:
+            return False
         user_permission = UserPermissions.query.get(assigned_permission.permission_fk)
         return permission_to_check in user_permission.permissions_list.split("&&")
 
@@ -1460,6 +1532,7 @@ def index():
                               sliders_main=sliders_main, sliders_sub=sliders_sub))
     if flask.request.args.get("ref", False):
         resp.set_cookie('referrer', flask.request.args.get("ref"))
+        resp.set_cookie('affiliate', flask.request.args.get("affiliate"))
     return resp
 
 
@@ -1803,6 +1876,7 @@ def signup():
 
         new_user = User(
             id=str(uuid4()),
+            affiliate_tag=flask.request.cookies.get('affiiate', None),
             completed_first_deposit=False,
             casino_bonus_balance=0,
             sports_bonus_balance=0,
@@ -2547,6 +2621,14 @@ def update_withdraw():
     return flask.redirect("/admin/home")
 
 
+@app.route("/admin/affiliate")
+def admin_panel_affiliate():
+    affiliates = Affiliate.query.all()
+    if not current_user.user_has_permission("general"):
+        affiliates = Affiliate.query.filter_by(user_fk=current_user.id).all()
+    return flask.render_template("panel/affiliate.html", affiliates=affiliates)
+
+
 @app.route("/admin/home")
 def admin_panel():
     try:
@@ -2826,6 +2908,16 @@ def admin_panel_users():
             casino_bonus_balance=0,
             sports_bonus_balance=0
         )
+        if flask.request.values.get("user_permission", None) == "affiliate":
+            new_affiliate = Affiliate(
+                user_fk=new_user.id,
+                affiliate_tag=str(uuid4()),
+                affiliate_commission_percentage=float(flask.request.values.get("affiliate_commission_percentage")),
+                affiliate_cpa=float(flask.request.values.get("affiliate_cpa"))
+            )
+            db.session.add(new_affiliate)
+            db.session.commit()
+
         db.session.add(new_user)
         db.session.commit()
 
@@ -2941,6 +3033,10 @@ def admin_panel_players():
     users = users.all()
     if flask.request.args.get("promo_code", None):
         users = PromoCode.query.get(flask.request.args.get("promo_code", None)).players_using_promo_code
+    if flask.request.args.get("affiliate_id", None):
+        users = users.filter(
+            User.affiliate_tag == flask.request.args.get("affiliate_id", None)
+        )
     number_of_users = len(users)
     return flask.render_template("panel/players.html", users=users, number_of_users=number_of_users)
 
