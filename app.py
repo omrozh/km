@@ -88,6 +88,8 @@ app.config['MAIL_USERNAME'] = 'operations@m2betting.com'
 app.config['MAIL_PASSWORD'] = 'qvegsrxwmbwrxaxx'
 app.config['MAIL_DEFAULT_SENDER'] = 'operations@m2betting.com'
 
+bet_categories = ["Handikaplar", "Goller", "Maç Sonucu", "Yarılar", "Penaltılar", "Tüm Bahisler"]
+
 mail = Mail(app)
 
 db = SQLAlchemy(app)
@@ -147,7 +149,7 @@ class Affiliate(db.Model):
     @property
     def affiliate_players(self):
         return User.query.filter_by(affiliate_tag=self.affiliate_tag).all()
-    
+
     @property
     def total_monthly_volume(self):
         transactions = TransactionLog.query.filter(
@@ -169,7 +171,7 @@ class Affiliate(db.Model):
             TransactionLog.transaction_type.in_(["place_bet", "casino_bet"]),
             TransactionLog.user_fk.in_([i.id for i in self.affiliate_players])
         ).all()
-    
+
         transactions_win = TransactionLog.query.filter(
             TransactionLog.transaction_date >= datetime.date.today() - datetime.timedelta(days=30),
             TransactionLog.transaction_date <= datetime.date.today(),
@@ -180,7 +182,7 @@ class Affiliate(db.Model):
         transaction_value = sum([t.transaction_amount for t in transactions])
         win_transaction_value = sum([t.transaction_amount for t in transactions_win])
         return transaction_value - win_transaction_value
-    
+
     @property
     def verified_players_brought_in_last_thirty_days(self):
         users_total = User.query.filter(
@@ -188,13 +190,13 @@ class Affiliate(db.Model):
             User.id.in_([i.id for i in self.affiliate_players]),
         ).all()
         users_processed = []
-        
+
         for i in users_total:
             if i.user_information.id_verified:
                 users_processed.append(i)
 
         return users_processed
-    
+
     @property
     def generated_income(self):
         commission_income = self.total_ggr_volume / 100 * self.affiliate_commission_percentage
@@ -315,11 +317,13 @@ class PromoCode(db.Model):
 
     @property
     def n_players_using_promo_code(self):
-        return len(list(filter(lambda item: item.user is not None, AssignedPromoCode.query.filter_by(promo_code_fk=self.id).all())))
+        return len(list(
+            filter(lambda item: item.user is not None, AssignedPromoCode.query.filter_by(promo_code_fk=self.id).all())))
 
     @property
     def players_using_promo_code(self):
-        return [i.user for i in list(filter(lambda item: item.user is not None, AssignedPromoCode.query.filter_by(promo_code_fk=self.id).all()))]
+        return [i.user for i in list(
+            filter(lambda item: item.user is not None, AssignedPromoCode.query.filter_by(promo_code_fk=self.id).all()))]
 
 
 class AssignedPromoCode(db.Model):
@@ -865,6 +869,7 @@ class BetOption(db.Model):
     game_details = db.Column(db.String)
     open_bet_fk = db.Column(db.Integer)
     match_name_row = db.Column(db.String)
+    category = db.Column(db.String)
 
     @property
     def match_name(self):
@@ -1375,7 +1380,8 @@ def how_to_play():
     }
     with open(f"img/text/{data}/{info_file}") as f:
         info = f.read()
-    return flask.render_template("sss1.html", current_user=current_user, info=info, data=data, title=data_dict.get(data))
+    return flask.render_template("sss1.html", current_user=current_user, info=info, data=data,
+                                 title=data_dict.get(data))
 
 
 @app.route("/logout")
@@ -1812,6 +1818,8 @@ def login():
                 db.session.commit()
                 if flask.request.args.get("continue") == "admin":
                     return flask.redirect("/admin/home")
+                elif flask.request.args.get("continue", None):
+                    return flask.redirect(flask.request.args.get("continue", None))
                 return flask.redirect("/")
     return flask.render_template("login.html")
 
@@ -2073,7 +2081,12 @@ def canli_bahis_mobile():
 def bahis_mac(bahis_id):
     open_bet = OpenBet.query.get(bahis_id)
     from_frame = flask.request.args.get("iframe", False) == "True"
-    return flask.render_template("bahis/bahis_detay_yeni.html", open_bet=open_bet, from_frame=from_frame)
+    is_canli_bahis = open_bet.bet_ending_datetime <= datetime.datetime.now()
+    from betting_utils import get_live_score
+    current_score = get_live_score(open_bet)
+    return flask.render_template("bahis/bahis_detay_yeni.html", open_bet=open_bet, from_frame=from_frame,
+                                 bet_categories=bet_categories, current_score=current_score,
+                                 is_canli_bahis=is_canli_bahis, datestring=str(open_bet.bet_ending_datetime).replace(" ", "T"))
 
 
 @app.route("/take_bet/<odd_id>")
@@ -2442,6 +2455,8 @@ def casino():
 
 @app.route("/casino/<game_id>")
 def casino_game(game_id):
+    if not current_user.is_authenticated:
+        return flask.redirect(f"/login?continue=/casino/{game_id}")
     freespin_bonus = current_user.get_bonuses("casino", "freespin")
     if freespin_bonus:
         current_user.get_bonuses("casino", "freespin").status = "Kullanıldı"
@@ -2716,7 +2731,6 @@ def complete_deposit():
     User.query.get(transaction.user_fk).update_bonus_balance(transaction.transaction_amount)
     db.session.commit()
     return flask.redirect("/admin/home")
-
 
 
 @app.route("/admin/cancel_deposit")
@@ -3119,7 +3133,7 @@ def casino_player_details():
     })
 
 
-@app.route("/casino-callback//getBalance")
+@app.route("/casino-callback/getBalance")
 def casino_get_balance():
     m2_callback_router = M2CallbackRouter.query.filter_by(user_uuid=flask.request.args.get("token")).first()
     if m2_callback_router:
