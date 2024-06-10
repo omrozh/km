@@ -41,7 +41,7 @@
 										<div class="team-name"> {{ open_bet.team_1 }} </div>
 									</div>
 									{% if open_bet.sport == "soccer" and is_canli_bahis %}
-										<div class="teamvs">{{ current_score.intHomeScore }} : {{ current_score.intAwayScote }}</div>
+										<div class="teamvs">{{ current_score.intHomeScore }} : {{ current_score.intAwayScore }}</div>
 									{% else %}
 										<div class="teamvs"> VS </div>
 									{% endif %}
