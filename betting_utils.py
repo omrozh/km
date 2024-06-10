@@ -25,7 +25,7 @@ def get_live_score(open_bet):
     return {
         "intHomeScore": "-",
         "intAwayScore": "-",
-        "strProgress": "0"
+        "strProgress": "N/A"
     }
 
 
