@@ -27,7 +27,7 @@
 											<span id="half"></span>
 										</span>
 										<span id="minute" style="background-color: var(--baseColor); color: var(--generalTextColor); width: fit-content; border-radius: 0 10px 10px 0; padding: 10px;">
-											{{ current_score.Time }}'
+											{{ current_score.strProgress }}'
 										</span>
 									{% endif %}
 								</div>
@@ -41,7 +41,7 @@
 										<div class="team-name"> {{ open_bet.team_1 }} </div>
 									</div>
 									{% if open_bet.sport == "soccer" and is_canli_bahis %}
-										<div class="teamvs">{{ current_score.HomeGoals }} : {{ current_score.AwayGoals }}</div>
+										<div class="teamvs">{{ current_score.intHomeScore }} : {{ current_score.intAwayScote }}</div>
 									{% else %}
 										<div class="teamvs"> VS </div>
 									{% endif %}
@@ -58,7 +58,7 @@
 						</div>
 					</div>
 					<script>
-						let elapsed_minute = {{ current_score.Time }}
+						let elapsed_minute = {{ current_score.strProgress }}
 						function updateTime(){
 
 							if(60 > elapsed_minute > 45) {
