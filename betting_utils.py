@@ -19,7 +19,7 @@ def get_live_score(open_bet):
         for c in open_bet.team_2.split(" "):
             if c in i.get("strAwayTeam"):
                 match_likelihood += 1
-        if match_likelihood > 2:
+        if match_likelihood >= 2:
             return i
 
     return {
