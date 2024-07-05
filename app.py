@@ -1668,7 +1668,7 @@ def deposit_bank():
     return flask.render_template("bank_deposit_form.html")
 
 
-@app.route("/sessionCheck")
+@app.route("/casino-callback/sessionCheck")
 def sessionCheckCasino():
     return flask.jsonify({
         "status": True
