@@ -1678,12 +1678,7 @@ def sessionCheckCasino():
             "status": True
         })
     else:
-        return flask.jsonify({
-            "status": False,
-            "errors": {
-                "error": "Unauthorized"
-            }
-        })
+        raise ValueError
 
 
 # TO DO: completed backend for vivopay and kralpay, complete frontend for them. Example: lidyacasino.
