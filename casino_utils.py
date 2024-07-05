@@ -32,13 +32,10 @@ def get_game_iframe(game_id, user_id, user_uuid, demo="true", bonus=None):
 
 
 def check_sign(request):
-    # Equivalent authorization key from the back office
     hash_authorization_key = '424c65e51942160021fefe9d6d603492'
 
-    # Get hash from request headers or specify empty
     hash_auth = request.headers.get('Hash-Authorization', '')
 
-    # Retrieving data from a request
     if request.method == 'POST':
         data = request.form.to_dict()
     else:
