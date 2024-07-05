@@ -12,7 +12,7 @@ api_key = "na"
 def get_live_score(open_bet):
     r = requests.get("https://www.thesportsdb.com/api/v2/json/623577/livescore.php?s=Soccer")
     match_likelihood = 0
-    if not r.json.get("events"):
+    if not r.json().get("events"):
         return {
             "intHomeScore": "-",
             "intAwayScore": "-",
