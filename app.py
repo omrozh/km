@@ -1671,7 +1671,6 @@ def deposit_bank():
 @app.route("/casino-callback/sessionCheck")
 def sessionCheckCasino():
     params = flask.request.args
-    headers = flask.request.headers.get("Hash-Authorization")
     from casino_utils import check_sign
     if User.query.get(params.get("userId")).user_uuid == params.get("token") and check_sign(flask.request):
         return flask.jsonify({
