@@ -63,7 +63,7 @@ def get_odds_cloudbet(is_live=False, sport_name="soccer"):
                     game_name = language_dictionary.get(market).get("Name").replace("{{team}}", "")
                 odds.append(
                     {
-                        "gameName": ,
+                        "gameName": game_name,
                         "category": category,
                         "gameDetails": "",
                         "odds": [{
