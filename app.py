@@ -1670,9 +1670,20 @@ def deposit_bank():
 
 @app.route("/casino-callback/sessionCheck")
 def sessionCheckCasino():
-    return flask.jsonify({
-        "status": True
-    })
+    params = flask.request.args
+    headers = flask.request.headers.get("Hash-Authorization")
+    from casino_utils import check_sign
+    if User.query.get(params.get("userId")).user_uuid == params.get("token") and check_sign(flask.request):
+        return flask.jsonify({
+            "status": True
+        })
+    else:
+        return flask.jsonify({
+            "status": False,
+            "errors": {
+                "error": "Unauthorized"
+            }
+        })
 
 
 # TO DO: completed backend for vivopay and kralpay, complete frontend for them. Example: lidyacasino.

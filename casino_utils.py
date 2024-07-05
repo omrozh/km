@@ -1,5 +1,7 @@
 import datetime
 import time
+import json
+import hashlib
 
 import requests
 
@@ -27,4 +29,28 @@ def get_game_iframe(game_id, user_id, user_uuid, demo="true", bonus=None):
         return f"{BASE_URL}/start?demo={demo}&gameId={game_id}&country=TR&userId={user_id}&token={user_uuid}&lang=tr&bonusName={bonus.bonus.bonus_name}&bonusRounds={bonus.bonus_amount}&bonusBet={bonus.bonus.round_value}&bonusExpired={int(time.time())+3600}"
     else:
         return f"{BASE_URL}/start?demo={demo}&gameId={ game_id }&country=TR&userId={user_id}&token={ user_uuid }&lang=tr"
+
+
+def check_sign(request):
+    # Equivalent authorization key from the back office
+    hash_authorization_key = '424c65e51942160021fefe9d6d603492'
+
+    # Get hash from request headers or specify empty
+    hash_auth = request.headers.get('Hash-Authorization', '')
+
+    # Retrieving data from a request
+    if request.method == 'POST':
+        data = request.form.to_dict()
+    else:
+        data = request.args.to_dict()
+
+    if 'extraData' in data:
+        del data['extraData']
+
+    data = {k: str(v) for k, v in sorted(data.items())}
+    data_json = json.dumps(data)
+
+    hash_auth_local = hashlib.sha256((data_json + hash_authorization_key).encode('utf-8')).hexdigest()
+
+    return hash_auth_local != hash_auth
 
