@@ -32,7 +32,7 @@ def get_game_iframe(game_id, user_id, user_uuid, demo="true", bonus=None):
 
 
 def check_sign(request):
-    hash_authorization_key = '424c65e51942160021fefe9d6d603492'
+    hash_authorization_key = 'e42792aced9806cf74e03a4523949e0f'
 
     hash_auth = request.headers.get('Hash-Authorization', '')
 
