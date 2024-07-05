@@ -1668,6 +1668,13 @@ def deposit_bank():
     return flask.render_template("bank_deposit_form.html")
 
 
+@app.route("/sessionCheck")
+def sessionCheckCasino():
+    return flask.jsonify({
+        "status": True
+    })
+
+
 # TO DO: completed backend for vivopay and kralpay, complete frontend for them. Example: lidyacasino.
 @app.route("/deposit/papara", methods=["POST", "GET"])
 def deposit_papara():
