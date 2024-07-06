@@ -3185,7 +3185,7 @@ def casino_get_balance():
     }
     resp_inp = int(input("> "))
     if resp_inp == 200:
-        resp["balance"] = User.query.get(flask.request.values.get("userId")).balance
+        resp["balance"] = round(User.query.get(flask.request.values.get("userId")).balance, 2)
         return flask.jsonify(resp)
     else:
         resp["status"] = False
@@ -3221,7 +3221,8 @@ def casino_result_bet():
     resp_inp = int(input("> "))
     # 200 400 417 400 200 417 417 200 417
     # 200 400 200 417 400 200 200 417 200
-    # 400 200 200 200 200 402
+    # 400 200 200 200 200 402 400 200 200
+    # 400
     subject_user = User.query.get(flask.request.values.get("userId"))
     if resp_inp == 200:
         balance_change = float(flask.request.values["amount"])
