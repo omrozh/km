@@ -2118,6 +2118,8 @@ def bahis_mac(bahis_id):
                                  is_canli_bahis=is_canli_bahis,
                                  datestring=str(open_bet.bet_ending_datetime).replace(" ", "T"))
 
+# Problem is in template.
+
 
 @app.route("/take_bet/<odd_id>")
 def take_bet(odd_id):
