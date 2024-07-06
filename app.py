@@ -3220,9 +3220,10 @@ def casino_result_bet():
     }
     resp_inp = int(input("> "))
     # 200 400 417 400 200 417 417 200 417
-    # 200 400 200 417 400
+    # 200 400 200 417 400 200 200 417 200
+    # 400
     if resp_inp == 200:
-        resp["balance"] = 100
+        resp["balance"] = float(input("Balance: "))
         return flask.jsonify(resp)
     else:
         resp["status"] = False
