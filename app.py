@@ -1674,7 +1674,7 @@ def sessionCheckCasino():
             'HTTP_X_FORWARDED_FOR') else flask.request.environ.get(
         'HTTP_X_FORWARDED_FOR')
     print(ip)
-    if not ip == "2a01:4f9:c012:5e64::1, 172.70.85.231":
+    if "2a01:4f9:c012:5e64::1" not in ip:
         return flask.jsonify({
             "status": False
         })
