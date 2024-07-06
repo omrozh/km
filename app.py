@@ -3382,13 +3382,14 @@ def transaction_callback_vevopay(type):
 
 @app.route("/api/kralpy/", methods=["POST", "GET"])
 def transaction_callback_kralpay():
+    print("post kralpay")
     if flask.request.method == "POST":
-
         values = flask.request.values
         with open("logs.txt", "a") as f:
             f.write("Start Request Kralpay\n")
         with open("logs.txt", "a") as f:
             f.write(f"{values}")
+        print(values)
         if values.get("service") == "info":
             if User.query.get(values.get("user_id")):
                 return flask.jsonify({
