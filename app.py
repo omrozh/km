@@ -2109,15 +2109,10 @@ def canli_bahis_mobile():
 def bahis_mac(bahis_id):
     start_time = time.time()
     open_bet = OpenBet.query.get(bahis_id)
-    print(time.time() - start_time)
     from_frame = flask.request.args.get("iframe", False) == "True"
-    print(time.time() - start_time)
     is_canli_bahis = open_bet.bet_ending_datetime <= datetime.datetime.now()
-    print(time.time() - start_time)
     from betting_utils import get_live_score
-    print(time.time() - start_time)
     current_score = get_live_score(open_bet)
-    print(time.time() - start_time)
     return flask.render_template("bahis/bahis_detay_yeni.html", open_bet=open_bet, from_frame=from_frame,
                                  bet_categories=bet_categories, current_score=current_score,
                                  is_canli_bahis=is_canli_bahis,
