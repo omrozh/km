@@ -3224,7 +3224,9 @@ def casino_result_bet():
     # 400
     subject_user = User.query.get(flask.request.values.get("userId"))
     if resp_inp == 200:
-        balance_change = float(input("Balance Change: "))
+        balance_change = flask.request.values["amount"]
+        if flask.request.values.get("direction") == "debit":
+            balance_change *= 1
         subject_user += balance_change
         resp["balance"] = subject_user.balance
         return flask.jsonify(resp)
