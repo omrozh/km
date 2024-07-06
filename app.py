@@ -1678,7 +1678,9 @@ def sessionCheckCasino():
             "status": False
         })
     from casino_utils import check_sign
-    if User.query.get(params.get("userId")).user_uuid == params.get("token") and check_sign(flask.request):
+    if check_sign(request=flask.request):
+        return {'status': False, 'message': 'Error sign.'}
+    if User.query.get(params.get("userId")).user_uuid == params.get("token"):
         return flask.jsonify({
             "status": True
         })

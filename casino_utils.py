@@ -32,9 +32,9 @@ def get_game_iframe(game_id, user_id, user_uuid, demo="true", bonus=None):
 
 
 def check_sign(request):
-    hash_authorization_key = 'e42792aced9806cf74e03a4523949e0f'
+    hash_authorization_key = '424c65e51942160021fefe9d6d603492'  # Key from back office
 
-    hash_auth = request.headers.get("Hash-Authorization")
+    hash_auth = request.headers.get('Hash-Authorization', '')  # Get hash from request or specify empty
 
     if request.method == 'POST':
         data = request.form.to_dict()
@@ -44,11 +44,12 @@ def check_sign(request):
     if 'extraData' in data:
         del data['extraData']
 
-    data = {k: str(v) for k, v in sorted(data.items())}
-    data_json = json.dumps(data)
+    sorted_data = {k: str(v) for k, v in sorted(data.items())}
+    data_json = json.dumps(sorted_data)
 
-    hash_auth_local = hashlib.sha256((data_json + hash_authorization_key).encode('utf-8')).hexdigest()
-    print(hash_auth_local)
+    hash_auth_local = hashlib.sha256((data_json + hash_authorization_key).encode()).hexdigest()  # Hashing of data
 
-    return hash_auth_local == hash_auth
+    # Compare the collected hash and the one received from NUXGAME
+    # Description returned: {true - Return an error!}, {false - Skip the request.}
+    return hash_auth_local != hash_auth
 
