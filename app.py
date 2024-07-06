@@ -3228,6 +3228,7 @@ def casino_result_bet():
         if flask.request.values.get("direction") == "debit":
             balance_change *= 1
         subject_user += balance_change
+        db.session.commit(subject_user)
         resp["balance"] = subject_user.balance
         return flask.jsonify(resp)
     else:
