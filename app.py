@@ -1672,17 +1672,13 @@ def deposit_bank():
 def sessionCheckCasino():
     params = flask.request.args
     from casino_utils import check_sign
-    return flask.jsonify({
-        "status": input("> ") == "t"
-    })
     if User.query.get(params.get("userId")).user_uuid == params.get("token") and check_sign(flask.request):
         return flask.jsonify({
             "status": True
         })
     else:
-        return flask.jsonify({
-            "status": False
-        })
+        raise ValueError
+
 
 # TO DO: completed backend for vivopay and kralpay, complete frontend for them. Example: lidyacasino.
 @app.route("/deposit/papara", methods=["POST", "GET"])
@@ -3149,7 +3145,7 @@ def casino_player_details():
             }
         }
     return flask.jsonify({
-        "status": input("> ") == "t",
+        "status": True,
         "userId": subject_user.id,
         "nickname": subject_user.username if subject_user.username else "player",
         "currency": "TRY",
@@ -3160,10 +3156,6 @@ def casino_player_details():
 @app.route("/casino-callback/getBalance")
 def casino_get_balance():
     m2_callback_router = M2CallbackRouter.query.filter_by(user_uuid=flask.request.args.get("token")).first()
-    return flask.jsonify({
-        "status": input("> ") == "t",
-        "balance": 100
-    })
     if m2_callback_router:
         if not m2_callback_router.base_url == app.config.get("CASINO_BASE_URL"):
             return requests.get(m2_callback_router.base_url + "getBalance", params=flask.request.args).json()
@@ -3326,9 +3318,8 @@ def transaction_callback_vevopay(type):
 
 @app.route("/api/kralpy/", methods=["POST", "GET"])
 def transaction_callback_kralpay():
-    print(flask.request.method)
     if flask.request.method == "POST":
-        print(flask.request.values)
+
         values = flask.request.values
         if values.get("service") == "info":
             if User.query.get(values.get("user_id")):
