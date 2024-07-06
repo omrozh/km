@@ -3165,10 +3165,11 @@ def casino_player_details():
 def casino_get_balance():
     resp = {
         "status": True,
-        "balance": 100
     }
+    # 200 400 417 400 200 417 417 200 417
     resp_inp = int(input("> "))
     if resp_inp == 200:
+        rest["balance"] = 100
         return flask.jsonify(resp)
     else:
         resp["status"] = False
