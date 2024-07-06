@@ -1666,27 +1666,23 @@ def deposit_bank():
                                      iban=get_first_active_method.payment_number)
     return flask.render_template("bank_deposit_form.html")
 
-
 @app.route("/casino-callback/sessionCheck")
 def sessionCheckCasino():
-    params = flask.request.args
-    ip = flask.requests.environ["REMOTE_ADDR"] if not flask.request.environ.get(
-            'HTTP_X_FORWARDED_FOR') else flask.request.environ.get(
-        'HTTP_X_FORWARDED_FOR')
-    if "2a01:4f9:c012:5e64::1" not in ip:
-        return flask.jsonify({
-            "status": False
-        })
-    from casino_utils import check_sign
-    if check_sign(request=flask.request):
-        return {'status': False, 'message': 'Error sign.'}
-    if User.query.get(params.get("userId")).user_uuid == params.get("token"):
+    resp = {
+        "status": True,
+    }
+    resp_inp = input("> ")
+    if resp_inp == 200:
+        return flask.jsonify(resp)
+    else:
+        resp["status"] = False
+        resp["errors"] = {
+            "code": int(resp_inp),
+            "error": "N/A"
+        }
+    if User.query.get(flask.request.args.get("userId")).user_uuid == flask.request.args.get("token"):
         return flask.jsonify({
             "status": True
-        })
-    else:
-        return flask.jsonify({
-            "status": False
         })
 
 
