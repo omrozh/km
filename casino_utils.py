@@ -49,5 +49,5 @@ def check_sign(request):
 
     hash_auth_local = hashlib.sha256((data_json + hash_authorization_key).encode('utf-8')).hexdigest()
 
-    return hash_auth_local != hash_auth
+    return hash_auth_local == hash_auth
 
