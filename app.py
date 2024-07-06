@@ -3161,7 +3161,8 @@ def casino_player_details():
 def casino_get_balance():
     m2_callback_router = M2CallbackRouter.query.filter_by(user_uuid=flask.request.args.get("token")).first()
     return flask.jsonify({
-        "status": input("> ") == "t"
+        "status": input("> ") == "t",
+        "balance": 100
     })
     if m2_callback_router:
         if not m2_callback_router.base_url == app.config.get("CASINO_BASE_URL"):
