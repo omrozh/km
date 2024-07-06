@@ -45,7 +45,9 @@ def check_sign(request):
         del data['extraData']
 
     sorted_data = {k: str(v) for k, v in sorted(data.items())}
+    print(sorted_data)
     data_json = json.dumps(sorted_data)
+    print(data_json)
 
     hash_auth_local = hashlib.sha256((data_json + hash_authorization_key).encode()).hexdigest()  # Hashing of data
 
