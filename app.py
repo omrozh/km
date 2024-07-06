@@ -1470,7 +1470,6 @@ def profile():
                                  available_manual_accounts=available_manual_accounts, transactions=transactions)
 
 
-
 # TO DO: Implement bonuses in profile.
 
 
@@ -1671,8 +1670,12 @@ def deposit_bank():
 @app.route("/casino-callback/sessionCheck")
 def sessionCheckCasino():
     params = flask.request.args
-    print(flask.requests.environ["REMOTE_ADDR"] if not flask.request.environ.get(
-                'HTTP_X_FORWARDED_FOR') else flask.request.environ.get('HTTP_X_FORWARDED_FOR'))
+    if not flask.requests.environ["REMOTE_ADDR"] if not flask.request.environ.get(
+            'HTTP_X_FORWARDED_FOR') else flask.request.environ.get(
+        'HTTP_X_FORWARDED_FOR') == "2a01:4f9:c012:5e64::1, 172.70.85.231":
+        return flask.jsonify({
+            "status": False
+        })
     from casino_utils import check_sign
     if User.query.get(params.get("userId")).user_uuid == params.get("token") and check_sign(flask.request):
         return flask.jsonify({
@@ -2108,7 +2111,8 @@ def bahis_mac(bahis_id):
     current_score = get_live_score(open_bet)
     return flask.render_template("bahis/bahis_detay_yeni.html", open_bet=open_bet, from_frame=from_frame,
                                  bet_categories=bet_categories, current_score=current_score,
-                                 is_canli_bahis=is_canli_bahis, datestring=str(open_bet.bet_ending_datetime).replace(" ", "T"))
+                                 is_canli_bahis=is_canli_bahis,
+                                 datestring=str(open_bet.bet_ending_datetime).replace(" ", "T"))
 
 
 @app.route("/take_bet/<odd_id>")
