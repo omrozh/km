@@ -3222,7 +3222,7 @@ def casino_result_bet():
     # 200 400 417 400 200 417 417 200 417
     # 200 400 200 417 400 200 200 417 200
     # 400 200 200 200 200 402 400 200 200
-    # 400
+    # 406 200 200 409
     subject_user = User.query.get(flask.request.values.get("userId"))
     if resp_inp == 200:
         balance_change = float(flask.request.values["amount"])
@@ -3385,6 +3385,7 @@ def transaction_callback_kralpay():
     if flask.request.method == "POST":
 
         values = flask.request.values
+        print(values)
         if values.get("service") == "info":
             if User.query.get(values.get("user_id")):
                 return flask.jsonify({
