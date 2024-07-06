@@ -3140,6 +3140,23 @@ def img_host_3(filename):
 
 @app.route("/casino-callback/playerDetails")
 def casino_player_details():
+    resp = {
+        "status": True,
+    }
+    resp_inp = int(input("> "))
+    if resp_inp == 200:
+        resp["userId"] = flask.request.args.get("userId")
+        resp["nickname"] = "player"
+        resp["currency"] = "TRY"
+        resp["language"] = "tr"
+        return flask.jsonify(resp)
+    else:
+        resp["status"] = False
+        resp["errors"] = {
+            "code": int(resp_inp),
+            "error": "N/A"
+        }
+        return flask.jsonify(resp)
     m2_callback_router = M2CallbackRouter.query.filter_by(user_uuid=flask.request.args.get("token")).first()
     if m2_callback_router:
         if not m2_callback_router.base_url == app.config.get("CASINO_BASE_URL"):
@@ -3166,7 +3183,6 @@ def casino_get_balance():
     resp = {
         "status": True,
     }
-    # 200 400 417 400 200 417 417 200 417
     resp_inp = int(input("> "))
     if resp_inp == 200:
         resp["balance"] = 100
