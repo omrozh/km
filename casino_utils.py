@@ -32,7 +32,7 @@ def get_game_iframe(game_id, user_id, user_uuid, demo="true", bonus=None):
 
 
 def check_sign(request):
-    hash_authorization_key = '424c65e51942160021fefe9d6d603492'  # Key from back office
+    hash_authorization_key = 'e42792aced9806cf74e03a4523949e0f'  # Key from back office
 
     hash_auth = request.headers.get('Hash-Authorization', '')  # Get hash from request or specify empty
 
@@ -45,11 +45,7 @@ def check_sign(request):
         del data['extraData']
 
     sorted_data = {k: str(v) for k, v in sorted(data.items())}
-    print(sorted_data)
     data_json = json.dumps(sorted_data)
-    print(data_json)
-    print(hashlib.sha256((data_json + hash_authorization_key).encode()).hexdigest())
-    print((data_json + hash_authorization_key).encode())
 
     hash_auth_local = hashlib.sha256((data_json + hash_authorization_key).encode()).hexdigest()  # Hashing of data
 
