@@ -1672,7 +1672,6 @@ def deposit_bank():
 def sessionCheckCasino():
     params = flask.request.args
     from casino_utils import check_sign
-    print(params.get("token"))
     return flask.jsonify({
         "status": input("> ") == "t"
     })
@@ -3161,6 +3160,9 @@ def casino_player_details():
 @app.route("/casino-callback/getBalance")
 def casino_get_balance():
     m2_callback_router = M2CallbackRouter.query.filter_by(user_uuid=flask.request.args.get("token")).first()
+    return flask.jsonify({
+        "status": input("> ") == "t"
+    })
     if m2_callback_router:
         if not m2_callback_router.base_url == app.config.get("CASINO_BASE_URL"):
             return requests.get(m2_callback_router.base_url + "getBalance", params=flask.request.args).json()
