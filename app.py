@@ -1680,6 +1680,7 @@ def sessionCheckCasino():
             "code": int(resp_inp),
             "error": "N/A"
         }
+        return flask.jsonify(resp)
     if User.query.get(flask.request.args.get("userId")).user_uuid == flask.request.args.get("token"):
         return flask.jsonify({
             "status": True
