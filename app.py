@@ -1671,7 +1671,7 @@ def sessionCheckCasino():
     resp = {
         "status": True,
     }
-    resp_inp = input("> ")
+    resp_inp = int(input("> "))
     if resp_inp == 200:
         return flask.jsonify(resp)
     else:
