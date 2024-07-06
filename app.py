@@ -1677,8 +1677,9 @@ def sessionCheckCasino():
             "status": True
         })
     else:
-        raise ValueError
-
+        return flask.jsonify({
+            "status": False
+        })
 
 # TO DO: completed backend for vivopay and kralpay, complete frontend for them. Example: lidyacasino.
 @app.route("/deposit/papara", methods=["POST", "GET"])
