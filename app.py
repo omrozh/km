@@ -3227,7 +3227,6 @@ def casino_result_bet():
         balance_change = float(input("Balance Change: "))
         subject_user += balance_change
         resp["balance"] = subject_user.balance
-        # 100 100 100 76
         return flask.jsonify(resp)
     else:
         resp["status"] = False
