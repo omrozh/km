@@ -3385,7 +3385,10 @@ def transaction_callback_kralpay():
     if flask.request.method == "POST":
 
         values = flask.request.values
-        print(values)
+        with open("logs.txt", "a") as f:
+            f.write("Start Request Kralpay\n")
+        with open("logs.txt", "a") as f:
+            f.write(f"{values}")
         if values.get("service") == "info":
             if User.query.get(values.get("user_id")):
                 return flask.jsonify({
