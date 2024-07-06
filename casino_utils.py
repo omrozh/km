@@ -48,7 +48,7 @@ def check_sign(request):
     print(sorted_data)
     data_json = json.dumps(sorted_data)
     print(data_json)
-    print(hashlib.sha256((data_json + hash_authorization_key).encode()))
+    print(hashlib.sha256((data_json + hash_authorization_key).encode()).hexdigest())
     print((data_json + hash_authorization_key).encode())
 
     hash_auth_local = hashlib.sha256((data_json + hash_authorization_key).encode()).hexdigest()  # Hashing of data
