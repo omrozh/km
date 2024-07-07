@@ -3388,7 +3388,7 @@ def transaction_callback_vevopay(type):
 def transaction_callback_kralpay():
     print("post kralpay")
     if flask.request.method == "POST":
-        values = flask.request.values
+        values = flask.request.json
         with open("logs.txt", "a") as f:
             f.write("Start Request Kralpay\n")
         with open("logs.txt", "a") as f:
