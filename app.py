@@ -3249,7 +3249,7 @@ def casino_result_bet():
         resp["status"] = False
         resp["errors"] = {
             "code": int(resp_inp),
-            "error": "N/A"
+            "error": "Debit transaction not found in this event"
         }
         if subject_user:
             resp["balance"] = round(subject_user.balance, 2)
