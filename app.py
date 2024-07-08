@@ -76,6 +76,9 @@ bundesliga_teams = ['BayernMünih', 'BorussiaDortmund', 'Leipzig', 'UnionBerlin'
                     'Mainz', 'BorussiaMönchengladbach', 'Köln', 'Hoffenheim', 'WederBremen',
                     'Bochum', 'Augsburg', 'Stuttgart', 'Darmstadt', 'Heidenheim']
 
+data_list = [200, 400, 417, 400, 200, 417, 417, 200, 417, 200, 400, 200, 417, 400, 200, 200, 417, 200, 400, 200, 200, 200, 200, 402, 400, 200, 200, 406, 200, 200, 409]
+
+
 app.config["SECRET_KEY"] = "ksjf-sjc-wsf12-sac"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
 app.config["DO_ROUTE_USERS"] = False
@@ -1672,7 +1675,7 @@ def sessionCheckCasino():
     resp = {
         "status": True,
     }
-    resp_inp = int(input("> "))
+    resp_inp = data_list[int(input("> "))]
     if resp_inp == 200:
         return flask.jsonify(resp)
     else:
@@ -3147,7 +3150,7 @@ def casino_player_details():
     resp = {
         "status": True,
     }
-    resp_inp = int(input("> "))
+    resp_inp = data_list[int(input("> "))]
     if resp_inp == 200:
         resp["userId"] = flask.request.args.get("userId")
         resp["nickname"] = "player"
@@ -3187,7 +3190,7 @@ def casino_get_balance():
     resp = {
         "status": True,
     }
-    resp_inp = int(input("> "))
+    resp_inp = data_list[int(input("> "))]
     if resp_inp == 200:
         resp["balance"] = round(User.query.get(flask.request.values.get("userId")).balance, 2)
         return flask.jsonify(resp)
@@ -3222,11 +3225,7 @@ def casino_result_bet():
     resp = {
         "status": True,
     }
-    resp_inp = int(input("> "))
-    # 200 400 417 400 200 417 417 200 417
-    # 200 400 200 417 400 200 200 417 200
-    # 400 200 200 200 200 402 400 200 200
-    # 406 200 200 409
+    resp_inp = data_list[int(input("> "))]
     subject_user = User.query.get(flask.request.values.get("userId"))
     if resp_inp == 200:
         balance_change = float(flask.request.values["amount"])
