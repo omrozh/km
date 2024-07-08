@@ -76,7 +76,7 @@ bundesliga_teams = ['BayernMünih', 'BorussiaDortmund', 'Leipzig', 'UnionBerlin'
                     'Mainz', 'BorussiaMönchengladbach', 'Köln', 'Hoffenheim', 'WederBremen',
                     'Bochum', 'Augsburg', 'Stuttgart', 'Darmstadt', 'Heidenheim']
 
-data_list = [200, 400, 417, 400, 200, 417, 417, 200, 417, 200, 400, 200, 417, 400, 200, 200, 417, 200, 400, 200, 200, 200, 200, 402, 400, 200, 200, 406, 200, 409, 200, 200, 409, 200, 200, 409, 406]
+data_list = [200, 400, 417, 400, 200, 417, 417, 200, 417, 200, 400, 200, 417, 400, 200, 200, 417, 200, 400, 200, 200, 200, 200, 402, 400, 200, 200, 406, 200, 409, 200, 200, 409, 200, 200, 409, 406, 200, 200, 406]
 
 
 app.config["SECRET_KEY"] = "ksjf-sjc-wsf12-sac"
