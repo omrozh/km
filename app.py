@@ -3241,7 +3241,8 @@ def casino_result_bet():
             "code": int(resp_inp),
             "error": "N/A"
         }
-        resp["balance"] = round(subject_user.balance, 2)
+        if subject_user:
+            resp["balance"] = round(subject_user.balance, 2)
         return flask.jsonify(resp)
     m2_callback_router = M2CallbackRouter.query.filter_by(user_uuid=flask.request.values.get("token")).first()
     if m2_callback_router:
