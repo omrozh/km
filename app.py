@@ -1672,19 +1672,6 @@ def deposit_bank():
 
 @app.route("/casino-callback/sessionCheck")
 def sessionCheckCasino():
-    resp = {
-        "status": True,
-    }
-    resp_inp = data_list[int(input("> "))]
-    if resp_inp == 200:
-        return flask.jsonify(resp)
-    else:
-        resp["status"] = False
-        resp["errors"] = {
-            "code": int(resp_inp),
-            "error": "N/A"
-        }
-        return flask.jsonify(resp)
     if User.query.get(flask.request.args.get("userId")).user_uuid == flask.request.args.get("token"):
         return flask.jsonify({
             "status": True
@@ -3145,35 +3132,8 @@ def img_host_3(filename):
     return flask.send_file(f"img/{filename}")
 
 
-@app.route("/casino-callback/getUserToken")
-def getUserToken():
-    return flask.jsonify({
-        "status": True,
-        "userId": "ce7bb4d2-3377-4cf0-9ecb-64101e7b7635",
-        "token": "4ef34cdd-df4c-40dc-913a-a7e257f6c8ce",
-        "balance": float(input("Enter Balance"))
-    })
-
-
 @app.route("/casino-callback/playerDetails")
 def casino_player_details():
-    resp = {
-        "status": True,
-    }
-    resp_inp = data_list[int(input("> "))]
-    if resp_inp == 200:
-        resp["userId"] = flask.request.args.get("userId")
-        resp["nickname"] = "player"
-        resp["currency"] = "TRY"
-        resp["language"] = "tr"
-        return flask.jsonify(resp)
-    else:
-        resp["status"] = False
-        resp["errors"] = {
-            "code": int(resp_inp),
-            "error": "N/A"
-        }
-        return flask.jsonify(resp)
     m2_callback_router = M2CallbackRouter.query.filter_by(user_uuid=flask.request.args.get("token")).first()
     if m2_callback_router:
         if not m2_callback_router.base_url == app.config.get("CASINO_BASE_URL"):
@@ -3197,20 +3157,6 @@ def casino_player_details():
 
 @app.route("/casino-callback/getBalance")
 def casino_get_balance():
-    resp = {
-        "status": True,
-    }
-    resp_inp = data_list[int(input("> "))]
-    if resp_inp == 200:
-        resp["balance"] = round(User.query.get(flask.request.values.get("userId")).balance, 2)
-        return flask.jsonify(resp)
-    else:
-        resp["status"] = False
-        resp["errors"] = {
-            "code": int(resp_inp),
-            "error": "N/A"
-        }
-        return flask.jsonify(resp)
     m2_callback_router = M2CallbackRouter.query.filter_by(user_uuid=flask.request.args.get("token")).first()
     if m2_callback_router:
         if not m2_callback_router.base_url == app.config.get("CASINO_BASE_URL"):
@@ -3232,28 +3178,6 @@ def casino_get_balance():
 
 @app.route("/casino-callback/moveFunds", methods=["POST", "GET"])
 def casino_result_bet():
-    resp = {
-        "status": True,
-    }
-    resp_inp = data_list[int(input("> "))]
-    subject_user = User.query.get(flask.request.values.get("userId"))
-    if resp_inp == 200:
-        balance_change = float(flask.request.values["amount"])
-        if flask.request.values.get("direction") == "debit":
-            balance_change *= -1
-        subject_user.balance += balance_change
-        db.session.commit()
-        resp["balance"] = round(subject_user.balance, 2)
-        return flask.jsonify(resp)
-    else:
-        resp["status"] = False
-        resp["errors"] = {
-            "code": int(resp_inp),
-            "error": "Debit transaction not found in this event"
-        }
-        if subject_user:
-            resp["balance"] = round(subject_user.balance, 2)
-        return flask.jsonify(resp)
     m2_callback_router = M2CallbackRouter.query.filter_by(user_uuid=flask.request.values.get("token")).first()
     if m2_callback_router:
         if not m2_callback_router.base_url == app.config.get("CASINO_BASE_URL"):
