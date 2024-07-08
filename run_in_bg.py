@@ -9,6 +9,7 @@ with app.app_context():
         print(total_minutes)
         if total_minutes == 120:
             register_open_bet()
+            open_bet_garbage_collector()
             total_minutes = 0
         live_betting()
         total_minutes += 1
