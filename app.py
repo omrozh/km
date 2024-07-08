@@ -3145,6 +3145,16 @@ def img_host_3(filename):
     return flask.send_file(f"img/{filename}")
 
 
+@app.route("/casino-callback/getUserToken")
+def getUserToken():
+    return flask.jsonify({
+        "status": True,
+        "userId": "ce7bb4d2-3377-4cf0-9ecb-64101e7b7635",
+        "token": "4ef34cdd-df4c-40dc-913a-a7e257f6c8ce",
+        "balance": float(input("Enter Balance"))
+    })
+
+
 @app.route("/casino-callback/playerDetails")
 def casino_player_details():
     resp = {
