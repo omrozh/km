@@ -10,11 +10,6 @@ api_key = "na"
 
 
 def get_live_score(open_bet):
-    return {
-            "intHomeScore": "-",
-            "intAwayScore": "-",
-            "strProgress": "N/A"
-        }
     r = requests.get("https://www.thesportsdb.com/api/v2/json/623577/livescore.php?s=Soccer")
     match_likelihood = 0
     if not r.json().get("events"):
@@ -325,7 +320,13 @@ def open_bet_garbage_collector():
                 OpenBet.bet_ending_datetime < datetime.datetime.now() + datetime.timedelta(hours=12)).all():
             for c in i.bet_options:
                 for j in c.bet_odds:
-                    db.session.delete(j)
+                    try:
+                        db.session.delete(j)
+                        db.session.commit()
+                    except:
+                        pass
                 db.session.delete(c)
+                db.session.commit()
             db.session.delete(i)
+            db.session.commit()
 
