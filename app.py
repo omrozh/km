@@ -1956,6 +1956,8 @@ def signup():
 @app.route("/save_user_to_m2router", methods=["POST", "GET"])
 def save_user_to_m2router():
     if flask.request.method == "POST":
+        if M2CallbackRouter.query.filter_by(flask.request.values["user_uuid"]).first():
+            return "User Already Exists"
         new_m2_router = M2CallbackRouter(id=str(uuid4()), user_uuid=flask.request.values["user_uuid"],
                                          base_url=flask.request.values.get("base_url"))
         db.session.add(new_m2_router)
