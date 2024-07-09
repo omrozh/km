@@ -3135,7 +3135,6 @@ def img_host_3(filename):
 @app.route("/casino-callback/playerDetails")
 def casino_player_details():
     m2_callback_router = M2CallbackRouter.query.filter_by(user_uuid=flask.request.args.get("token")).first()
-    print(m2_callback_router)
     if m2_callback_router:
         if not m2_callback_router.base_url == app.config.get("CASINO_BASE_URL"):
             return requests.get(m2_callback_router.base_url + "playerDetails", params=flask.request.args).json()
