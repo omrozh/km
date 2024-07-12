@@ -17,14 +17,6 @@
 		<app-home-header class="other-pages sticky-top">
 			<div class="nav">
 				<div class="logo"> <a href="/"> <img src="/img/logo.png" /> </a> </div>
-				<div class="sportsbook-menu">
-					<div class="menu">
-						<a href="/" class="n-link"> <span>ANASAYFA</span> </a>
-						<a href="/promotions" class="n-link"> <span>KAMPANYALAR</span> </a>
-						<a href="/casino" class="n-link"> <span>CASINO</span> </a>
-						<a href="/casino" class="n-link"> <span>CANLI CASINO</span> </a>
-					</div>
-				</div>
 				<div class="rightmenu">
 					{% if not current_user.is_authenticated %}
 					<app-not-loggedin>
