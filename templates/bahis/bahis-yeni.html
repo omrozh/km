@@ -73,7 +73,12 @@
 
 			</div>
 		</div>
-		<iframe src="https://sb.plugin-demo.delasport.com/en/euro/home" style="width: 100vw; height: 85vh" frameborder="0"></iframe>
+		<iframe src="https://sb.plugin-demo.delasport.com/en/euro/home" id="sportsbook-iframe" style="width: 100vw; height: 85vh" frameborder="0"></iframe>
+		<script>
+			if(window.innerHeight > window.innerWidth){
+				document.getElementById("sportsbook-iframe").style.height = "60vh"
+			}
+		</script>
 	</app-content>
 	<app-mobilemenu>
 		<fast-menu class="page-sportsbook">
