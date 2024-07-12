@@ -25,6 +25,7 @@ def get_games(provider_id=None, game_type=None):
 
 
 def get_game_iframe(game_id, user_id, user_uuid, demo="true", bonus=None):
+    demo = "true"
     if bonus:
         return f"{BASE_URL}/start?demo={demo}&gameId={game_id}&country=TR&userId={user_id}&token={user_uuid}&lang=tr&bonusName={bonus.bonus.bonus_name}&bonusRounds={bonus.bonus_amount}&bonusBet={bonus.bonus.round_value}&bonusExpired={int(time.time())+3600}"
     else:
