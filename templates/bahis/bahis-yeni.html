@@ -17,6 +17,14 @@
 		<app-home-header class="other-pages sticky-top">
 			<div class="nav">
 				<div class="logo"> <a href="/"> <img src="/img/logo.png" /> </a> </div>
+				<div class="sportsbook-menu">
+					<div class="menu">
+						<a href="/" class="n-link"> <span>ANASAYFA</span> </a>
+						<a href="/promotions" class="n-link"> <span>KAMPANYALAR</span> </a>
+						<a href="/casino" class="n-link"> <span>CASINO</span> </a>
+						<a href="/casino" class="n-link"> <span>CANLI CASINO</span> </a>
+					</div>
+				</div>
 				<div class="rightmenu">
 					{% if not current_user.is_authenticated %}
 					<app-not-loggedin>
@@ -62,20 +70,7 @@
 	<app-content>
 		<div class="sportsbook">
 			<div class="c1">
-				<div class="mobile-menu mobile-fast-menu">
-					<div class="mobileSlider2 owl-carousel">
 
-						<a href="/" class="ma-item"> ANASAYFA </a>
-						{% if canli_bahis %}
-							<a href="/canli_bahis" class="ma-item active"> CANLI BAHİSLER </a>
-							<a href="/bahis" class="ma-item"> SPOR BAHİSLERİ </a>
-						{% else %}
-							<a href="/canli_bahis" class="ma-item"> CANLI BAHİSLER </a>
-							<a href="/bahis" class="ma-item active"> SPOR BAHİSLERİ </a>
-						{% endif %}
-						<a href="#." class="ma-item"> SLOT OYUNLARI </a>
-					</div>
-				</div>
 			</div>
 		</div>
 		<iframe src="https://sb.plugin-demo.delasport.com/en/euro/home" style="width: 100vw; height: 85vh" frameborder="0"></iframe>
