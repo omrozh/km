@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="/plugins/owl/owl.carousel.min.css" />
 	<link rel="stylesheet" href="/plugins/perfect-scrollbar/perfect-scrollbar.css" />
 </head>
-<body>
+<body style="display: flex; flex-direction: column; height: 100vh">
 	<app-header>
 		<app-home-header class="other-pages sticky-top">
 			<div class="nav">
@@ -67,7 +67,7 @@
 			</div>
 		</app-home-header>
 	</app-header>
-	<iframe src="{{ game_iframe }}" style="width: 100%; height: 80vh" frameborder="0"></iframe>
+	<iframe src="{{ game_iframe }}" style="width: 100%; height: 80vh; flex: 1" frameborder="0"></iframe>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/plugins/owl/owl.carousel.min.js"></script>
