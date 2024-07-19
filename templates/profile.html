@@ -466,7 +466,7 @@
         <div id="withdraw-money" class="division-profile" style="display: none">
             <div style="display: block">
 
-            <div style="background-color: var(--categoryBackground); width: fit-content; box-sizing: border-box;  margin-top: 50px">
+            <div style="background-color: var(--categoryBackground); width: fit-content; box-sizing: border-box;">
                 <div  id="withdraw-options-div" style="width: 98%; max-width: 70vw;">
                     {% for i in available_manual_accounts %}
                         <div onclick="document.getElementById('withdraw_type_{{i.id}}').value = '{{ i.payment_type }}'; this.style.opacity = 0.3; let withdraw_methods = document.getElementsByClassName('searchable-div'); document.getElementById('form_{{ i.id }}').style.display = 'block'; for(let i = 0; i < withdraw_methods.length; i++){withdraw_methods[i].onclick = function(){console.log('cannot change payment type')}}" style="display: inline-block" class="select-payment">
