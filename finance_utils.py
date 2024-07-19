@@ -34,6 +34,12 @@ withdraw_types_kralpay = {
     "auto_kralpay_banka": "BankTransfer"
 }
 
+deposit_types = {
+
+}
+
+# PROD WARNING: Remove this override in real prod websites.
+
 
 def get_iframe_url_kralpay(transaction, method, base_url, bank_id):
     user = transaction.user
