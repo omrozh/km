@@ -1360,7 +1360,9 @@ def admin_console():
 
     withdrawal_requests = WithdrawalRequest.query.filter(WithdrawalRequest.status != "Tamamlandı"). \
         filter(WithdrawalRequest.status != "Reddedildi").all()
-    return flask.render_template("admin_console.html", withdrawal_requests=list(reversed(withdrawal_requests)))
+    withdrawal_requests = list(withdrawal_requests)
+    withdrawal_requests.reverse()
+    return flask.render_template("admin_console.html", withdrawal_requests=withdrawal_requests))
 
 
 @app.route("/create/session", methods=["POST"])
