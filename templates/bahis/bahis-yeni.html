@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1; height=device-height" />
 	<title>KadroMilyon</title>
 	<link rel="stylesheet" href="/css/style.css" />
 	<link rel="stylesheet" href="/css/sportsbook.css" />
@@ -11,9 +11,24 @@
 	<link rel="stylesheet" href="/css/fontawesome.min.css" />
 	<link rel="stylesheet" href="/plugins/owl/owl.carousel.min.css" />
 	<link rel="stylesheet" href="/plugins/perfect-scrollbar/perfect-scrollbar.css" />
+	<style>
+		body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .nvbr {
+            flex-shrink: 0;
+        }
+        .cntn {
+            flex: 1;
+        }
+	</style>
 </head>
 <body>
-	<app-header>
+	<app-header class="nvbr">
 		<app-home-header class="other-pages sticky-top">
 			<div class="nav">
 				<div class="logo"> <a href="/"> <img src="/img/logo.png" /> </a> </div>
@@ -67,35 +82,10 @@
 			</div>
 		</app-home-header>
 	</app-header>
-	<app-content>
-		<div>
-			<div class="c1">
-
-			</div>
-		</div>
-		<iframe src="https://sb.plugin-demo.delasport.com/en/euro/home" id="sportsbook-iframe" style="width: 100vw; height: 85vh" frameborder="0"></iframe>
-		<script>
-			if(window.innerHeight > window.innerWidth){
-				document.getElementById("sportsbook-iframe").style.height = "70vh"
-			}
-		</script>
-	</app-content>
-	<app-mobilemenu>
-		<fast-menu class="page-sportsbook">
-			<div class="mobile-menu">
-				<a href="/casino?provider_id=122&provider_name=Evolution"> <img src="/img/mobilemenu/i7.png" /> <span>Canlı Casino</span> </a>
-				<a href="/bahis"> <img src="/img/mobilemenu/i4.png" /> <span>Spor</span> </a>
-				<a href='/'> <img src="/img/mobilemenu/i3.png" /> <span>Anasayfa</span> </a>
-				<a href="/canli_bahis"> <img src="/img/mobilemenu/i5.png" /> <span>Canlı Bahis</span> </a>
-				<a href="/casino"> <img src="/img/mobilemenu/i6.png" /> <span>Casino</span> </a>
-			</div>
-		</fast-menu>
-	</app-mobilemenu>
+	<iframe src="https://sb.plugin-demo.delasport.com/en/euro/home" style="width: 100%;" class="cntn" frameborder="0"></iframe>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/plugins/owl/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="/plugins/perfect-scrollbar/perfect-scrollbar.js"></script>
 	<script type="text/javascript" src="/js/script.js"></script>
-	<script type="text/javascript" src="/js/sportsbook.js"></script>
 </body>
 </html>
