@@ -298,7 +298,7 @@
 	</div>
         <div id="current-competitions" class="division-profile" style="display: none">
             <h1 style="color: white; text-align: left; font-family: 'Open Sans', sans-serif; width: 80%">Aktif Kadrolar</h1>
-            {% if current_user.active_drafts|length == 0%}
+            {% if current_user.active_drafts|length == 0 %}
                 <p style="color: white; text-align: left; margin-left: 10%">Henüz aktif bir kadronuz yok</p>
             {% endif %}
             {% for i in current_user.active_drafts %}
