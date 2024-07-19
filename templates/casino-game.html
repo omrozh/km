@@ -6,21 +6,66 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<title>KadroMilyon</title>
 	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/sportsbook.css" />
 	<link rel="stylesheet" href="/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="/css/fontawesome.min.css" />
 	<link rel="stylesheet" href="/plugins/owl/owl.carousel.min.css" />
-	<link rel="stylesheet" href="/css/sportsbook.css" />
+	<link rel="stylesheet" href="/plugins/perfect-scrollbar/perfect-scrollbar.css" />
 </head>
 <body>
 	<app-header>
-		<div class="sportsbook-menu">
-			<div class="menu">
-				<a href="/" class="n-link"> <span>ANASAYFA</span> </a>
-				<a href="/promotions" class="n-link"> <span>KAMPANYALAR</span> </a>
-				<a href="/casino" class="n-link"> <span>CASINO</span> </a>
-				<a href="/casino" class="n-link"> <span>CANLI CASINO</span> </a>
+		<app-home-header class="other-pages sticky-top">
+			<div class="nav">
+				<div class="logo"> <a href="/"> <img src="/img/logo.png" /> </a> </div>
+				<div class="sportsbook-menu">
+					<div class="menu">
+						<a href="/" class="n-link"> <span>ANASAYFA</span> </a>
+						<a href="/promotions" class="n-link"> <span>KAMPANYALAR</span> </a>
+						<a href="/casino" class="n-link"> <span>CASINO</span> </a>
+						<a href="/casino" class="n-link"> <span>CANLI CASINO</span> </a>
+					</div>
+				</div>
+				<div class="rightmenu">
+					{% if not current_user.is_authenticated %}
+					<app-not-loggedin>
+						<a href="/login" class="btn login-btn"> <i class="fa-solid fa-right-to-bracket"></i> Giriş Yap </a>
+							<a href="/signup" class="btn register-btn"> <i class="fa-solid fa-user-plus"></i> Kayıt Ol </a>
+						<div class="lang-select">
+							<div class="view"> <img src="/img/flag/tr.png" /> TR <i class="fa-solid fa-chevron-down"></i> </div>
+						</div>
+						<div class="timer" id="timer">
+							16:40:50
+						</div>
+						<script>
+							function setTimer(){
+								var d = new Date();
+								var n = d.toLocaleTimeString();
+								document.getElementById("timer").innerText = n;
+							}
+							setInterval(setTimer, 1000)
+						</script>
+						<a href="#." class="notification"> <i class="fa-solid fa-bell"></i> </a>
+					</app-not-loggedin>
+					{% else %}
+					<app-loggedin>
+						<a href="#." class="btn price-btn"> <i class="fa-solid fa-turkish-lira-sign"></i>
+							{% if current_user.sports_bonus_balance + current_user.casino_bonus_balance > 0 %}
+								<span style="display: inline-block; vertical-align: middle">
+									<p style="font-size: 12px; margin-bottom: 0; margin-block-start: 0; margin-block-end: 0;">{{'%0.2f'| format(current_user.balance|float)}}</p>
+									<p style="font-size: 8px; color: var(--baseColor); margin-top: 0; margin-bottom: 0; margin-block-start: 0; margin-block-end: 0">{{'%0.2f'| format(current_user.casino_bonus_balance + current_user.sports_bonus_balance |float)}}</p>
+								</span>
+							{% else %}
+								{{'%0.2f'| format(current_user.balance|float)}}
+							{% endif %}
+						</a>
+						<a href="/profile" class="btn setting-btn"> <i class="fa-solid fa-gear"></i> </a>
+						<a href="/notifications" class="btn notification-btn"> <i class="fa-regular fa-bell"></i> <div class="counter">0</div> </a>
+						<a href="/profile" class="btn profile-btn"> <img src="/img/profile-demo.png" /> </a>
+					</app-loggedin>
+					{% endif %}
+				</div>
 			</div>
-		</div>
+		</app-home-header>
 	</app-header>
 	<iframe src="{{ game_iframe }}" style="width: 100%; height: 80vh" frameborder="0"></iframe>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
