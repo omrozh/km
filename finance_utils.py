@@ -34,10 +34,6 @@ withdraw_types_kralpay = {
     "auto_kralpay_banka": "BankTransfer"
 }
 
-deposit_types = {
-
-}
-
 # PROD WARNING: Remove this override in real prod websites.
 
 
