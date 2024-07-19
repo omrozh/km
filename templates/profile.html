@@ -338,6 +338,19 @@
             {% endfor %}
         </div>
         <div id="bets" style="display: none; text-align: left; margin-left: 0; width: 80%; padding: 50px; box-sizing: border-box;" class="division-profile">
+            <div>
+                <div style="display: inline-block">
+                    <label for="start-date">Başlangıç Tarihi</label>
+                    <br>
+                    <input type="date" id="start-date" style="max-width: 50vw; width: 400px; background: #2e2f33; vertical-align: middle; color: white; font-size: 1rem; padding: 1rem .75rem; font-weight: 400; border-radius: 5px; border: none; outline: none;">
+                </div>
+                <div style="display: inline-block">
+                    <label for="end-date">Bitiş Tarihi</label>
+                    <br>
+                    <input type="date" id="end-date" style="max-width: 50vw; width: 400px; background: #2e2f33; vertical-align: middle; color: white; font-size: 1rem; padding: 1rem .75rem; font-weight: 400; border-radius: 5px; border: none; outline: none;">
+                </div>
+                <button style="max-width: 50vw; width: 200px; background: #ff7200; vertical-align: middle; color: white; font-size: 1rem; padding: 1rem .75rem; font-weight: 400; border-radius: 5px; border: none; outline: none;">Filtrele</button>
+            </div>
             {% for i in current_user.mybets %}
                 {% if not i.status == "Oluşturuluyor" %}
                 <div style="display: inline-block; width: 320px; max-width: 100%; margin-top: 15px; vertical-align: top">
