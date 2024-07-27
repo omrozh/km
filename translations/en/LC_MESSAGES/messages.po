@@ -189,11 +189,11 @@ msgstr " LIVE CASINO "
 
 #: templates/login.html:19
 msgid "HENÜZ HESABINIZ YOK MU?"
-msgstr ""
+msgstr "Don't Have an Account Yet?"
 
 #: templates/login.html:21
 msgid "Hemen Üye Ol"
-msgstr ""
+msgstr "Sign Up Now"
 
 #: templates/login.html:30 templates/profile.html:418 templates/signup.html:49
 msgid "E-Posta"
@@ -201,11 +201,11 @@ msgstr "Email"
 
 #: templates/login.html:33 templates/signup.html:52
 msgid "Şifre"
-msgstr ""
+msgstr "Password"
 
 #: templates/login.html:40
 msgid "Şifremi Unuttum"
-msgstr ""
+msgstr "Forgot My Password"
 
 #: templates/profile.html:175
 msgid " ANASAYFA "
@@ -507,7 +507,7 @@ msgstr " Username "
 #: templates/signup.html:64
 #, fuzzy
 msgid "Promosyon Kodu"
-msgstr "PROMOTIONS"
+msgstr "Promo Code"
 
 #: templates/signup.html:68
 #, fuzzy

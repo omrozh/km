@@ -190,11 +190,11 @@ msgstr "كازينو مباشر"
 
 #: templates/login.html:19
 msgid "HENÜZ HESABINIZ YOK MU?"
-msgstr ""
+msgstr "ليس لديك حساب بعد؟"
 
 #: templates/login.html:21
 msgid "Hemen Üye Ol"
-msgstr ""
+msgstr "اشترك الآن"
 
 #: templates/login.html:30 templates/profile.html:418 templates/signup.html:49
 msgid "E-Posta"
@@ -202,11 +202,11 @@ msgstr "البريد الإلكتروني"
 
 #: templates/login.html:33 templates/signup.html:52
 msgid "Şifre"
-msgstr ""
+msgstr "كلمة المرور"
 
 #: templates/login.html:40
 msgid "Şifremi Unuttum"
-msgstr ""
+msgstr "نسيت كلمة المرور"
 
 #: templates/profile.html:175
 msgid " ANASAYFA "

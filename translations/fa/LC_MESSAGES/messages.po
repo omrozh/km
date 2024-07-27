@@ -189,11 +189,11 @@ msgstr "کازینو زنده"
 
 #: templates/login.html:19
 msgid "HENÜZ HESABINIZ YOK MU?"
-msgstr ""
+msgstr "هنوز حساب کاربری ندارید؟"
 
 #: templates/login.html:21
 msgid "Hemen Üye Ol"
-msgstr ""
+msgstr "اکنون عضو شوید"
 
 #: templates/login.html:30 templates/profile.html:418 templates/signup.html:49
 msgid "E-Posta"
@@ -201,11 +201,11 @@ msgstr "پست الکترونیک"
 
 #: templates/login.html:33 templates/signup.html:52
 msgid "Şifre"
-msgstr ""
+msgstr "رمز عبور"
 
 #: templates/login.html:40
 msgid "Şifremi Unuttum"
-msgstr ""
+msgstr "رمز عبورم را فراموش کرده‌ام"
 
 #: templates/profile.html:175
 msgid " ANASAYFA "

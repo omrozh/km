@@ -189,11 +189,11 @@ msgstr "Canlı Casino"
 
 #: templates/login.html:19
 msgid "HENÜZ HESABINIZ YOK MU?"
-msgstr ""
+msgstr "HENÜZ HESABINIZ YOK MU?"
 
 #: templates/login.html:21
 msgid "Hemen Üye Ol"
-msgstr ""
+msgstr "Hemen Üye Ol"
 
 #: templates/login.html:30 templates/profile.html:418 templates/signup.html:49
 msgid "E-Posta"
@@ -201,11 +201,11 @@ msgstr "E-Posta"
 
 #: templates/login.html:33 templates/signup.html:52
 msgid "Şifre"
-msgstr ""
+msgstr "Şifre"
 
 #: templates/login.html:40
 msgid "Şifremi Unuttum"
-msgstr ""
+msgstr "Şifremi Unuttum"
 
 #: templates/profile.html:175
 msgid " ANASAYFA "

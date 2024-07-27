@@ -189,11 +189,11 @@ msgstr "คาสิโนสด"
 
 #: templates/login.html:19
 msgid "HENÜZ HESABINIZ YOK MU?"
-msgstr ""
+msgstr "ยังไม่มีบัญชีใช่ไหม?"
 
 #: templates/login.html:21
 msgid "Hemen Üye Ol"
-msgstr ""
+msgstr "สมัครตอนนี้"
 
 #: templates/login.html:30 templates/profile.html:418 templates/signup.html:49
 msgid "E-Posta"
@@ -201,11 +201,11 @@ msgstr "อีเมล"
 
 #: templates/login.html:33 templates/signup.html:52
 msgid "Şifre"
-msgstr ""
+msgstr "รหัสผ่าน"
 
 #: templates/login.html:40
 msgid "Şifremi Unuttum"
-msgstr ""
+msgstr "ลืมรหัสผ่าน"
 
 #: templates/profile.html:175
 msgid " ANASAYFA "
@@ -488,7 +488,7 @@ msgstr "ลงทุน"
 
 #: templates/profile.html:755
 msgid "100₺"
-msgstr ""
+msgstr "100₺"
 
 #: templates/profile.html:765
 #, fuzzy
