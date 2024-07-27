@@ -1,0 +1,474 @@
+# Persian translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-07-27 20:39+0300\n"
+"PO-Revision-Date: 2024-07-27 20:46+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fa\n"
+"Language-Team: fa <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: templates/anasayfa-yeni.html:20 templates/anasayfa-yeni.html:189
+#: templates/casino.html:20 templates/casino.html:183
+#: templates/promotion-details.html:20 templates/promotions.html:20
+#: templates/sss1.html:19 templates/sss1.html:118
+msgid "Affiliate"
+msgstr "همکار"
+
+#: templates/anasayfa-yeni.html:21 templates/anasayfa-yeni.html:164
+#: templates/casino.html:21 templates/casino.html:158
+#: templates/promotion-details.html:21 templates/promotions.html:21
+#: templates/sss1.html:20 templates/sss1.html:119
+msgid "Sizi Arayalım"
+msgstr "با شما تماس بگیریم"
+
+#: templates/anasayfa-yeni.html:29 templates/bahis/bahis-yeni.html:46
+#: templates/casino-game.html:46 templates/casino.html:29
+#: templates/promotion-details.html:29 templates/promotions.html:29
+#: templates/sss1.html:28
+msgid "Giriş Yap"
+msgstr "وارد شوید"
+
+#: templates/anasayfa-yeni.html:30 templates/bahis/bahis-yeni.html:47
+#: templates/casino-game.html:47 templates/casino.html:30
+#: templates/promotion-details.html:30 templates/promotions.html:30
+#: templates/sss1.html:29
+msgid "Kayıt Ol"
+msgstr "ثبت نام"
+
+#: templates/anasayfa-yeni.html:73 templates/anasayfa-yeni.html:112
+#: templates/casino.html:73 templates/promotion-details.html:73
+#: templates/promotions.html:73 templates/sss1.html:72
+msgid "CANLI BAHİS"
+msgstr "پیش‌بینی زنده"
+
+#: templates/anasayfa-yeni.html:74 templates/anasayfa-yeni.html:109
+#: templates/casino.html:74 templates/promotion-details.html:74
+#: templates/promotions.html:74 templates/sss1.html:73
+msgid "SPOR"
+msgstr "ورزش"
+
+#: templates/anasayfa-yeni.html:75 templates/anasayfa-yeni.html:110
+#: templates/casino.html:75 templates/promotion-details.html:75
+#: templates/promotions.html:75 templates/sss1.html:74
+msgid "SLOT"
+msgstr "ماشین‌های اسلات"
+
+#: templates/anasayfa-yeni.html:76 templates/anasayfa-yeni.html:111
+#: templates/casino.html:76 templates/promotion-details.html:76
+#: templates/promotions.html:76 templates/sss1.html:75
+msgid "CANLI CASINO"
+msgstr "کازینو زنده"
+
+#: templates/anasayfa-yeni.html:77 templates/casino.html:77
+#: templates/promotion-details.html:77 templates/promotions.html:77
+#: templates/sss1.html:76
+msgid "OYUNLAR"
+msgstr "بازی‌ها"
+
+#: templates/anasayfa-yeni.html:78 templates/casino.html:78
+#: templates/promotion-details.html:78 templates/promotions.html:78
+#: templates/sss1.html:77
+msgid "TOMBALA"
+msgstr "بingo"
+
+#: templates/anasayfa-yeni.html:79 templates/casino.html:79
+#: templates/promotion-details.html:79 templates/promotions.html:79
+#: templates/sss1.html:78
+msgid "AVIATOR"
+msgstr "آویاتور"
+
+#: templates/anasayfa-yeni.html:80 templates/anasayfa-yeni.html:118
+#: templates/casino.html:80 templates/promotion-details.html:80
+#: templates/promotions.html:80 templates/sss1.html:79
+msgid "PROMOSYONLAR"
+msgstr "پیشنهادات ویژه"
+
+#: templates/anasayfa-yeni.html:117
+msgid "LİSANS"
+msgstr "مجوز"
+
+#: templates/anasayfa-yeni.html:171 templates/casino.html:165
+msgid "Hakkımızda"
+msgstr "درباره ما"
+
+#: templates/anasayfa-yeni.html:173 templates/casino.html:167
+msgid "Firma Bilgileri"
+msgstr "اطلاعات شرکت"
+
+#: templates/anasayfa-yeni.html:174 templates/casino.html:168
+msgid "İletişim"
+msgstr "تماس"
+
+#: templates/anasayfa-yeni.html:175 templates/casino.html:169
+msgid "Yardım - SSS"
+msgstr "کمک - سوالات متداول"
+
+#: templates/anasayfa-yeni.html:179 templates/casino.html:173
+msgid "ŞARTLAR VE KURALLAR"
+msgstr "قوانین و مقررات"
+
+#: templates/anasayfa-yeni.html:181 templates/casino.html:175
+msgid "Genel Kural ve Şartlar"
+msgstr "قوانین و شرایط عمومی"
+
+#: templates/anasayfa-yeni.html:182 templates/casino.html:176
+msgid "Gizlilik Politikası"
+msgstr "سیاست حفظ حریم خصوصی"
+
+#: templates/anasayfa-yeni.html:183 templates/casino.html:177
+msgid "Sorumlu Oyun"
+msgstr "بازی مسئولانه"
+
+#: templates/anasayfa-yeni.html:187 templates/casino.html:181
+msgid "GÖSTERİMLER"
+msgstr "نمایش‌ها"
+
+#: templates/anasayfa-yeni.html:190 templates/casino.html:184
+msgid "Turnuvalar"
+msgstr "مسابقات"
+
+#: templates/anasayfa-yeni.html:191 templates/casino.html:185
+msgid "Maç Programı"
+msgstr "برنامه مسابقات"
+
+#: templates/anasayfa-yeni.html:219 templates/casino.html:213
+msgid "Canlı Casino"
+msgstr "کازینو زنده"
+
+#: templates/anasayfa-yeni.html:220 templates/casino.html:214
+msgid "Spor"
+msgstr "ورزش"
+
+#: templates/anasayfa-yeni.html:221 templates/casino.html:215
+msgid "Anasayfa"
+msgstr "صفحه اصلی"
+
+#: templates/anasayfa-yeni.html:222 templates/casino.html:216
+msgid "Canlı Bahis"
+msgstr "پیش‌بینی زنده"
+
+#: templates/anasayfa-yeni.html:223 templates/casino.html:217
+msgid "Casino"
+msgstr "کازینو"
+
+#: templates/bahis/bahis-yeni.html:37 templates/casino-game.html:37
+msgid " ANASAYFA"
+msgstr "صفحه اصلی"
+
+#: templates/bahis/bahis-yeni.html:38 templates/casino-game.html:38
+msgid " KAMPANYALAR "
+msgstr "کمپین‌ها"
+
+#: templates/bahis/bahis-yeni.html:39 templates/casino-game.html:39
+msgid " CASINO "
+msgstr "کازینو"
+
+#: templates/bahis/bahis-yeni.html:40 templates/casino-game.html:40
+msgid " CANLI CASINO "
+msgstr "کازینو زنده"
+
+#: templates/casino.html:91
+msgid " Tüm Oyunlar "
+msgstr "تمام بازی‌ها"
+
+#: templates/profile.html:175
+msgid " ANASAYFA "
+msgstr "صفحه اصلی"
+
+#: templates/profile.html:178
+msgid " HESAP BİLGİLERİM "
+msgstr "اطلاعات حساب"
+
+#: templates/profile.html:181
+msgid " PARA YATIR "
+msgstr "واریز پول"
+
+#: templates/profile.html:184
+msgid " PARA ÇEK "
+msgstr "برداشت پول"
+
+#: templates/profile.html:187
+msgid " İŞLEM GEÇMİŞİ "
+msgstr "تاریخچه تراکنش‌ها"
+
+#: templates/profile.html:191
+msgid " KASA İŞLEMLERİ "
+msgstr "تراکنش‌های صندوق"
+
+#: templates/profile.html:195
+msgid " ÇIKIŞ YAP "
+msgstr "خروج"
+
+#: templates/profile.html:203
+msgid " ANA BAKİYE "
+msgstr "موجودی اصلی"
+
+#: templates/profile.html:209
+msgid " TOPLAM BONUS "
+msgstr "کل بونس"
+
+#: templates/profile.html:218
+msgid " İşlem Türü "
+msgstr "نوع تراکنش"
+
+#: templates/profile.html:219
+msgid " Kullanıcı Adı "
+msgstr "نام کاربری"
+
+#: templates/profile.html:220
+msgid " Tutar "
+msgstr "مقدار"
+
+#: templates/profile.html:221
+msgid " İşlem Tarihi "
+msgstr "تاریخ تراکنش"
+
+#: templates/profile.html:222
+msgid " Kanal "
+msgstr "کانال"
+
+#: templates/profile.html:223
+msgid " Ek Bilgiler "
+msgstr "اطلاعات اضافی"
+
+#: templates/profile.html:224
+msgid " Statü "
+msgstr "وضعیت"
+
+#: templates/profile.html:301
+msgid " Başlangıç Tarihi "
+msgstr "تاریخ شروع"
+
+#: templates/profile.html:306
+msgid " Bitiş Tarihi "
+msgstr "تاریخ پایان"
+
+#: templates/profile.html:311
+msgid " Filtrele "
+msgstr "فیلتر"
+
+#: templates/profile.html:317
+msgid " Kupon "
+msgstr "کوپن"
+
+#: templates/profile.html:321
+msgid "Maç"
+msgstr "مسابقه"
+
+#: templates/profile.html:324
+msgid "Oran"
+msgstr "ضریب"
+
+#: templates/profile.html:329
+msgid "Toplam Oran"
+msgstr "ضریب کل"
+
+#: templates/profile.html:332
+msgid "Yatırım Tutarı"
+msgstr "مقدار سرمایه‌گذاری"
+
+#: templates/profile.html:335
+msgid "Potansiyel Kazanç"
+msgstr "پتانسیل درآمد"
+
+#: templates/profile.html:338
+msgid "Sonuç"
+msgstr "نتیجه"
+
+#: templates/profile.html:342
+msgid "Ödül Al"
+msgstr "دریافت جایزه"
+
+#: templates/profile.html:356
+msgid "Kişisel Bilgilerim"
+msgstr "اطلاعات شخصی"
+
+#: templates/profile.html:358
+msgid " İsim Soyisim "
+msgstr "نام و نام خانوادگی"
+
+#: templates/profile.html:362
+msgid " Cinsiyet "
+msgstr "جنسیت"
+
+#: templates/profile.html:366
+msgid "Telefon Numarası "
+msgstr "شماره تلفن"
+
+#: templates/profile.html:370
+msgid " TC Kimlik No "
+msgstr "شماره شناسنامه"
+
+#: templates/profile.html:374
+msgid "Doğum Tarihi"
+msgstr "تاریخ تولد"
+
+#: templates/profile.html:378
+msgid "Adres"
+msgstr "آدرس"
+
+#: templates/profile.html:385
+msgid "Üyelik Bilgileri"
+msgstr "اطلاعات عضویت"
+
+#: templates/profile.html:387
+msgid "Kayıt Tarihi"
+msgstr "تاریخ ثبت‌نام"
+
+#: templates/profile.html:391
+msgid "Üyelik Numarası"
+msgstr "شماره عضویت"
+
+#: templates/profile.html:395
+msgid "Para Birimi"
+msgstr "واحد پول"
+
+#: templates/profile.html:399
+msgid "E-Posta"
+msgstr "پست الکترونیک"
+
+#: templates/profile.html:404
+msgid "Kaydet"
+msgstr "ذخیره"
+
+#: templates/profile.html:431
+msgid "Çekim Talebi"
+msgstr "درخواست برداشت"
+
+#: templates/profile.html:442
+msgid "Min. Çekim"
+msgstr "حداقل برداشت"
+
+#: templates/profile.html:444
+msgid "Maks. Çekim"
+msgstr "حداکثر برداشت"
+
+#: templates/profile.html:456 templates/profile.html:496
+#: templates/profile.html:537 templates/profile.html:687
+#: templates/profile.html:723
+msgid "Yöntem Adı"
+msgstr "نام روش"
+
+#: templates/profile.html:457 templates/profile.html:688
+msgid "Yöntem Seçin"
+msgstr "روش را انتخاب کنید"
+
+#: templates/profile.html:460 templates/profile.html:500
+#: templates/profile.html:541 templates/profile.html:691
+#: templates/profile.html:727
+msgid "Ücret"
+msgstr "هزینه"
+
+#: templates/profile.html:464 templates/profile.html:504
+#: templates/profile.html:545 templates/profile.html:695
+#: templates/profile.html:731
+msgid "İşlem Süresi"
+msgstr "زمان پردازش"
+
+#: templates/profile.html:468 templates/profile.html:508
+#: templates/profile.html:549 templates/profile.html:699
+#: templates/profile.html:735
+msgid "Minimum Tutar"
+msgstr "حداقل مبلغ"
+
+#: templates/profile.html:474 templates/profile.html:514
+#: templates/profile.html:556
+msgid "Para çekmek için lütfen aşağıdaki tüm gerekli alanları doldurun."
+msgstr "برای برداشت پول لطفاً تمام فیلدهای ضروری زیر را پر کنید."
+
+#: templates/profile.html:479 templates/profile.html:519
+#: templates/profile.html:561
+msgid "Çekmek İstenen Miktar"
+msgstr "مقدار مورد نظر برای برداشت"
+
+#: templates/profile.html:484 templates/profile.html:524
+#: templates/profile.html:566
+msgid "Hesap Adresi"
+msgstr "آدرس حساب"
+
+#: templates/profile.html:489 templates/profile.html:529
+#: templates/profile.html:571
+msgid "Para Çek"
+msgstr "برداشت پول"
+
+#: templates/profile.html:501 templates/profile.html:542
+#: templates/profile.html:728
+msgid "Ücretsiz"
+msgstr "رایگان"
+
+#: templates/profile.html:505 templates/profile.html:546
+#: templates/profile.html:732
+msgid "Anlık"
+msgstr "لحظه‌ای"
+
+#: templates/profile.html:577
+msgid "Geçmiş İşlemler"
+msgstr "تراکنش‌های گذشته"
+
+#: templates/profile.html:595
+msgid "Kasa İşlemleri"
+msgstr "تراکنش‌های صندوق"
+
+#: templates/profile.html:601
+msgid "Partner Statüsü"
+msgstr "وضعیت شریک"
+
+#: templates/profile.html:602
+msgid "Komisyon Oranı"
+msgstr "نسبت کمیسیون"
+
+#: templates/profile.html:603
+msgid "Kasa Bakiyesi"
+msgstr "موجودی صندوق"
+
+#: templates/profile.html:604
+msgid "Kasa Kazancı"
+msgstr "درآمد صندوق"
+
+#: templates/profile.html:660
+msgid "Yatırım Talebi"
+msgstr "درخواست سرمایه‌گذاری"
+
+#: templates/profile.html:670
+msgid "Min. Yatırım 100₺"
+msgstr "حداقل سرمایه‌گذاری 100₺"
+
+#: templates/profile.html:672
+msgid "Maks. Yatırım 50000₺"
+msgstr "حداکثر سرمایه‌گذاری 50000₺"
+
+#: templates/profile.html:692 templates/profile.html:696
+#: templates/profile.html:700
+msgid "-"
+msgstr "-"
+
+#: templates/profile.html:705 templates/profile.html:741
+msgid "Para yatırmak için lütfen aşağıdaki tüm gerekli alanları doldurun."
+msgstr "برای واریز پول لطفاً تمام فیلدهای ضروری زیر را پر کنید."
+
+#: templates/profile.html:709 templates/profile.html:755
+msgid "Yatırılacak Miktar"
+msgstr "مقدار سرمایه‌گذاری"
+
+#: templates/profile.html:715 templates/profile.html:761
+msgid "Yatırım Yap"
+msgstr "سرمایه‌گذاری کنید"
+
+#: templates/profile.html:736
+msgid "100₺"
+msgstr "100₺"
+
+#: templates/profile.html:746
+msgid "Banka Seçin"
+msgstr "بانک را انتخاب کنید"

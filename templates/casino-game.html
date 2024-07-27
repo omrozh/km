@@ -34,20 +34,25 @@
 				<div class="logo"> <a href="/"> <img src="/img/logo.png" /> </a> </div>
 				<div class="sportsbook-menu">
 					<div class="menu">
-						<a href="/" class="n-link"> <span>ANASAYFA</span> </a>
-						<a href="/promotions" class="n-link"> <span>KAMPANYALAR</span> </a>
-						<a href="/casino" class="n-link"> <span>CASINO</span> </a>
-						<a href="/casino" class="n-link"> <span>CANLI CASINO</span> </a>
+						<a href="/" class="n-link"> <span>{% trans %} ANASAYFA{% endtrans %}</span> </a>
+						<a href="/promotions" class="n-link"> <span>{% trans %} KAMPANYALAR {% endtrans %}</span> </a>
+						<a href="/casino" class="n-link"> <span>{% trans %} CASINO {% endtrans %}</span> </a>
+						<a href="/casino" class="n-link"> <span>{% trans %} CANLI CASINO {% endtrans %}</span> </a>
 					</div>
 				</div>
 				<div class="rightmenu">
 					{% if not current_user.is_authenticated %}
 					<app-not-loggedin>
-						<a href="/login" class="btn login-btn"> <i class="fa-solid fa-right-to-bracket"></i> Giriş Yap </a>
-							<a href="/signup" class="btn register-btn"> <i class="fa-solid fa-user-plus"></i> Kayıt Ol </a>
-						<div class="lang-select">
-							<div class="view"> <img src="/img/flag/tr.png" /> TR <i class="fa-solid fa-chevron-down"></i> </div>
-						</div>
+						<a href="/login" class="btn login-btn"> <i class="fa-solid fa-right-to-bracket"></i>{% trans %}Giriş Yap{% endtrans %} </a>
+							<a href="/signup" class="btn register-btn"> <i class="fa-solid fa-user-plus"></i> {% trans %}Kayıt Ol{% endtrans %} </a>
+						<select style="-webkit-appearance: none" class="lang-select">
+							<option class="view"> 🇹🇷 TUR <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> KURDI <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> 🇬🇧 ENG <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> 🇮🇷 FARSI <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> 🇹🇭 THAI <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> 🇸🇦 ARAB <i class="fa-solid fa-chevron-down"></i> </option>
+						</select>
 						<div class="timer" id="timer">
 							16:40:50
 						</div>

@@ -14,6 +14,8 @@ from flask_bcrypt import Bcrypt
 from sqlalchemy import desc
 import requests
 
+from flask_babel import Babel
+
 from sqlalchemy import or_
 
 import shortuuid
@@ -93,6 +95,9 @@ app.config['MAIL_USERNAME'] = 'operations@m2betting.com'
 app.config['MAIL_PASSWORD'] = 'qvegsrxwmbwrxaxx'
 app.config['MAIL_DEFAULT_SENDER'] = 'operations@m2betting.com'
 
+app.config['BABEL_DEFAULT_LOCALE'] = 'tr'
+app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'
+
 bet_categories = ["Handikaplar", "Goller", "Maç Sonucu", "Yarılar", "Penaltılar", "Tüm Bahisler"]
 
 mail = Mail(app)
@@ -102,6 +107,12 @@ db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 bcrypt = Bcrypt(app)
 migrate = Migrate(app, db)
+babel = Babel(app)
+
+
+@babel.localeselector
+def get_locale():
+    return flask.request.accept_languages.best_match(['en', 'ku', 'fa', 'th', 'ar', 'tr'])
 
 
 def user_on_mobile() -> bool:

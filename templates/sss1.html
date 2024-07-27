@@ -16,8 +16,8 @@
 			<div class="nav">
 				<div class="logo"> <a href="/"> <img src="/img/logo.png" /> </a> </div>
 				<div class="fast-links">
-					<a href="#." class="btn"> <i class="km km-affiliate"></i> Affiliate </a>
-					<a href="#." class="btn"> <i class="km km-call"></i> Sizi Arayalım </a>
+					<a href="#." class="btn"> <i class="km km-affiliate"></i> {% trans %}Affiliate{% endtrans %} </a>
+					<a href="#." class="btn"> <i class="km km-call"></i> {% trans %}Sizi Arayalım{% endtrans %} </a>
 					<a href="#." class="btn"> <i class="km km-whatsapp"></i> Whatsapp </a>
 					<a href="#." class="btn"> <i class="km km-telegram"></i> Telegram </a>
 					<a href="#." class="btn"> <i class="km km-twitter"></i> Twitter </a>
@@ -25,11 +25,16 @@
 				<div class="rightmenu">
 					{% if not current_user.is_authenticated %}
 					<app-not-loggedin>
-							<a href="/login" class="btn login-btn"> <i class="fa-solid fa-right-to-bracket"></i> Giriş Yap </a>
-							<a href="/signup" class="btn register-btn"> <i class="fa-solid fa-user-plus"></i> Kayıt Ol </a>
-						<div class="lang-select">
-							<div class="view"> <img src="/img/flag/tr.png" /> TR <i class="fa-solid fa-chevron-down"></i> </div>
-						</div>
+							<a href="/login" class="btn login-btn"> <i class="fa-solid fa-right-to-bracket"></i>{% trans %}Giriş Yap{% endtrans %} </a>
+							<a href="/signup" class="btn register-btn"> <i class="fa-solid fa-user-plus"></i> {% trans %}Kayıt Ol{% endtrans %} </a>
+						<select style="-webkit-appearance: none" class="lang-select">
+							<option class="view"> 🇹🇷 TUR <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> KURDI <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> 🇬🇧 ENG <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> 🇮🇷 FARSI <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> 🇹🇭 THAI <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> 🇸🇦 ARAB <i class="fa-solid fa-chevron-down"></i> </option>
+						</select>
 						<div class="timer" id="timer">
 							16:40:50
 						</div>
@@ -64,14 +69,14 @@
 			</div>
 			<div class="menu-container">
 				<div class="menu">
-					<a href="/canli_bahis" class="n-link"> <i class="km km-live"></i> <span>CANLI BAHİS</span> </a>
-					<a href="/bahis" class="n-link"> <i class="km km-sports"></i> <span>SPOR</span> </a>
-					<a href="/casino" class="n-link"> <i class="km km-slot"></i> <span>SLOT</span> </a>
-					<a href="/casino?provider_id=122&provider_name=Evolution" class="n-link"> <i class="km km-live-casino"></i> <span>CANLI CASINO</span> </a>
-					<a href="/casino?provider_id=344&provider_name=Spribe" class="n-link"> <i class="km km-games"></i> <span>OYUNLAR</span> </a>
-					<a href="/casino?search_query=bingo" class="n-link"> <i class="km km-tomb"></i> <span>TOMBALA</span> </a>
-					<a href="/casino/1022357" class="n-link"> <i class="km km-aviator"></i> <span>AVIATOR</span> </a>
-					<a href="/promotions" class="n-link"> <i class="km km-promotions"></i> <span>PROMOSYONLAR</span> </a>
+					<a href="/canli_bahis" class="n-link"> <i class="km km-live"></i> <span>{% trans %}CANLI BAHİS{% endtrans %}</span> </a>
+					<a href="/bahis" class="n-link"> <i class="km km-sports"></i> <span>{% trans %}SPOR{% endtrans %}</span> </a>
+					<a href="/casino" class="n-link"> <i class="km km-slot"></i> <span>{% trans %}SLOT{% endtrans %}</span> </a>
+					<a href="/casino?provider_id=122&provider_name=Evolution" class="n-link"> <i class="km km-live-casino"></i> <span>{% trans %}CANLI CASINO{% endtrans %}</span> </a>
+					<a href="/casino?provider_id=344&provider_name=Spribe" class="n-link"> <i class="km km-games"></i> <span>{% trans %}OYUNLAR{% endtrans %}</span> </a>
+					<a href="/casino?search_query=bingo" class="n-link"> <i class="km km-tomb"></i> <span>{% trans %}TOMBALA{% endtrans %}</span> </a>
+					<a href="/casino/1022357" class="n-link"> <i class="km km-aviator"></i> <span>{% trans %}AVIATOR{% endtrans %}</span> </a>
+					<a href="/promotions" class="n-link"> <i class="km km-promotions"></i> <span>{% trans %}PROMOSYONLAR{% endtrans %}</span> </a>
 				</div>
 			</div>
 		</app-home-header>
@@ -110,8 +115,8 @@
 		<div class="footer">
 			<div class="inner">
 				<div class="fast-links">
-					<a href="#." class="btn"> <i class="km km-affiliate"></i> Affiliate </a>
-					<a href="#." class="btn"> <i class="km km-call"></i> Sizi Arayalım </a>
+					<a href="#." class="btn"> <i class="km km-affiliate"></i> {% trans %}Affiliate{% endtrans %} </a>
+					<a href="#." class="btn"> <i class="km km-call"></i> {% trans %}Sizi Arayalım{% endtrans %} </a>
 					<a href="#." class="btn"> <i class="km km-whatsapp"></i> Whatsapp </a>
 					<a href="#." class="btn"> <i class="km km-telegram"></i> Telegram </a>
 					<a href="#." class="btn"> <i class="km km-twitter"></i> Twitter </a>

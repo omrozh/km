@@ -17,8 +17,8 @@
 			<div class="nav">
 				<div class="logo"> <a href="/"> <img src="/img/logo.png" /> </a> </div>
 				<div class="fast-links">
-					<a href="#." class="btn"> <i class="km km-affiliate"></i> Affiliate </a>
-					<a href="#." class="btn"> <i class="km km-call"></i> Sizi Arayalım </a>
+					<a href="#." class="btn"> <i class="km km-affiliate"></i> {% trans %}Affiliate{% endtrans %} </a>
+					<a href="#." class="btn"> <i class="km km-call"></i> {% trans %}Sizi Arayalım{% endtrans %} </a>
 					<a href="#." class="btn"> <i class="km km-whatsapp"></i> Whatsapp </a>
 					<a href="#." class="btn"> <i class="km km-telegram"></i> Telegram </a>
 					<a href="#." class="btn"> <i class="km km-twitter"></i> Twitter </a>
@@ -26,11 +26,16 @@
 				<div class="rightmenu">
 					{% if not current_user.is_authenticated %}
 					<app-not-loggedin>
-							<a href="/login" class="btn login-btn"> <i class="fa-solid fa-right-to-bracket"></i> Giriş Yap </a>
-							<a href="/signup" class="btn register-btn"> <i class="fa-solid fa-user-plus"></i> Kayıt Ol </a>
-						<div class="lang-select">
-							<div class="view"> <img src="/img/flag/tr.png" /> TR <i class="fa-solid fa-chevron-down"></i> </div>
-						</div>
+							<a href="/login" class="btn login-btn"> <i class="fa-solid fa-right-to-bracket"></i>{% trans %}Giriş Yap{% endtrans %} </a>
+							<a href="/signup" class="btn register-btn"> <i class="fa-solid fa-user-plus"></i> {% trans %}Kayıt Ol{% endtrans %} </a>
+						<select style="-webkit-appearance: none" class="lang-select">
+							<option class="view"> 🇹🇷 TUR <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> KURDI <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> 🇬🇧 ENG <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> 🇮🇷 FARSI <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> 🇹🇭 THAI <i class="fa-solid fa-chevron-down"></i> </option>
+							<option class="view"> 🇸🇦 ARAB <i class="fa-solid fa-chevron-down"></i> </option>
+						</select>
 						<div class="timer" id="timer">
 							16:40:50
 						</div>
@@ -65,14 +70,14 @@
 			</div>
 			<div class="menu-container">
 				<div class="menu">
-					<a href="/canli_bahis" class="n-link"> <i class="km km-live"></i> <span>CANLI BAHİS</span> </a>
-					<a href="/bahis" class="n-link"> <i class="km km-sports"></i> <span>SPOR</span> </a>
-					<a href="/casino" class="n-link"> <i class="km km-slot"></i> <span>SLOT</span> </a>
-					<a href="/casino?provider_id=122&provider_name=Evolution" class="n-link"> <i class="km km-live-casino"></i> <span>CANLI CASINO</span> </a>
-					<a href="/casino?provider_id=344&provider_name=Spribe" class="n-link"> <i class="km km-games"></i> <span>OYUNLAR</span> </a>
-					<a href="/casino?search_query=bingo" class="n-link"> <i class="km km-tomb"></i> <span>TOMBALA</span> </a>
-					<a href="/casino/1022357" class="n-link"> <i class="km km-aviator"></i> <span>AVIATOR</span> </a>
-					<a href="/promotions" class="n-link"> <i class="km km-promotions"></i> <span>PROMOSYONLAR</span> </a>
+					<a href="/canli_bahis" class="n-link"> <i class="km km-live"></i> <span>{% trans %}CANLI BAHİS{% endtrans %}</span> </a>
+					<a href="/bahis" class="n-link"> <i class="km km-sports"></i> <span>{% trans %}SPOR{% endtrans %}</span> </a>
+					<a href="/casino" class="n-link"> <i class="km km-slot"></i> <span>{% trans %}SLOT{% endtrans %}</span> </a>
+					<a href="/casino?provider_id=122&provider_name=Evolution" class="n-link"> <i class="km km-live-casino"></i> <span>{% trans %}CANLI CASINO{% endtrans %}</span> </a>
+					<a href="/casino?provider_id=344&provider_name=Spribe" class="n-link"> <i class="km km-games"></i> <span>{% trans %}OYUNLAR{% endtrans %}</span> </a>
+					<a href="/casino?search_query=bingo" class="n-link"> <i class="km km-tomb"></i> <span>{% trans %}TOMBALA{% endtrans %}</span> </a>
+					<a href="/casino/1022357" class="n-link"> <i class="km km-aviator"></i> <span>{% trans %}AVIATOR{% endtrans %}</span> </a>
+					<a href="/promotions" class="n-link"> <i class="km km-promotions"></i> <span>{% trans %}PROMOSYONLAR{% endtrans %}</span> </a>
 				</div>
 			</div>
 		</app-home-header>
@@ -83,7 +88,7 @@
 				<div class="game-list">
 					<div class="game-cat">
 						<div class="part">
-							<div class="title"> Tüm Oyunlar </div>
+							<div class="title"> {% trans %} Tüm Oyunlar {% endtrans %} </div>
 							<div class="search-game"> <i class="fa-solid fa-magnifying-glass"></i> <input onchange="document.location = `/casino?search_query=${this.value}`" type="text" placeholder="Arama yap" /> </div>
 						</div>
 						
@@ -150,34 +155,34 @@
 			<div class="inner">
 				<div class="fast-links">
 					<a href="mailto:sales@m2betting.com" class="btn"> <i class="km km-affiliate"></i> Affiliate </a>
-					<a href="/signup" class="btn"> <i class="km km-call"></i> Sizi Arayalım </a>
+					<a href="/signup" class="btn"> <i class="km km-call"></i> {% trans %}Sizi Arayalım{% endtrans %} </a>
 					<a href="#." class="btn"> <i class="km km-whatsapp"></i> Whatsapp </a>
 					<a href="#." class="btn"> <i class="km km-telegram"></i> Telegram </a>
 					<a href="#." class="btn"> <i class="km km-twitter"></i> Twitter </a>
 				</div>
 				<div class="details">
 					<div class="col-2">
-						<h3> Hakkımızda </h3>
+						<h3> {% trans %}Hakkımızda{% endtrans %} </h3>
 						<ul>
-							<li> <a href="/howtoplay?data=contact"> Firma Bilgileri </a> </li>
-							<li> <a href="/howtoplay?data=contact"> İletişim </a> </li>
-							<li> <a href="/howtoplay"> Yardım - SSS </a> </li>
+							<li> <a href="/howtoplay?data=contact"> {% trans %}Firma Bilgileri{% endtrans %} </a> </li>
+							<li> <a href="/howtoplay?data=contact"> {% trans %}İletişim{% endtrans %} </a> </li>
+							<li> <a href="/howtoplay"> {% trans %}Yardım - SSS{% endtrans %} </a> </li>
 						</ul>
 					</div>
 					<div class="col-2">
-						<h3> ŞARTLAR VE KURALLAR </h3>
+						<h3> {% trans %}ŞARTLAR VE KURALLAR{% endtrans %} </h3>
 						<ul>
-							<li> <a href="/howtoplay"> Genel Kural ve Şartlar </a> </li>
-							<li> <a href="#."> Gizlilik Politikası </a> </li>
-							<li> <a href="#."> Sorumlu Oyun </a> </li>
+							<li> <a href="/howtoplay"> {% trans %}Genel Kural ve Şartlar{% endtrans %} </a> </li>
+							<li> <a href="#."> {% trans %}Gizlilik Politikası{% endtrans %} </a> </li>
+							<li> <a href="#."> {% trans %}Sorumlu Oyun{% endtrans %} </a> </li>
 						</ul>
 					</div>
 					<div class="col-2">
-						<h3> GÖSTERİMLER </h3>
+						<h3> {% trans %}GÖSTERİMLER{% endtrans %} </h3>
 						<ul>
-							<li> <a href="#."> Affiliate </a> </li>
-							<li> <a href="/casino"> Turnuvalar </a> </li>
-							<li> <a href="/bahis"> Maç Programı </a> </li>
+							<li> <a href="#."> {% trans %}Affiliate{% endtrans %} </a> </li>
+							<li> <a href="/casino"> {% trans %}Turnuvalar{% endtrans %} </a> </li>
+							<li> <a href="/bahis"> {% trans %}Maç Programı{% endtrans %} </a> </li>
 						</ul>
 					</div>
 				</div>
@@ -186,13 +191,13 @@
 				</div>
 				<div class="copy">
 					<a href="#." class="licence-url"> <img src="/img/licence.png" /> </a>
-					<p> BetCity.com is operated by M2 Betting registered under No. 164124 at, Chuchubiweg 17, Curaçao. This website is licensed and regulated by Curaçao eGaming, license No. 1668/JAZ.  In
+					<p>  is operated by M2 Betting registered under No. 164124 at, Chuchubiweg 17, Curaçao. This website is licensed and regulated by Curaçao eGaming, license No. 1668/JAZ.  In
 	order to register for this website, the user is required to accept the “<a href="#.">General Terms and Conditions.</a>" In the event the ”<a href="#.">General Terms and Conditions</a>" are updated, existing users may choose to
 	discontinue using the products and services before the said update shall become effective, which is a minimum of two weeks after it has been announced.  </p>
 				</div>
 				<div class="finish">
 					<a href="/"> <img src="/img/logo.png" /> </a>
-					<p> 2024 © BetCity </p>
+					<p> 2024 © KadroMilyon </p>
 				</div>
 			</div>
 		</div>
@@ -205,11 +210,11 @@
 				<div class="livechat"> <a href="/contact"> <img src="/img/mobilemenu/i2.png" /> </a> </div>
 			</div>
 			<div class="mobile-menu">
-				<a href="/casino?provider_id=122&provider_name=Evolution"> <img src="/img/mobilemenu/i7.png" /> <span>Canlı Casino</span> </a>
-				<a href="/bahis"> <img src="/img/mobilemenu/i4.png" /> <span>Spor</span> </a>
-				<a href='/'> <img src="/img/mobilemenu/i3.png" /> <span>Anasayfa</span> </a>
-				<a href="/canli_bahis"> <img src="/img/mobilemenu/i5.png" /> <span>Canlı Bahis</span> </a>
-				<a href="/casino"> <img src="/img/mobilemenu/i6.png" /> <span>Casino</span> </a>
+				<a href="/casino?provider_id=122&provider_name=Evolution"> <img src="/img/mobilemenu/i7.png" /> <span>{% trans %}Canlı Casino{% endtrans %}</span> </a>
+				<a href="/bahis"> <img src="/img/mobilemenu/i4.png" /> <span>{% trans %}Spor{% endtrans %}</span> </a>
+				<a href='/'> <img src="/img/mobilemenu/i3.png" /> <span>{% trans %}Anasayfa{% endtrans %}</span> </a>
+				<a href="/canli_bahis"> <img src="/img/mobilemenu/i5.png" /> <span>{% trans %}Canlı Bahis{% endtrans %}</span> </a>
+				<a href="/casino"> <img src="/img/mobilemenu/i6.png" /> <span>{% trans %}Casino{% endtrans %}</span> </a>
 			</div>
 		</fast-menu>
 	</app-mobilemenu>
