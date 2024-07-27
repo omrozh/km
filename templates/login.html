@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <title>KadroMilyon | Güvenilir Casino</title>
+    <title>KadroMilyon | {%trans %}Güvenilir Casino{% endtrans %}</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -16,9 +16,9 @@
     <iframe src="/" style="width: 100vw; height: 100vh; position: relative; opacity: 0.3; z-index: -1" frameborder="0"></iframe>
     <center class="form-container" style="background: #2e2f33; max-width: 100vw; position: absolute; top: 0; bottom: 0; right: 0; left: 0; margin: auto; width: 350px; height: fit-content; padding: 10px; padding-top: 20px; box-sizing: border-box; border-radius: 5px">
         <div style="height: 78px">
-            <span style="font-family: 'Roboto', sans-serif; color: white;">HENÜZ HESABINIZ YOK MU?</span>
+            <span style="font-family: 'Roboto', sans-serif; color: white;">{%trans%}HENÜZ HESABINIZ YOK MU?{%endtrans%}</span>
             <br>
-            <button onclick="document.location = '/signup'" style="background: #101213; color: white; font-size: 1rem; padding: .7rem .75rem; margin-top: 5px; font-weight: 400; width: 100%; border-radius: 5px; border: none; outline: none;">Hemen Üye Ol</button>
+            <button onclick="document.location = '/signup'" style="background: #101213; color: white; font-size: 1rem; padding: .7rem .75rem; margin-top: 5px; font-weight: 400; width: 100%; border-radius: 5px; border: none; outline: none;">{%trans%}Hemen Üye Ol{%endtrans%}</button>
         </div>
         <div class="login-container" style="background: #26292d; padding: 15px; position: relative" id="login-container">
             <img src="/img/logo.png" style="width: 100px; margin-top: 15px; display: inline-block" alt="">
@@ -27,17 +27,17 @@
             <br>
             <form method="post" enctype="multipart/form-data">
                 <div class="input-container">
-                    <input type="text" name="email"  placeholder="E-Posta" style="width: 100%;background: #2e2f33; color: white; font-size: 1rem; padding: 1rem .75rem; font-weight: 400; border-radius: 5px; border: none; outline: none;" autofocus = "on">
+                    <input type="text" name="email"  placeholder="{%trans%}E-Posta{%endtrans%}" style="width: 100%;background: #2e2f33; color: white; font-size: 1rem; padding: 1rem .75rem; font-weight: 400; border-radius: 5px; border: none; outline: none;" autofocus = "on">
                 </div>
                 <div class="input-container">
-                    <input type="password" name="password"  placeholder="Şifre" style="width: 100%; margin-top: 10px; background: #2e2f33; color: white; font-size: 1rem; padding: 1rem .75rem; font-weight: 400; border-radius: 5px; border: none; outline: none;" autofocus = "on">
+                    <input type="password" name="password"  placeholder="{%trans%}Şifre{%endtrans%}" style="width: 100%; margin-top: 10px; background: #2e2f33; color: white; font-size: 1rem; padding: 1rem .75rem; font-weight: 400; border-radius: 5px; border: none; outline: none;" autofocus = "on">
                 </div>
                 <br>
                 <div class="account-controls">
                     <button style="background: #101213; color: white; font-size: 1rem; padding: .7rem .75rem; margin-top: 5px; font-weight: 400; width: 100%; border-radius: 5px; border: none; outline: none;">Giriş Yap</button>
                 </div>
             </form>
-            <p><a href="/forgot_password" style="color: white; text-decoration: none; font-family: 'Roboto'">Şifremi Unuttum</a></p>
+            <p><a href="/forgot_password" style="color: white; text-decoration: none; font-family: 'Roboto'">{%trans%}Şifremi Unuttum{%endtrans%}</a></p>
             <br>
         </div>
     </center>

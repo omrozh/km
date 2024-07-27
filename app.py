@@ -111,6 +111,8 @@ babel = Babel(app)
 
 
 def get_locale():
+    if flask.request.cookies.get("lang", False):
+        return flask.request.cookies.get("lang")
     return flask.request.accept_languages.best_match(['en', 'ku', 'fa', 'th', 'ar', 'tr'])
 
 

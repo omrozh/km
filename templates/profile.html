@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>KadroMilyon | Güvenilir Casino</title>
+    <title>KadroMilyon | {%trans %}Güvenilir Casino{% endtrans %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="stylesheet" href="/css/style.css" />
 	<link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -194,6 +194,25 @@
             <span class="navbar-item" style="padding: 5px 15px; border-radius: 5px; box-sizing: border-box; display: inline-block; ; color: white" onclick="document.location = '/logout'">
                 {% trans %} ÇIKIŞ YAP {% endtrans %}
 	        </span>
+            <select id="changer" onchange="changeLanguage(this)" style="-webkit-appearance: none; padding: 5px 22.5px; border-radius: 5px; box-sizing: border-box; display: inline-block; background-color: var(--categoryBackground); color: white" onclick="document.location = '/'">
+                <option value="tr">Türkçe</option>
+                <option value="en">English</option>
+                <option value="ku">Kurdî</option>
+                <option value="fa">فارسی</option>
+                <option value="th">แบบไทย</option>
+                <option value="ar">عربي</option>
+	        </select>
+            <script>
+                function getCookie(name) {
+                  const value = `; ${document.cookie}`;
+                  const parts = value.split(`; ${name}=`);
+                  if (parts.length === 2) return parts.pop().split(';').shift();
+                }
+                function changeLanguage(changer){
+                    document.cookie = `lang=${changer.value}`;
+                }
+                document.getElementById("changer").value = getCookie("lang");
+            </script>
             <span style="padding: 5px 22.5px; border-radius: 5px; box-sizing: border-box; display: inline-block; background-color: var(--categoryBackground); color: white" onclick="document.location = '/'">
                 X
 	        </span>

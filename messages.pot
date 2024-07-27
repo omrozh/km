@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-27 20:39+0300\n"
+"POT-Creation-Date: 2024-07-27 22:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,17 +17,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.15.0\n"
 
-#: templates/anasayfa-yeni.html:20 templates/anasayfa-yeni.html:189
-#: templates/casino.html:20 templates/casino.html:183
+#: templates/anasayfa-yeni.html:20 templates/anasayfa-yeni.html:181
+#: templates/casino.html:20 templates/casino.html:176
 #: templates/promotion-details.html:20 templates/promotions.html:20
-#: templates/sss1.html:19 templates/sss1.html:118
+#: templates/sss1.html:19 templates/sss1.html:111
 msgid "Affiliate"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:21 templates/anasayfa-yeni.html:164
-#: templates/casino.html:21 templates/casino.html:158
+#: templates/anasayfa-yeni.html:21 templates/anasayfa-yeni.html:156
+#: templates/casino.html:21 templates/casino.html:151
 #: templates/promotion-details.html:21 templates/promotions.html:21
-#: templates/sss1.html:20 templates/sss1.html:119
+#: templates/sss1.html:20 templates/sss1.html:112
 msgid "Sizi Arayalım"
 msgstr ""
 
@@ -45,119 +45,119 @@ msgstr ""
 msgid "Kayıt Ol"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:73 templates/anasayfa-yeni.html:112
-#: templates/casino.html:73 templates/promotion-details.html:73
-#: templates/promotions.html:73 templates/sss1.html:72
+#: templates/anasayfa-yeni.html:65 templates/anasayfa-yeni.html:104
+#: templates/casino.html:66 templates/promotion-details.html:66
+#: templates/promotions.html:66 templates/sss1.html:65
 msgid "CANLI BAHİS"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:74 templates/anasayfa-yeni.html:109
-#: templates/casino.html:74 templates/promotion-details.html:74
-#: templates/promotions.html:74 templates/sss1.html:73
+#: templates/anasayfa-yeni.html:66 templates/anasayfa-yeni.html:101
+#: templates/casino.html:67 templates/promotion-details.html:67
+#: templates/promotions.html:67 templates/sss1.html:66
 msgid "SPOR"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:75 templates/anasayfa-yeni.html:110
-#: templates/casino.html:75 templates/promotion-details.html:75
-#: templates/promotions.html:75 templates/sss1.html:74
+#: templates/anasayfa-yeni.html:67 templates/anasayfa-yeni.html:102
+#: templates/casino.html:68 templates/promotion-details.html:68
+#: templates/promotions.html:68 templates/sss1.html:67
 msgid "SLOT"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:76 templates/anasayfa-yeni.html:111
-#: templates/casino.html:76 templates/promotion-details.html:76
-#: templates/promotions.html:76 templates/sss1.html:75
+#: templates/anasayfa-yeni.html:68 templates/anasayfa-yeni.html:103
+#: templates/casino.html:69 templates/promotion-details.html:69
+#: templates/promotions.html:69 templates/sss1.html:68
 msgid "CANLI CASINO"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:77 templates/casino.html:77
-#: templates/promotion-details.html:77 templates/promotions.html:77
-#: templates/sss1.html:76
+#: templates/anasayfa-yeni.html:69 templates/casino.html:70
+#: templates/promotion-details.html:70 templates/promotions.html:70
+#: templates/sss1.html:69
 msgid "OYUNLAR"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:78 templates/casino.html:78
-#: templates/promotion-details.html:78 templates/promotions.html:78
-#: templates/sss1.html:77
+#: templates/anasayfa-yeni.html:70 templates/casino.html:71
+#: templates/promotion-details.html:71 templates/promotions.html:71
+#: templates/sss1.html:70
 msgid "TOMBALA"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:79 templates/casino.html:79
-#: templates/promotion-details.html:79 templates/promotions.html:79
-#: templates/sss1.html:78
+#: templates/anasayfa-yeni.html:71 templates/casino.html:72
+#: templates/promotion-details.html:72 templates/promotions.html:72
+#: templates/sss1.html:71
 msgid "AVIATOR"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:80 templates/anasayfa-yeni.html:118
-#: templates/casino.html:80 templates/promotion-details.html:80
-#: templates/promotions.html:80 templates/sss1.html:79
+#: templates/anasayfa-yeni.html:72 templates/anasayfa-yeni.html:110
+#: templates/casino.html:73 templates/promotion-details.html:73
+#: templates/promotions.html:73 templates/sss1.html:72
 msgid "PROMOSYONLAR"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:117
+#: templates/anasayfa-yeni.html:109
 msgid "LİSANS"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:171 templates/casino.html:165
+#: templates/anasayfa-yeni.html:163 templates/casino.html:158
 msgid "Hakkımızda"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:173 templates/casino.html:167
+#: templates/anasayfa-yeni.html:165 templates/casino.html:160
 msgid "Firma Bilgileri"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:174 templates/casino.html:168
+#: templates/anasayfa-yeni.html:166 templates/casino.html:161
 msgid "İletişim"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:175 templates/casino.html:169
+#: templates/anasayfa-yeni.html:167 templates/casino.html:162
 msgid "Yardım - SSS"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:179 templates/casino.html:173
+#: templates/anasayfa-yeni.html:171 templates/casino.html:166
 msgid "ŞARTLAR VE KURALLAR"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:181 templates/casino.html:175
+#: templates/anasayfa-yeni.html:173 templates/casino.html:168
 msgid "Genel Kural ve Şartlar"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:182 templates/casino.html:176
+#: templates/anasayfa-yeni.html:174 templates/casino.html:169
 msgid "Gizlilik Politikası"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:183 templates/casino.html:177
+#: templates/anasayfa-yeni.html:175 templates/casino.html:170
 msgid "Sorumlu Oyun"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:187 templates/casino.html:181
+#: templates/anasayfa-yeni.html:179 templates/casino.html:174
 msgid "GÖSTERİMLER"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:190 templates/casino.html:184
+#: templates/anasayfa-yeni.html:182 templates/casino.html:177
 msgid "Turnuvalar"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:191 templates/casino.html:185
+#: templates/anasayfa-yeni.html:183 templates/casino.html:178
 msgid "Maç Programı"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:219 templates/casino.html:213
+#: templates/anasayfa-yeni.html:211 templates/casino.html:206
 msgid "Canlı Casino"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:220 templates/casino.html:214
+#: templates/anasayfa-yeni.html:212 templates/casino.html:207
 msgid "Spor"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:221 templates/casino.html:215
+#: templates/anasayfa-yeni.html:213 templates/casino.html:208
 msgid "Anasayfa"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:222 templates/casino.html:216
+#: templates/anasayfa-yeni.html:214 templates/casino.html:209
 msgid "Canlı Bahis"
 msgstr ""
 
-#: templates/anasayfa-yeni.html:223 templates/casino.html:217
+#: templates/anasayfa-yeni.html:215 templates/casino.html:210
 msgid "Casino"
 msgstr ""
 
@@ -177,8 +177,32 @@ msgstr ""
 msgid " CANLI CASINO "
 msgstr ""
 
-#: templates/casino.html:91
+#: templates/casino.html:84
 msgid " Tüm Oyunlar "
+msgstr ""
+
+#: templates/login.html:8 templates/profile.html:7 templates/signup.html:8
+msgid "Güvenilir Casino"
+msgstr ""
+
+#: templates/login.html:19
+msgid "HENÜZ HESABINIZ YOK MU?"
+msgstr ""
+
+#: templates/login.html:21
+msgid "Hemen Üye Ol"
+msgstr ""
+
+#: templates/login.html:30 templates/profile.html:418 templates/signup.html:49
+msgid "E-Posta"
+msgstr ""
+
+#: templates/login.html:33 templates/signup.html:52
+msgid "Şifre"
+msgstr ""
+
+#: templates/login.html:40
+msgid "Şifremi Unuttum"
 msgstr ""
 
 #: templates/profile.html:175
@@ -209,266 +233,278 @@ msgstr ""
 msgid " ÇIKIŞ YAP "
 msgstr ""
 
-#: templates/profile.html:203
+#: templates/profile.html:222
 msgid " ANA BAKİYE "
 msgstr ""
 
-#: templates/profile.html:209
+#: templates/profile.html:228
 msgid " TOPLAM BONUS "
 msgstr ""
 
-#: templates/profile.html:218
+#: templates/profile.html:237
 msgid " İşlem Türü "
 msgstr ""
 
-#: templates/profile.html:219
+#: templates/profile.html:238
 msgid " Kullanıcı Adı "
 msgstr ""
 
-#: templates/profile.html:220
+#: templates/profile.html:239
 msgid " Tutar "
 msgstr ""
 
-#: templates/profile.html:221
+#: templates/profile.html:240
 msgid " İşlem Tarihi "
 msgstr ""
 
-#: templates/profile.html:222
+#: templates/profile.html:241
 msgid " Kanal "
 msgstr ""
 
-#: templates/profile.html:223
+#: templates/profile.html:242
 msgid " Ek Bilgiler "
 msgstr ""
 
-#: templates/profile.html:224
+#: templates/profile.html:243
 msgid " Statü "
 msgstr ""
 
-#: templates/profile.html:301
+#: templates/profile.html:320
 msgid " Başlangıç Tarihi "
 msgstr ""
 
-#: templates/profile.html:306
+#: templates/profile.html:325
 msgid " Bitiş Tarihi "
 msgstr ""
 
-#: templates/profile.html:311
+#: templates/profile.html:330
 msgid " Filtrele "
 msgstr ""
 
-#: templates/profile.html:317
+#: templates/profile.html:336
 msgid " Kupon "
 msgstr ""
 
-#: templates/profile.html:321
+#: templates/profile.html:340
 msgid "Maç"
 msgstr ""
 
-#: templates/profile.html:324
+#: templates/profile.html:343
 msgid "Oran"
 msgstr ""
 
-#: templates/profile.html:329
+#: templates/profile.html:348
 msgid "Toplam Oran"
 msgstr ""
 
-#: templates/profile.html:332
+#: templates/profile.html:351
 msgid "Yatırım Tutarı"
 msgstr ""
 
-#: templates/profile.html:335
+#: templates/profile.html:354
 msgid "Potansiyel Kazanç"
 msgstr ""
 
-#: templates/profile.html:338
+#: templates/profile.html:357
 msgid "Sonuç"
 msgstr ""
 
-#: templates/profile.html:342
+#: templates/profile.html:361
 msgid "Ödül Al"
 msgstr ""
 
-#: templates/profile.html:356
+#: templates/profile.html:375
 msgid "Kişisel Bilgilerim"
 msgstr ""
 
-#: templates/profile.html:358
+#: templates/profile.html:377 templates/signup.html:40
 msgid " İsim Soyisim "
 msgstr ""
 
-#: templates/profile.html:362
+#: templates/profile.html:381
 msgid " Cinsiyet "
 msgstr ""
 
-#: templates/profile.html:366
+#: templates/profile.html:385 templates/signup.html:46
 msgid "Telefon Numarası "
 msgstr ""
 
-#: templates/profile.html:370
+#: templates/profile.html:389
 msgid " TC Kimlik No "
 msgstr ""
 
-#: templates/profile.html:374
+#: templates/profile.html:393 templates/signup.html:58
 msgid "Doğum Tarihi"
 msgstr ""
 
-#: templates/profile.html:378
+#: templates/profile.html:397
 msgid "Adres"
 msgstr ""
 
-#: templates/profile.html:385
+#: templates/profile.html:404
 msgid "Üyelik Bilgileri"
 msgstr ""
 
-#: templates/profile.html:387
+#: templates/profile.html:406
 msgid "Kayıt Tarihi"
 msgstr ""
 
-#: templates/profile.html:391
+#: templates/profile.html:410
 msgid "Üyelik Numarası"
 msgstr ""
 
-#: templates/profile.html:395
+#: templates/profile.html:414
 msgid "Para Birimi"
 msgstr ""
 
-#: templates/profile.html:399
-msgid "E-Posta"
-msgstr ""
-
-#: templates/profile.html:404
+#: templates/profile.html:423
 msgid "Kaydet"
 msgstr ""
 
-#: templates/profile.html:431
+#: templates/profile.html:450
 msgid "Çekim Talebi"
 msgstr ""
 
-#: templates/profile.html:442
+#: templates/profile.html:461
 msgid "Min. Çekim"
 msgstr ""
 
-#: templates/profile.html:444
+#: templates/profile.html:463
 msgid "Maks. Çekim"
 msgstr ""
 
-#: templates/profile.html:456 templates/profile.html:496
-#: templates/profile.html:537 templates/profile.html:687
-#: templates/profile.html:723
+#: templates/profile.html:475 templates/profile.html:515
+#: templates/profile.html:556 templates/profile.html:706
+#: templates/profile.html:742
 msgid "Yöntem Adı"
 msgstr ""
 
-#: templates/profile.html:457 templates/profile.html:688
+#: templates/profile.html:476 templates/profile.html:707
 msgid "Yöntem Seçin"
 msgstr ""
 
-#: templates/profile.html:460 templates/profile.html:500
-#: templates/profile.html:541 templates/profile.html:691
-#: templates/profile.html:727
+#: templates/profile.html:479 templates/profile.html:519
+#: templates/profile.html:560 templates/profile.html:710
+#: templates/profile.html:746
 msgid "Ücret"
 msgstr ""
 
-#: templates/profile.html:464 templates/profile.html:504
-#: templates/profile.html:545 templates/profile.html:695
-#: templates/profile.html:731
+#: templates/profile.html:483 templates/profile.html:523
+#: templates/profile.html:564 templates/profile.html:714
+#: templates/profile.html:750
 msgid "İşlem Süresi"
 msgstr ""
 
-#: templates/profile.html:468 templates/profile.html:508
-#: templates/profile.html:549 templates/profile.html:699
-#: templates/profile.html:735
+#: templates/profile.html:487 templates/profile.html:527
+#: templates/profile.html:568 templates/profile.html:718
+#: templates/profile.html:754
 msgid "Minimum Tutar"
 msgstr ""
 
-#: templates/profile.html:474 templates/profile.html:514
-#: templates/profile.html:556
+#: templates/profile.html:493 templates/profile.html:533
+#: templates/profile.html:575
 msgid "Para çekmek için lütfen aşağıdaki tüm gerekli alanları doldurun."
 msgstr ""
 
-#: templates/profile.html:479 templates/profile.html:519
-#: templates/profile.html:561
+#: templates/profile.html:498 templates/profile.html:538
+#: templates/profile.html:580
 msgid "Çekmek İstenen Miktar"
 msgstr ""
 
-#: templates/profile.html:484 templates/profile.html:524
-#: templates/profile.html:566
+#: templates/profile.html:503 templates/profile.html:543
+#: templates/profile.html:585
 msgid "Hesap Adresi"
 msgstr ""
 
-#: templates/profile.html:489 templates/profile.html:529
-#: templates/profile.html:571
+#: templates/profile.html:508 templates/profile.html:548
+#: templates/profile.html:590
 msgid "Para Çek"
 msgstr ""
 
-#: templates/profile.html:501 templates/profile.html:542
-#: templates/profile.html:728
+#: templates/profile.html:520 templates/profile.html:561
+#: templates/profile.html:747
 msgid "Ücretsiz"
 msgstr ""
 
-#: templates/profile.html:505 templates/profile.html:546
-#: templates/profile.html:732
+#: templates/profile.html:524 templates/profile.html:565
+#: templates/profile.html:751
 msgid "Anlık"
 msgstr ""
 
-#: templates/profile.html:577
+#: templates/profile.html:596
 msgid "Geçmiş İşlemler"
 msgstr ""
 
-#: templates/profile.html:595
+#: templates/profile.html:614
 msgid "Kasa İşlemleri"
 msgstr ""
 
-#: templates/profile.html:601
+#: templates/profile.html:620
 msgid "Partner Statüsü"
 msgstr ""
 
-#: templates/profile.html:602
+#: templates/profile.html:621
 msgid "Komisyon Oranı"
 msgstr ""
 
-#: templates/profile.html:603
+#: templates/profile.html:622
 msgid "Kasa Bakiyesi"
 msgstr ""
 
-#: templates/profile.html:604
+#: templates/profile.html:623
 msgid "Kasa Kazancı"
 msgstr ""
 
-#: templates/profile.html:660
+#: templates/profile.html:679
 msgid "Yatırım Talebi"
 msgstr ""
 
-#: templates/profile.html:670
+#: templates/profile.html:689
 msgid "Min. Yatırım 100₺"
 msgstr ""
 
-#: templates/profile.html:672
+#: templates/profile.html:691
 msgid "Maks. Yatırım 50000₺"
 msgstr ""
 
-#: templates/profile.html:692 templates/profile.html:696
-#: templates/profile.html:700
+#: templates/profile.html:711 templates/profile.html:715
+#: templates/profile.html:719
 msgid "-"
 msgstr ""
 
-#: templates/profile.html:705 templates/profile.html:741
+#: templates/profile.html:724 templates/profile.html:760
 msgid "Para yatırmak için lütfen aşağıdaki tüm gerekli alanları doldurun."
 msgstr ""
 
-#: templates/profile.html:709 templates/profile.html:755
+#: templates/profile.html:728 templates/profile.html:774
 msgid "Yatırılacak Miktar"
 msgstr ""
 
-#: templates/profile.html:715 templates/profile.html:761
+#: templates/profile.html:734 templates/profile.html:780
 msgid "Yatırım Yap"
 msgstr ""
 
-#: templates/profile.html:736
+#: templates/profile.html:755
 msgid "100₺"
 msgstr ""
 
-#: templates/profile.html:746
+#: templates/profile.html:765
 msgid "Banka Seçin"
+msgstr ""
+
+#: templates/signup.html:55
+msgid "TC Kimlik No"
+msgstr ""
+
+#: templates/signup.html:61
+msgid "Kullanıcı Adı"
+msgstr ""
+
+#: templates/signup.html:64
+msgid "Promosyon Kodu"
+msgstr ""
+
+#: templates/signup.html:68
+msgid "Kayıt Ol "
 msgstr ""
 
