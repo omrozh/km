@@ -132,7 +132,7 @@ msgstr "Responsible Gaming"
 
 #: templates/anasayfa-yeni.html:187 templates/casino.html:181
 msgid "GÖSTERİMLER"
-msgstr "SHOWS"
+msgstr "OTHER"
 
 #: templates/anasayfa-yeni.html:190 templates/casino.html:184
 msgid "Turnuvalar"
