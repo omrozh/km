@@ -109,11 +109,10 @@ bcrypt = Bcrypt(app)
 migrate = Migrate(app, db)
 babel = Babel(app)
 
-
-@babel.localeselector
 def get_locale():
     return flask.request.accept_languages.best_match(['en', 'ku', 'fa', 'th', 'ar', 'tr'])
 
+babel.init_app(app, locale_selector=get_locale)
 
 def user_on_mobile() -> bool:
     user_agent = flask.request.headers.get("User-Agent")
