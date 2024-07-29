@@ -1530,7 +1530,7 @@ def index():
     for c in get_games(provider_id="22").get("games"):
         try:
             games_popular[col_index].append({
-                "img": c.get("img"),
+                "img": c.get("img_vertical"),
                 "name": c.get("name"),
                 "provider_name": "-",
                 "category": c.get("category"),
@@ -1548,7 +1548,7 @@ def index():
     for c in get_games(provider_id="1").get("games"):
         try:
             live_casino_games[col_index].append({
-                "img": c.get("img"),
+                "img": c.get("img_vertical"),
                 "name": c.get("name"),
                 "provider_name": "-",
                 "category": c.get("category"),
