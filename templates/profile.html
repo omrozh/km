@@ -257,7 +257,9 @@
                 function changeLanguage(changer){
                     document.cookie = `lang=${changer.value}`;
                 }
-                document.getElementById("changer").value = getCookie("lang");
+                if(getCookie("lang")) {
+                    document.getElementById("changer").value = getCookie("lang");
+                }
             </script>
         </div>
 	<div id="content-block">
