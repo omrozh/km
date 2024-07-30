@@ -608,7 +608,95 @@
                 {% endif %}
 
             </div>
+        <div id="deposit-money" style="display: none" class="division-profile">
+    <div>
+        <div id="deposit-options-div" style="white-space: nowrap; overflow-x: auto">
+            {% for i in available_manual_accounts %}
+                <div onclick="document.getElementById('manual_deposit_{{ i.id }}').style.display = 'block';" style="display: inline-block" class="select-payment">
+                    <div style="color: black; font-family: 'Open Sans', sans-serif; background-color: white; width: 200px; margin-top: -15px; padding: 10px; box-sizing: border-box; border-radius: 15px">
+                        {{ i.payment_type.capitalize() }} {% trans %}Yatırım Talebi{% endtrans %}
+                    </div>
+                </div>
+            {% endfor %}
+            <table class="table table-hover table-nowrap" id="withdraw-table">
+			    <thead class="thead-light">
+			    </thead>
+			    <tbody>
+				{% for key, item in available_withdraw_methods.items() %}
+                        {% if not item == "kralpay_creditCard" %}
+                            <tr class="searchable-div" onclick="this.style.opacity = 0.3;let deposit_methods = document.getElementsByClassName('select-deposit');document.getElementById('deposit_form_{{ item }}').style.display = 'block';for (let i = 0; i < deposit_methods.length; i++) {deposit_methods[i].onclick = function() {console.log('cannot change payment type')}};">
+                                <td>
+                                    <img src="/img/payment_methods/{{ item }}.jpg" style="width: 100px; display: inline-block; vertical-align: middle;" alt="">
+                                </td>
+                                <td>
+                                    {{ key }}
+                                </td>
+                                <td>
+                                    {%trans%}Min. Yatırım{%endtrans%} 100₺
+                                </td>
+                                <td>
+                                    {%trans%}Maks. Yatırım{%endtrans%} 50000₺
+                                </td>
+                            </tr>
+                    {% endif %}
+				{% endfor %}
+			    </tbody>
+			</table>
         </div>
+        <br>
+
+        {% for i in available_manual_accounts %}
+            <iframe style="display: none; width: 70vw; height: 40vw;" src="/deposit/{{ i.payment_type }}" id="manual_deposit_{{ i.id }}" frameborder="0"></iframe>
+        {% endfor %}
+
+        {% for key, item in available_withdraw_methods.items() %}
+            <form method="post" id="deposit_form_{{ item }}" enctype="multipart/form-data" style="background-color: var(--backgroundDark); border-radius: 5px; color: white; box-sizing: border-box; width: fit-content; height: fit-content; max-width: 70vw; display: none; padding: 15px; text-align: left">
+                <br>
+                <div style="background-color: var(--categoryBackground); text-align: left; padding: 10px; white-space: nowrap; max-width: 80vw; overflow-x: auto; border-radius: 5px">
+                    <div style="display: inline-block">
+                        <p style="color: grey; font-size: 12px; margin-bottom: 5px; margin-top: 5px">{% trans %}Yöntem Adı{% endtrans %}</p>
+                        {{ key }}
+                    </div>
+                    <div style="display: inline-block; margin-left: 25px">
+                        <p style="color: grey; font-size: 12px; margin-bottom: 5px; margin-top: 5px">{% trans %}Ücret{% endtrans %}</p>
+                        {% trans %}Ücretsiz{% endtrans %}
+                    </div>
+                    <div style="display: inline-block; margin-left: 25px">
+                        <p style="color: grey; font-size: 12px; margin-bottom: 5px; margin-top: 5px">{% trans %}İşlem Süresi{% endtrans %}</p>
+                        {% trans %}Anlık{% endtrans %}
+                    </div>
+                    <div style="display: inline-block; margin-left: 25px">
+                        <p style="color: grey; font-size: 12px; margin-bottom: 5px; margin-top: 5px">{% trans %}Minimum Tutar{% endtrans %}</p>
+                        {% trans %}100₺{% endtrans %}
+                    </div>
+                </div>
+                <br>
+                <div style="background-color: var(--categoryBackground); text-align: left; padding: 10px; white-space: nowrap; max-width: 80vw; overflow-x: auto; border-radius: 5px">
+                    <p style="color: white; margin-bottom: 5px; margin-top: 5px">{% trans %}Para yatırmak için lütfen aşağıdaki tüm gerekli alanları doldurun.{% endtrans %}</p>
+                </div>
+                {% if item == "kralpay_banka" %}
+                <br>
+                <select name="bank_id" style="width: 300px; max-width: 90%; padding: 5px; font-family: sans-serif; outline: none; font-size: 1rem; border: 1px solid white; background-color: transparent; color: white; -webkit-appearance: none;">
+                    <option value="no-bank">{% trans %}Banka Seçin{% endtrans %}</option>
+                    {% for key, item in bank_banks.items() %}
+                        <option value="{{item}}">{{ key }}</option>
+                    {% endfor %}
+                </select>
+                {% endif %}
+                <br>
+                <input type="text" name="form-type" value="deposit-money" style="display: none">
+                <input type="text" name="deposit_type" style="display: none" id="deposit_type_{{ item }}">
+                <label for="amount" style="font-family: sans-serif; font-size: 12px">{% trans %}Yatırılacak Miktar{% endtrans %}</label>
+                <br>
+                <input id="amount" name="amount" type="text" style="width: 300px; max-width: 90%; padding: 5px; font-family: sans-serif; outline: none; font-size: 1rem; background-color: transparent; color: white; border-radius: 5px; border: 1px solid rgb(80, 80, 80)">
+                <br>
+                <br>
+
+                <button style="color: white; max-width: 90%; font-family: sans-serif; width: 300px; padding: 10px; box-sizing: border-box; background-color: var(--baseColor); outline: none; border: none">{% trans %}Yatırım Yap{% endtrans %}</button>
+            </form>
+        {% endfor %}
+    </div>
+</div>
         {% if current_user.site_partner %}
 
             <div id="partnership" class="division-profile" style="display: block">
@@ -675,118 +763,8 @@
                 </div>
             {% endfor %}
         </div>
-        <div id="deposit-money" style="display: none" class="division-profile">
-    <div>
-        <div id="deposit-options-div" style="white-space: nowrap; overflow-x: auto">
-            {% for i in available_manual_accounts %}
-                <div onclick="document.getElementById('manual_deposit_{{ i.id }}').style.display = 'block';" style="display: inline-block" class="select-payment">
-                    <div style="color: black; font-family: 'Open Sans', sans-serif; background-color: white; width: 200px; margin-top: -15px; padding: 10px; box-sizing: border-box; border-radius: 15px">
-                        {{ i.payment_type.capitalize() }} {% trans %}Yatırım Talebi{% endtrans %}
-                    </div>
-                </div>
-            {% endfor %}
-            {% for key, item in available_withdraw_methods.items() %}
-            <div onclick="document.getElementById('deposit_form_default').style.display = 'none';this.style.opacity = 0.3;let deposit_methods = document.getElementsByClassName('select-deposit');document.getElementById('deposit_form_{{ item }}').style.display = 'block';for (let i = 0; i < deposit_methods.length; i++) {deposit_methods[i].onclick = function() {console.log('cannot change payment type')}};" style="font-family: sans-serif; height: fit-content; display: inline-block; margin: 5px; background: #2e2f33; color: white; box-sizing: border-box; border-radius: 15px; min-width: 320px;" class="select-payment select-deposit">
-                <div style="font-family: sans-serif; height: fit-content; display: inline-block; margin: 15px; background: transparent; box-sizing: border-box; border-radius: 15px; padding: 25px;">
-                    <img src="/img/payment_methods/{{ item }}.jpg" style="width: 100px; display: inline-block; vertical-align: middle;" alt="">
-                    <div style="text-align: left; display: inline-block; vertical-align: middle; margin-left: 15px; font-size: 12px">
-                        <b>{{ key }}</b><br>
-                        {% trans %}Min. Yatırım 100₺{% endtrans %}
-                        <br>
-                        {% trans %}Maks. Yatırım 50000₺{% endtrans %}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
         </div>
-        <br>
 
-        {% for i in available_manual_accounts %}
-            <iframe style="display: none; width: 70vw; height: 40vw;" src="/deposit/{{ i.payment_type }}" id="manual_deposit_{{ i.id }}" frameborder="0"></iframe>
-        {% endfor %}
-        <form method="post" id="deposit_form_default" enctype="multipart/form-data" style="background-color: var(--backgroundDark); border-radius: 5px; color: white; box-sizing: border-box; width: fit-content; height: fit-content; max-width: 70vw; padding: 15px; text-align: left">
-            <br>
-            <div style="background-color: var(--categoryBackground); text-align: left; padding: 10px; white-space: nowrap; max-width: 80vw; overflow-x: auto; border-radius: 5px">
-                <div style="display: inline-block">
-                    <p style="color: grey; font-size: 12px; margin-bottom: 5px; margin-top: 5px">{% trans %}Yöntem Adı{% endtrans %}</p>
-                    {% trans %}Yöntem Seçin{% endtrans %}
-                </div>
-                <div style="display: inline-block; margin-left: 25px">
-                    <p style="color: grey; font-size: 12px; margin-bottom: 5px; margin-top: 5px">{% trans %}Ücret{% endtrans %}</p>
-                    {% trans %}-{% endtrans %}
-                </div>
-                <div style="display: inline-block; margin-left: 25px">
-                    <p style="color: grey; font-size: 12px; margin-bottom: 5px; margin-top: 5px">{% trans %}İşlem Süresi{% endtrans %}</p>
-                    {% trans %}-{% endtrans %}
-                </div>
-                <div style="display: inline-block; margin-left: 25px">
-                    <p style="color: grey; font-size: 12px; margin-bottom: 5px; margin-top: 5px">{% trans %}Minimum Tutar{% endtrans %}</p>
-                    {% trans %}-{% endtrans %}
-                </div>
-            </div>
-            <br>
-            <div style="background-color: var(--categoryBackground); text-align: left; padding: 10px; white-space: nowrap; max-width: 80vw; overflow-x: auto; border-radius: 5px">
-                <p style="color: white; margin-bottom: 5px; margin-top: 5px">{% trans %}Para yatırmak için lütfen aşağıdaki tüm gerekli alanları doldurun.{% endtrans %}</p>
-            </div>
-            <input type="text" name="form-type" value="deposit-money" style="display: none">
-            <input type="text" name="deposit_type" style="display: none" id="deposit_type_{{ item }}">
-            <label for="amount" style="font-family: sans-serif; font-size: 12px">{% trans %}Yatırılacak Miktar{% endtrans %}</label>
-            <br>
-            <input id="amount" name="amount" type="text" style="width: 300px; max-width: 90%; padding: 5px; font-family: sans-serif; outline: none; font-size: 1rem; background-color: transparent; color: white; border-radius: 5px; border: 1px solid rgb(80, 80, 80)">
-            <br>
-            <br>
-
-            <button style="color: white; max-width: 90%; font-family: sans-serif; width: 300px; padding: 10px; box-sizing: border-box; background-color: var(--baseColor); outline: none; border: none">{% trans %}Yatırım Yap{% endtrans %}</button>
-        </form>
-
-        {% for key, item in available_withdraw_methods.items() %}
-            <form method="post" id="deposit_form_{{ item }}" enctype="multipart/form-data" style="background-color: var(--backgroundDark); border-radius: 5px; color: white; box-sizing: border-box; width: fit-content; height: fit-content; max-width: 70vw; display: none; padding: 15px; text-align: left">
-                <br>
-                <div style="background-color: var(--categoryBackground); text-align: left; padding: 10px; white-space: nowrap; max-width: 80vw; overflow-x: auto; border-radius: 5px">
-                    <div style="display: inline-block">
-                        <p style="color: grey; font-size: 12px; margin-bottom: 5px; margin-top: 5px">{% trans %}Yöntem Adı{% endtrans %}</p>
-                        {{ key }}
-                    </div>
-                    <div style="display: inline-block; margin-left: 25px">
-                        <p style="color: grey; font-size: 12px; margin-bottom: 5px; margin-top: 5px">{% trans %}Ücret{% endtrans %}</p>
-                        {% trans %}Ücretsiz{% endtrans %}
-                    </div>
-                    <div style="display: inline-block; margin-left: 25px">
-                        <p style="color: grey; font-size: 12px; margin-bottom: 5px; margin-top: 5px">{% trans %}İşlem Süresi{% endtrans %}</p>
-                        {% trans %}Anlık{% endtrans %}
-                    </div>
-                    <div style="display: inline-block; margin-left: 25px">
-                        <p style="color: grey; font-size: 12px; margin-bottom: 5px; margin-top: 5px">{% trans %}Minimum Tutar{% endtrans %}</p>
-                        {% trans %}100₺{% endtrans %}
-                    </div>
-                </div>
-                <br>
-                <div style="background-color: var(--categoryBackground); text-align: left; padding: 10px; white-space: nowrap; max-width: 80vw; overflow-x: auto; border-radius: 5px">
-                    <p style="color: white; margin-bottom: 5px; margin-top: 5px">{% trans %}Para yatırmak için lütfen aşağıdaki tüm gerekli alanları doldurun.{% endtrans %}</p>
-                </div>
-                {% if item == "kralpay_banka" %}
-                <br>
-                <select name="bank_id" style="width: 300px; max-width: 90%; padding: 5px; font-family: sans-serif; outline: none; font-size: 1rem; border: 1px solid white; background-color: transparent; color: white; -webkit-appearance: none;">
-                    <option value="no-bank">{% trans %}Banka Seçin{% endtrans %}</option>
-                    {% for key, item in bank_banks.items() %}
-                        <option value="{{item}}">{{ key }}</option>
-                    {% endfor %}
-                </select>
-                {% endif %}
-                <br>
-                <input type="text" name="form-type" value="deposit-money" style="display: none">
-                <input type="text" name="deposit_type" style="display: none" id="deposit_type_{{ item }}">
-                <label for="amount" style="font-family: sans-serif; font-size: 12px">{% trans %}Yatırılacak Miktar{% endtrans %}</label>
-                <br>
-                <input id="amount" name="amount" type="text" style="width: 300px; max-width: 90%; padding: 5px; font-family: sans-serif; outline: none; font-size: 1rem; background-color: transparent; color: white; border-radius: 5px; border: 1px solid rgb(80, 80, 80)">
-                <br>
-                <br>
-
-                <button style="color: white; max-width: 90%; font-family: sans-serif; width: 300px; padding: 10px; box-sizing: border-box; background-color: var(--baseColor); outline: none; border: none">{% trans %}Yatırım Yap{% endtrans %}</button>
-            </form>
-        {% endfor %}
-    </div>
-</div>
 
 
         <div id="papara-modal" class="modal">
