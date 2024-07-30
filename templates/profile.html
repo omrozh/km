@@ -26,6 +26,9 @@
     #content-block{
         display: inline-block; width: 80%
     }
+    #all-content-container{
+        background-color: #26292d; padding: 5px; border-radius: 5px; box-sizing: border-box; width: 80vw; height: 81vh;
+    }
     #account-info{
         padding: 15px 15px; box-sizing: border-box; color: white; background-color: var(--baseColor); border-radius: 5px; width: 101%; text-align: left; opacity: 0.5
     }
@@ -148,9 +151,18 @@
         }
 
         @media screen and (max-width: 1300px) {
+            #all-content-container{
+                width: 100vw;
+                height: 100vh;
+                margin-bottom: 0;
+            }
+            #top-br{
+                display: none;
+            }
             #navbar-main{
                 display: block;
                 width: 100%;
+                height: 95vh;
             }
             #account-info{
                 padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left; opacity: 1!important;
@@ -192,10 +204,10 @@
 <div style="width: 100%; box-sizing: border-box;">
     <iframe src="/" style="width: 100vw; height: 100vh; position: fixed; z-index: 1; opacity: 0.3" frameborder="0"></iframe>
     </div>
-    <br>
+    <br id="top-br">
     <div id="main-content-wrapper">
     <center style="z-index: 10; position: relative;">
-        <div style="background-color: #26292d; padding: 5px; border-radius: 5px; box-sizing: border-box; width: 80vw; height: 81vh;" id="all-content-container">
+        <div id="all-content-container">
         <button onclick="document.location = '/profile'" style="background: #101213; color: white; font-size: 1rem; padding: 10px 15px; margin-top: 5px; font-weight: 400; border-radius: 5px; border: none; outline: none; float: left; display: none" id="toggle-menu"><i class="fa-solid fa-bars"></i></button>
             <br style="clear: both; display: none" id="toggle-br">
         <div id="navbar-main">
@@ -851,8 +863,6 @@
             changeDivision('deposit-money', document.getElementById('deposit-money-navbar-button'));
         {% endif %}
     </script>
-    <br>
-    <span style="opacity: 0">KadroMilyon</span>
     </div>
 </body>
 </html>
