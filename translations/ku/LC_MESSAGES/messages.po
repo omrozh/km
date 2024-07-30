@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-27 22:19+0300\n"
+"POT-Creation-Date: 2024-07-30 15:43+0300\n"
 "PO-Revision-Date: 2024-07-27 20:43+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ku\n"
@@ -34,8 +34,8 @@ msgstr "Me dîtinê we li vir de"
 
 #: templates/anasayfa-yeni.html:29 templates/bahis/bahis-yeni.html:46
 #: templates/casino-game.html:46 templates/casino.html:29
-#: templates/promotion-details.html:29 templates/promotions.html:29
-#: templates/sss1.html:28
+#: templates/login.html:37 templates/promotion-details.html:29
+#: templates/promotions.html:29 templates/sss1.html:28
 msgid "Giriş Yap"
 msgstr "Têkevin"
 
@@ -183,7 +183,6 @@ msgid " Tüm Oyunlar "
 msgstr " Hemû LÊTGEHÊN"
 
 #: templates/login.html:8 templates/profile.html:7 templates/signup.html:8
-#, fuzzy
 msgid "Güvenilir Casino"
 msgstr " CASINO YA CANLI"
 
@@ -198,6 +197,10 @@ msgstr ""
 #: templates/login.html:30 templates/profile.html:418 templates/signup.html:49
 msgid "E-Posta"
 msgstr "E-Posta"
+
+#: templates/login.html:30 templates/signup.html:61
+msgid "Kullanıcı Adı"
+msgstr " Navê Bikarhêner"
 
 #: templates/login.html:33 templates/signup.html:52
 msgid "Şifre"
@@ -495,22 +498,14 @@ msgid "Banka Seçin"
 msgstr "Banka Hilbijêrin"
 
 #: templates/signup.html:55
-#, fuzzy
 msgid "TC Kimlik No"
 msgstr "Hejmara Nasnameya TC"
 
-#: templates/signup.html:61
-#, fuzzy
-msgid "Kullanıcı Adı"
-msgstr " Navê Bikarhêner"
-
 #: templates/signup.html:64
-#, fuzzy
 msgid "Promosyon Kodu"
 msgstr "PROMOSYONÊN"
 
 #: templates/signup.html:68
-#, fuzzy
 msgid "Kayıt Ol "
 msgstr "Tevlîbûn"
 
