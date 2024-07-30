@@ -182,7 +182,7 @@
     <br>
     <div id="main-content-wrapper">
     <center style="z-index: 10; position: relative;">
-        <div style="background-color: #26292d; padding: 5px; border-radius: 5px; box-sizing: border-box; width: 80vw; height: 81vh;">
+        <div style="background-color: #26292d; padding: 5px; border-radius: 5px; box-sizing: border-box; width: 80vw; height: 81vh;" id="all-content-container">
         <button onclick="document.location = '/profile'" style="background: #101213; color: white; font-size: 1rem; padding: 10px 15px; margin-top: 5px; font-weight: 400; border-radius: 5px; border: none; outline: none; float: left; display: none" id="toggle-menu"><i class="fa-solid fa-bars"></i></button>
         <div style="padding: 10px; float: left; white-space: nowrap; width: 19.5%; margin-right: .5%; box-sizing: border-box; background-color: #2e2f33; margin-bottom: 10px; display: inline-block; text-align: left; border-radius: 5px; overflow-y: auto; height: 80vh" id="navbar-main">
             <span style="padding: 5px 22.5px; border-radius: 5px; box-sizing: border-box; display: inline-block; background-color: var(--categoryBackground); color: white" onclick="document.location = '/'">
@@ -859,10 +859,11 @@
     <script>
         function changeDivision(changeTo, clickElem){
             if(window.innerWidth < 1300){
-                document.getElementById("toggle-menu").style.display = "block";
-                document.getElementById("navbar-main").style.display = "none";
-                document.getElementById("content-block").style.display = "block";
-                document.getElementById("content-block").style.width = "100%";
+                document.getElementById("toggle-menu").style.display = "block!important";
+                document.getElementById("navbar-main").style.display = "none!important";
+                document.getElementById("content-block").style.display = "block!important";
+                document.getElementById("content-block").style.width = "100%!important";
+                document.getElementById("content-block").style.marginTop = "10px!important";
             }
             let all_divs = document.getElementsByClassName("division-profile");
             let all_navbar = document.getElementsByClassName("navbar-item");
