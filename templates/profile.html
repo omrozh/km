@@ -190,6 +190,7 @@
     <center style="z-index: 10; position: relative;">
         <div style="background-color: #26292d; padding: 5px; border-radius: 5px; box-sizing: border-box; width: 80vw; height: 81vh;" id="all-content-container">
         <button onclick="document.location = '/profile'" style="background: #101213; color: white; font-size: 1rem; padding: 10px 15px; margin-top: 5px; font-weight: 400; border-radius: 5px; border: none; outline: none; float: left; display: none" id="toggle-menu"><i class="fa-solid fa-bars"></i></button>
+            <br style="clear: both; display: none" id="toggle-br">
         <div id="navbar-main">
             <span style="padding: 5px 22.5px; border-radius: 5px; box-sizing: border-box; display: inline-block; background-color: var(--categoryBackground); color: white" onclick="document.location = '/'">
                 X
@@ -865,8 +866,8 @@
     <script>
         function changeDivision(changeTo, clickElem){
             if(window.innerWidth < 1300){
-                alert("w")
                 document.getElementById("toggle-menu").style.display = "block";
+                document.getElementById("toggle-bw").style.display = "block";
                 document.getElementById("navbar-main").style.display = "none";
                 document.getElementById("content-block").style.display = "block";
                 document.getElementById("content-block").style.width = "100%";
