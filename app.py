@@ -1847,6 +1847,8 @@ def login():
     if flask.request.method == "POST":
         values = flask.request.values
         user_from_email = User.query.filter_by(email=values["email"]).first()
+        if not user_from_email:
+            user_from_email = User.query.filter_by(username=values["email"]).first()
         if user_from_email:
             if bcrypt.check_password_hash(user_from_email.password, values["password"]):
                 login_user(user_from_email, remember=False)
