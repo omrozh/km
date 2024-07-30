@@ -369,7 +369,7 @@
             {% endfor %}
         </div>
         <div id="profile-information" class="division-profile" style="display: block">
-            <div style="background-color: var(--categoryBackground); width: fit-content; box-sizing: border-box; ">
+            <div style="background-color: var(--categoryBackground); box-sizing: border-box; ">
                 <form method="post" enctype="multipart/form-data" class="form-main" style="max-width: 70vw">
                     <br>
                     <input type="text" name="form-type" value="user-info" style="display: none">
@@ -446,7 +446,7 @@
         <div id="withdraw-money" class="division-profile" style="display: none">
             <div style="display: block">
 
-            <div style="background-color: var(--categoryBackground); width: fit-content; box-sizing: border-box;">
+            <div style="background-color: var(--categoryBackground); box-sizing: border-box;">
                 <div  id="withdraw-options-div" style="width: 98%; max-width: 70vw; overflow-y: auto; white-space: nowrap">
                     {% for i in available_manual_accounts %}
                         <div onclick="document.getElementById('withdraw_type_{{i.id}}').value = '{{ i.payment_type }}'; this.style.opacity = 0.3; let withdraw_methods = document.getElementsByClassName('searchable-div'); document.getElementById('form_{{ i.id }}').style.display = 'block'; for(let i = 0; i < withdraw_methods.length; i++){withdraw_methods[i].onclick = function(){console.log('cannot change payment type')}}" style="display: inline-block" class="select-payment">
@@ -619,7 +619,7 @@
                         </p>
                     </div>
                 </center>
-                <div style="background-color: var(--categoryBackground); width: fit-content; box-sizing: border-box;  margin-top: 50px">
+                <div style="background-color: var(--categoryBackground); box-sizing: border-box;  margin-top: 50px">
                     <p style="background-color: gray; padding: 5px; border-radius: 5px; color: white"><span id="current-website"></span>/?ref={{ current_user.reference_code }}</p>
                     <h3 style="color: var(--generalTextColor)">{%trans%}Partner Statüsü{%endtrans%}: {{ current_user.site_partner.partnership_status }}</h3>
                     <h3 style="color: var(--generalTextColor)">{%trans%}Komisyon Oranı{%endtrans%}: %{{ current_user.site_partner.commission_rate }}</h3>
