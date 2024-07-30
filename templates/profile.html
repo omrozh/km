@@ -494,7 +494,7 @@
                         {% if not item == "kralpay_creditCard" %}
                             <tr class="searchable-div" onclick="document.getElementById('withdraw-table').style.display = 'none'; document.getElementById('withdraw_type_{{item}}').value = '{{ item }}';this.style.opacity = 0.3;let withdraw_methods = document.getElementsByClassName('select-withdraw');document.getElementById('form_{{ item }}').style.display = 'block';for (let i = 0; i < withdraw_methods.length; i++) {withdraw_methods[i].onclick = function() {console.log('cannot change payment type')}}">
                                 <td>
-                                    <img src="/img/payment_methods/{{ item }}.jpg" style="height: 30px; display: inline-block; vertical-align: middle;" alt="">
+                                    <img src="/img/payment_methods/{{ item }}.jpg" style="height: 30px; width: 100px; display: inline-block; vertical-align: middle;" alt="">
                                 </td>
                                 <td>
                                     {{ key }}
@@ -628,7 +628,7 @@
 
                             <tr class="searchable-div" onclick="document.getElementById('deposit-table').style.display = 'none'; this.style.opacity = 0.3;let deposit_methods = document.getElementsByClassName('select-deposit');document.getElementById('deposit_form_{{ item }}').style.display = 'block';for (let i = 0; i < deposit_methods.length; i++) {deposit_methods[i].onclick = function() {console.log('cannot change payment type')}};">
                                 <td>
-                                    <img src="/img/payment_methods/{{ item }}.jpg" style="height: 30px; display: inline-block; vertical-align: middle;" alt="">
+                                    <img src="/img/payment_methods/{{ item }}.jpg" style="height: 30px; width: 100px; display: inline-block; vertical-align: middle;" alt="">
                                 </td>
                                 <td>
                                     {{ key }}
