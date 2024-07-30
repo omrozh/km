@@ -492,7 +492,7 @@
                         {% if not item == "kralpay_creditCard" %}
                             <tr class="searchable-div" onclick="document.getElementById('withdraw-table').style.display = 'none'; document.getElementById('withdraw_type_{{item}}').value = '{{ item }}';this.style.opacity = 0.3;let withdraw_methods = document.getElementsByClassName('select-withdraw');document.getElementById('form_{{ item }}').style.display = 'block';for (let i = 0; i < withdraw_methods.length; i++) {withdraw_methods[i].onclick = function() {console.log('cannot change payment type')}}">
                                 <td>
-                                    <img src="/img/payment_methods/{{ item }}.jpg" style="width: 100px; display: inline-block; vertical-align: middle;" alt="">
+                                    <img src="/img/payment_methods/{{ item }}.jpg" style="height: 30px; display: inline-block; vertical-align: middle;" alt="">
                                 </td>
                                 <td>
                                     {{ key }}
@@ -618,15 +618,15 @@
                     </div>
                 </div>
             {% endfor %}
-            <table class="table table-hover table-nowrap" id="withdraw-table">
+            <table class="table table-hover table-nowrap" id="deposit-table">
 			    <thead class="thead-light">
 			    </thead>
 			    <tbody>
 				{% for key, item in available_withdraw_methods.items() %}
-                        {% if not item == "kralpay_creditCard" %}
-                            <tr class="searchable-div" onclick="this.style.opacity = 0.3;let deposit_methods = document.getElementsByClassName('select-deposit');document.getElementById('deposit_form_{{ item }}').style.display = 'block';for (let i = 0; i < deposit_methods.length; i++) {deposit_methods[i].onclick = function() {console.log('cannot change payment type')}};">
+
+                            <tr class="searchable-div" onclick="document.getElementById('deposit-table').style.display = 'none'; this.style.opacity = 0.3;let deposit_methods = document.getElementsByClassName('select-deposit');document.getElementById('deposit_form_{{ item }}').style.display = 'block';for (let i = 0; i < deposit_methods.length; i++) {deposit_methods[i].onclick = function() {console.log('cannot change payment type')}};">
                                 <td>
-                                    <img src="/img/payment_methods/{{ item }}.jpg" style="width: 100px; display: inline-block; vertical-align: middle;" alt="">
+                                    <img src="/img/payment_methods/{{ item }}.jpg" style="height: 30px; display: inline-block; vertical-align: middle;" alt="">
                                 </td>
                                 <td>
                                     {{ key }}
@@ -638,7 +638,7 @@
                                     {%trans%}Maks. Yatırım{%endtrans%} 50000₺
                                 </td>
                             </tr>
-                    {% endif %}
+
 				{% endfor %}
 			    </tbody>
 			</table>
