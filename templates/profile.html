@@ -26,6 +26,9 @@
     #content-block{
         display: inline-block; width: 80%
     }
+    #account-info{
+        padding: 15px 15px; box-sizing: border-box; color: white; background-color: var(--baseColor); border-radius: 5px; width: 101%; text-align: left; opacity: 0.5
+    }
 
         .form-main{
             color: white; padding: 20px; box-sizing: border-box; max-width: 100vw; overflow-y: auto; border-radius: 15px;
@@ -148,6 +151,9 @@
                 display: block;
                 width: 100%;
             }
+            #account-info{
+                padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left
+            }
             #content-block{
                 display: none;
                 margin-top: 10px;
@@ -211,7 +217,7 @@
                 ANASAYFA
             </p>
 
-            <p class="navbar-item" onclick="changeDivision('profile-information', this)" style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: var(--baseColor); border-radius: 5px; width: 101%; text-align: left; opacity: 0.5">
+            <p class="navbar-item" onclick="changeDivision('profile-information', this)" id="account-info">
                 {% trans %} HESAP BİLGİLERİM {% endtrans %}
             </p>
             <p onclick="changeDivision('deposit-money', this)" id="deposit-money-navbar-button" class="navbar-item" style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left">
