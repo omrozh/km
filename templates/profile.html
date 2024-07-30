@@ -133,8 +133,19 @@
         table{
             width: 80%;
         }
+        #toggle-menu{
+            display: none;
+        }
 
-        @media screen and (max-width: 1400px) {
+        @media screen and (max-width: 1300px) {
+            #navbar-main{
+                display: block!important;
+                width: 100%!important;
+            }
+            #content-block{
+                display: none!important;
+                margin-top: 10px;
+            }
             .kadro-mil{
                 min-height: fit-content;
                 height: 320px;
@@ -161,6 +172,7 @@
         tr:nth-child(even) {
             background-color: #22252a;
         }
+
     </style>
 </head>
 <body>
@@ -171,6 +183,7 @@
     <div id="main-content-wrapper">
     <center style="z-index: 10; position: relative;">
         <div style="background-color: #26292d; padding: 5px; border-radius: 5px; box-sizing: border-box; width: 80vw; height: 81vh;">
+        <button onclick="document.location = '/profile'" style="background: #101213; color: white; font-size: 1rem; padding: 10px 15px; margin-top: 5px; font-weight: 400; border-radius: 5px; border: none; outline: none; float: left; display: none" id="toggle-menu"><i class="fa-solid fa-bars"></i></button>
         <div style="padding: 10px; float: left; white-space: nowrap; width: 19.5%; margin-right: .5%; box-sizing: border-box; background-color: #2e2f33; margin-bottom: 10px; display: inline-block; text-align: left; border-radius: 5px; overflow-y: auto; height: 80vh" id="navbar-main">
             <span style="padding: 5px 22.5px; border-radius: 5px; box-sizing: border-box; display: inline-block; background-color: var(--categoryBackground); color: white" onclick="document.location = '/'">
                 X
@@ -233,7 +246,7 @@
                 document.getElementById("changer").value = getCookie("lang");
             </script>
         </div>
-	<div style="display: inline-block; width: 80%">
+	<div style="display: inline-block; width: 80%" id="content-block">
         <div id="history" class="division-profile" style="display: none">
 		<div class="table-responsive">
 			<table class="table table-hover table-nowrap">
@@ -845,6 +858,12 @@
         <script src="//code.tidio.co/qeafxo2jnxjghzs7okkx7ahlzkdbd4fl.js" async></script>
     <script>
         function changeDivision(changeTo, clickElem){
+            if(window.innerWidth < 1300){
+                document.getElementById("toggle-menu").style.display = "block";
+                document.getElementById("navbar-main").style.display = "none";
+                document.getElementById("content-block").style.display = "block";
+                document.getElementById("content-block").style.width = "100%";
+            }
             let all_divs = document.getElementsByClassName("division-profile");
             let all_navbar = document.getElementsByClassName("navbar-item");
             for(let i = 0; i < all_navbar.length; i++){
