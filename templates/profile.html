@@ -170,31 +170,47 @@
     <div id="main-content-wrapper">
     <center style="z-index: 10; position: relative">
         <div style="background-color: #26292d; padding: 5px; border-radius: 5px; box-sizing: border-box; width: 80vw">
-        <div style="padding: 10px; overflow-x: auto; float: left; white-space: nowrap; width: 100%; box-sizing: border-box; background-color: #2e2f33; margin-bottom: 10px" id="navbar-main">
-            <span style="padding: 5px 15px; box-sizing: border-box; display: inline-block; color: white" onclick="document.location = '/'">
-                {% trans %} ANASAYFA {% endtrans %}
-            </span>
-            <span class="navbar-item" onclick="changeDivision('profile-information', this)" style="background-color: var(--baseColor); padding: 5px 15px; border-radius: 5px; box-sizing: border-box; display: inline-block; color: white; opacity: 0.5">
-                {% trans %} HESAP BİLGİLERİM {% endtrans %}
-            </span>
-            <span onclick="changeDivision('deposit-money', this)" id="deposit-money-navbar-button" class="navbar-item" style="display: inline-block; border-radius: 5px; color: white; padding: 5px 15px; box-sizing: border-box;">
-                {% trans %} PARA YATIR {% endtrans %}
-            </span>
-            <span class="navbar-item" style="padding: 5px 15px; border-radius: 5px; box-sizing: border-box; display: inline-block; color: white" onclick="changeDivision('withdraw-money', this)">
-                {% trans %} PARA ÇEK {% endtrans %}
-            </span>
-	    <span class="navbar-item" style="padding: 5px 15px; border-radius: 5px; box-sizing: border-box; display: inline-block; color: white" onclick="changeDivision('history', this)">
-		   {% trans %} İŞLEM GEÇMİŞİ {% endtrans %}
-	    </span>
-            {% if current_user.site_partner %}
-            <span class="navbar-item" style="padding: 5px 15px; border-radius: 5px; box-sizing: border-box; display: inline-block; color: white" onclick="changeDivision('partnership', this)">
-                {% trans %} KASA İŞLEMLERİ {% endtrans %}
-            </span>
-            {% endif %}
-            <span class="navbar-item" style="padding: 5px 15px; border-radius: 5px; box-sizing: border-box; display: inline-block; ; color: white" onclick="document.location = '/logout'">
-                {% trans %} ÇIKIŞ YAP {% endtrans %}
+        <div style="padding: 10px; overflow-x: auto; float: left; white-space: nowrap; width: 19.5%; margin-right: .5%; height: 100%; box-sizing: border-box; background-color: #2e2f33; margin-bottom: 10px; display: inline-block; text-align: left; border-radius: 5px;" id="navbar-main">
+            <span style="padding: 5px 22.5px; border-radius: 5px; box-sizing: border-box; display: inline-block; background-color: var(--categoryBackground); color: white" onclick="document.location = '/'">
+                X
 	        </span>
-            <select id="changer" onchange="changeLanguage(this)" style="-webkit-appearance: none; padding: 5px 22.5px; border-radius: 5px; box-sizing: border-box; display: inline-block; background-color: var(--categoryBackground); color: white">
+            <br>
+            <br>
+            <div style="position: relative; background: radial-gradient(circle at -14% 113%,rgb(86,169,87),rgba(86,169,87,0.65) 135%); text-align: left; color: white; padding: 20px 10px; border-radius: 5px; margin-bottom: 10px; width: 100%;" class="bf-gradient">
+                <span style="font-size: 12px">{% trans %} ANA BAKİYE {% endtrans %}</span>
+                <i style="position: absolute; color: rgb(86, 169, 87); top: 15px; right: 10px; font-size: 24px" class="fa-solid fa-dollar-sign"></i>
+                <p style="color: white; margin-top: -10px; margin-bottom: 0; font-size: 1.5rem; font-weight: bold">{{'%0.2f'| format(current_user.balance|float)}}₺</p>
+            </div>
+            <div style="position: relative; background: radial-gradient(circle at -14% 113%,#b9943d,rgba(185,148,61,0.65) 135%); width: 100%; flex: 1; text-align: left; color: white; padding: 20px 10px; border-radius: 5px; margin-bottom: 10px;" class="bf-gradient">
+                <i style="position: absolute; color: #b9943d; top: 15px; right: 10px; font-size: 24px" class="fa-solid fa-gift"></i>
+                <span style="font-size: 12px">{% trans %} TOPLAM BONUS {% endtrans %}</span>
+                <p style="color: white; margin-top: -10px; margin-bottom: 0; font-size: 2rem; font-weight: bold">{{'%0.2f'| format(current_user.casino_bonus_balance + current_user.sports_bonus_balance |float)}}₺</p>
+            </div>
+            <p style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left" onclick="document.location = '/'">
+                ANASAYFA
+            </p>
+
+            <p class="navbar-item" onclick="changeDivision('profile-information', this)" style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: var(--baseColor); border-radius: 5px; width: 101%; text-align: left; opacity: 0.5">
+                {% trans %} HESAP BİLGİLERİM {% endtrans %}
+            </p>
+            <p onclick="changeDivision('deposit-money', this)" id="deposit-money-navbar-button" class="navbar-item" style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left">
+                {% trans %} PARA YATIR {% endtrans %}
+            </p>
+            <p class="navbar-item" style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left" onclick="changeDivision('withdraw-money', this)">
+                {% trans %} PARA ÇEK {% endtrans %}
+            </p>
+	    <p class="navbar-item" style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left" onclick="changeDivision('history', this)">
+		   {% trans %} İŞLEM GEÇMİŞİ {% endtrans %}
+	    </p>
+            {% if current_user.site_partner %}
+            <p class="navbar-item" style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left" onclick="changeDivision('partnership', this)">
+                {% trans %} KASA İŞLEMLERİ {% endtrans %}
+            </p>
+            {% endif %}
+            <p class="navbar-item" style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left" onclick="document.location = '/logout'">
+                {% trans %} ÇIKIŞ YAP {% endtrans %}
+	        </p>
+            <select id="changer" onchange="changeLanguage(this)" style="-webkit-appearance: none; padding: 10px 22.5px; border-radius: 5px; box-sizing: border-box; background-color: var(--categoryBackground); color: white; width: 100%">
                 <option value="tr">Türkçe</option>
                 <option value="en">English</option>
                 <option value="ku">Kurdî</option>
@@ -202,6 +218,8 @@
                 <option value="th">แบบไทย</option>
                 <option value="ar">عربي</option>
 	        </select>
+            <br>
+            <br>
             <script>
                 function getCookie(name) {
                   const value = `; ${document.cookie}`;
@@ -213,23 +231,9 @@
                 }
                 document.getElementById("changer").value = getCookie("lang");
             </script>
-            <span style="padding: 5px 22.5px; border-radius: 5px; box-sizing: border-box; display: inline-block; background-color: var(--categoryBackground); color: white" onclick="document.location = '/'">
-                X
-	        </span>
         </div>
-            <div style="display: flex; flex-direction: row; width: 100%; gap: 5px">
-                <div style="position: relative; background: radial-gradient(circle at -14% 113%,rgb(86,169,87),rgba(86,169,87,0.65) 135%); width: 40%; flex: 1; text-align: left; color: white; padding: 10px; border-radius: 5px; margin-bottom: 10px;" class="bf-gradient">
-                    <span style="font-size: 12px">{% trans %} ANA BAKİYE {% endtrans %}</span>
-                    <i style="position: absolute; color: rgb(86, 169, 87); top: 15px; right: 10px; font-size: 24px" class="fa-solid fa-dollar-sign"></i>
-                    <p style="color: white; margin-top: -10px; margin-bottom: 0; font-size: 2rem; font-weight: bold">{{'%0.2f'| format(current_user.balance|float)}}₺</p>
-                </div>
-                <div style="position: relative; background: radial-gradient(circle at -14% 113%,#b9943d,rgba(185,148,61,0.65) 135%); width: 40%; flex: 1; text-align: left; color: white; padding: 10px; border-radius: 5px; margin-bottom: 10px;" class="bf-gradient">
-                    <i style="position: absolute; color: #b9943d; top: 15px; right: 10px; font-size: 24px" class="fa-solid fa-gift"></i>
-                    <span style="font-size: 12px">{% trans %} TOPLAM BONUS {% endtrans %}</span>
-                    <p style="color: white; margin-top: -10px; margin-bottom: 0; font-size: 2rem; font-weight: bold">{{'%0.2f'| format(current_user.casino_bonus_balance + current_user.sports_bonus_balance |float)}}₺</p>
-                </div>
-            </div>
-	<div id="history" class="division-profile" style="display: none">
+	<div style="display: inline-block; width: 80%">
+        <div id="history" class="division-profile" style="display: none">
 		<div class="table-responsive">
 			<table class="table table-hover table-nowrap">
 			    <thead class="thead-light">
@@ -792,6 +796,7 @@
             </iframe>
           </div>
 
+    </div>
         </div>
         <style>
             .modal {
