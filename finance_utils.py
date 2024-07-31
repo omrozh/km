@@ -16,7 +16,7 @@ deposit_keys_vevopay = {
 
 deposit_types = {
     "kralpay_papara": "Kralpay Papara",
-    "kralpay_banka": "Kralpay Banka Transferi",
+    "kralpay_banka": "Kralpay Banka",
     "vevopay_papara": "Vevopay Papara",
     "vevopay_havale": "Vevopay Havale",
     "vevopay_mefete": "Vevopay Mefete",
