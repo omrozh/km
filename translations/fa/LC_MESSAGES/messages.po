@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-30 15:43+0300\n"
+"POT-Creation-Date: 2024-07-31 10:52+0300\n"
 "PO-Revision-Date: 2024-07-27 20:46+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fa\n"
@@ -142,23 +142,23 @@ msgstr "مسابقات"
 msgid "Maç Programı"
 msgstr "برنامه مسابقات"
 
-#: templates/anasayfa-yeni.html:211 templates/casino.html:206
+#: templates/anasayfa-yeni.html:206 templates/casino.html:202
 msgid "Canlı Casino"
 msgstr "کازینو زنده"
 
-#: templates/anasayfa-yeni.html:212 templates/casino.html:207
+#: templates/anasayfa-yeni.html:207 templates/casino.html:203
 msgid "Spor"
 msgstr "ورزش"
 
-#: templates/anasayfa-yeni.html:213 templates/casino.html:208
+#: templates/anasayfa-yeni.html:208 templates/casino.html:204
 msgid "Anasayfa"
 msgstr "صفحه اصلی"
 
-#: templates/anasayfa-yeni.html:214 templates/casino.html:209
+#: templates/anasayfa-yeni.html:209 templates/casino.html:205
 msgid "Canlı Bahis"
 msgstr "پیش‌بینی زنده"
 
-#: templates/anasayfa-yeni.html:215 templates/casino.html:210
+#: templates/anasayfa-yeni.html:210 templates/casino.html:206
 msgid "Casino"
 msgstr "کازینو"
 
@@ -194,7 +194,7 @@ msgstr "هنوز حساب کاربری ندارید؟"
 msgid "Hemen Üye Ol"
 msgstr "اکنون عضو شوید"
 
-#: templates/login.html:30 templates/profile.html:418 templates/signup.html:49
+#: templates/login.html:30 templates/profile.html:521 templates/signup.html:49
 msgid "E-Posta"
 msgstr "پست الکترونیک"
 
@@ -210,292 +210,287 @@ msgstr "رمز عبور"
 msgid "Şifremi Unuttum"
 msgstr "رمز عبورم را فراموش کرده‌ام"
 
-#: templates/profile.html:175
-msgid " ANASAYFA "
-msgstr "صفحه اصلی"
-
-#: templates/profile.html:178
-msgid " HESAP BİLGİLERİM "
-msgstr "اطلاعات حساب"
-
-#: templates/profile.html:181
-msgid " PARA YATIR "
-msgstr "واریز پول"
-
-#: templates/profile.html:184
-msgid " PARA ÇEK "
-msgstr "برداشت پول"
-
-#: templates/profile.html:187
-msgid " İŞLEM GEÇMİŞİ "
-msgstr "تاریخچه تراکنش‌ها"
-
-#: templates/profile.html:191
-msgid " KASA İŞLEMLERİ "
-msgstr "تراکنش‌های صندوق"
-
-#: templates/profile.html:195
-msgid " ÇIKIŞ YAP "
-msgstr "خروج"
-
-#: templates/profile.html:222
+#: templates/profile.html:229
 msgid " ANA BAKİYE "
 msgstr "موجودی اصلی"
 
-#: templates/profile.html:228
+#: templates/profile.html:235
 msgid " TOPLAM BONUS "
 msgstr "کل بونس"
 
-#: templates/profile.html:237
+#: templates/profile.html:239
+msgid " ANASAYFA "
+msgstr "صفحه اصلی"
+
+#: templates/profile.html:242
+msgid " HESAP BİLGİLERİM "
+msgstr "اطلاعات حساب"
+
+#: templates/profile.html:245
+msgid " PARA YATIR "
+msgstr "واریز پول"
+
+#: templates/profile.html:248
+msgid " PARA ÇEK "
+msgstr "برداشت پول"
+
+#: templates/profile.html:251
+msgid " İŞLEM GEÇMİŞİ "
+msgstr "تاریخچه تراکنش‌ها"
+
+#: templates/profile.html:255
+msgid " KASA İŞLEMLERİ "
+msgstr "تراکنش‌های صندوق"
+
+#: templates/profile.html:259
+msgid " ÇIKIŞ YAP "
+msgstr "خروج"
+
+#: templates/profile.html:292 templates/profile.html:344
 msgid " İşlem Türü "
 msgstr "نوع تراکنش"
 
-#: templates/profile.html:238
-msgid " Kullanıcı Adı "
-msgstr "نام کاربری"
-
-#: templates/profile.html:239
+#: templates/profile.html:300 templates/profile.html:345
 msgid " Tutar "
 msgstr "مقدار"
 
-#: templates/profile.html:240
+#: templates/profile.html:308 templates/profile.html:346
 msgid " İşlem Tarihi "
 msgstr "تاریخ تراکنش"
 
-#: templates/profile.html:241
+#: templates/profile.html:316 templates/profile.html:347
 msgid " Kanal "
 msgstr "کانال"
 
-#: templates/profile.html:242
+#: templates/profile.html:324 templates/profile.html:348
 msgid " Ek Bilgiler "
 msgstr "اطلاعات اضافی"
 
-#: templates/profile.html:243
+#: templates/profile.html:332 templates/profile.html:349
 msgid " Statü "
 msgstr "وضعیت"
 
-#: templates/profile.html:320
+#: templates/profile.html:423
 msgid " Başlangıç Tarihi "
 msgstr "تاریخ شروع"
 
-#: templates/profile.html:325
+#: templates/profile.html:428
 msgid " Bitiş Tarihi "
 msgstr "تاریخ پایان"
 
-#: templates/profile.html:330
+#: templates/profile.html:433
 msgid " Filtrele "
 msgstr "فیلتر"
 
-#: templates/profile.html:336
+#: templates/profile.html:439
 msgid " Kupon "
 msgstr "کوپن"
 
-#: templates/profile.html:340
+#: templates/profile.html:443
 msgid "Maç"
 msgstr "مسابقه"
 
-#: templates/profile.html:343
+#: templates/profile.html:446
 msgid "Oran"
 msgstr "ضریب"
 
-#: templates/profile.html:348
+#: templates/profile.html:451
 msgid "Toplam Oran"
 msgstr "ضریب کل"
 
-#: templates/profile.html:351
+#: templates/profile.html:454
 msgid "Yatırım Tutarı"
 msgstr "مقدار سرمایه‌گذاری"
 
-#: templates/profile.html:354
+#: templates/profile.html:457
 msgid "Potansiyel Kazanç"
 msgstr "پتانسیل درآمد"
 
-#: templates/profile.html:357
+#: templates/profile.html:460
 msgid "Sonuç"
 msgstr "نتیجه"
 
-#: templates/profile.html:361
+#: templates/profile.html:464
 msgid "Ödül Al"
 msgstr "دریافت جایزه"
 
-#: templates/profile.html:375
+#: templates/profile.html:478
 msgid "Kişisel Bilgilerim"
 msgstr "اطلاعات شخصی"
 
-#: templates/profile.html:377 templates/signup.html:40
+#: templates/profile.html:480 templates/signup.html:40
 msgid " İsim Soyisim "
 msgstr "نام و نام خانوادگی"
 
-#: templates/profile.html:381
+#: templates/profile.html:484
 msgid " Cinsiyet "
 msgstr "جنسیت"
 
-#: templates/profile.html:385 templates/signup.html:46
+#: templates/profile.html:488 templates/signup.html:46
 msgid "Telefon Numarası "
 msgstr "شماره تلفن"
 
-#: templates/profile.html:389
+#: templates/profile.html:492
 msgid " TC Kimlik No "
 msgstr "شماره شناسنامه"
 
-#: templates/profile.html:393 templates/signup.html:58
+#: templates/profile.html:496 templates/signup.html:58
 msgid "Doğum Tarihi"
 msgstr "تاریخ تولد"
 
-#: templates/profile.html:397
+#: templates/profile.html:500
 msgid "Adres"
 msgstr "آدرس"
 
-#: templates/profile.html:404
+#: templates/profile.html:507
 msgid "Üyelik Bilgileri"
 msgstr "اطلاعات عضویت"
 
-#: templates/profile.html:406
+#: templates/profile.html:509
 msgid "Kayıt Tarihi"
 msgstr "تاریخ ثبت‌نام"
 
-#: templates/profile.html:410
+#: templates/profile.html:513
 msgid "Üyelik Numarası"
 msgstr "شماره عضویت"
 
-#: templates/profile.html:414
+#: templates/profile.html:517
 msgid "Para Birimi"
 msgstr "واحد پول"
 
-#: templates/profile.html:423
+#: templates/profile.html:526
 msgid "Kaydet"
 msgstr "ذخیره"
 
-#: templates/profile.html:450
+#: templates/profile.html:553
 msgid "Çekim Talebi"
 msgstr "درخواست برداشت"
 
-#: templates/profile.html:461
+#: templates/profile.html:563 templates/profile.html:736
+msgid " Yöntem: "
+msgstr "نام روش"
+
+#: templates/profile.html:571 templates/profile.html:744
+msgid " Yöntem Adı: "
+msgstr "نام روش"
+
+#: templates/profile.html:579 templates/profile.html:587
+msgid " Min. Çekim: "
+msgstr "حداقل برداشت"
+
+#: templates/profile.html:611
 msgid "Min. Çekim"
 msgstr "حداقل برداشت"
 
-#: templates/profile.html:463
+#: templates/profile.html:614
 msgid "Maks. Çekim"
 msgstr "حداکثر برداشت"
 
-#: templates/profile.html:475 templates/profile.html:515
-#: templates/profile.html:556 templates/profile.html:706
-#: templates/profile.html:742
+#: templates/profile.html:630 templates/profile.html:671
+#: templates/profile.html:806
 msgid "Yöntem Adı"
 msgstr "نام روش"
 
-#: templates/profile.html:476 templates/profile.html:707
-msgid "Yöntem Seçin"
-msgstr "روش را انتخاب کنید"
-
-#: templates/profile.html:479 templates/profile.html:519
-#: templates/profile.html:560 templates/profile.html:710
-#: templates/profile.html:746
+#: templates/profile.html:634 templates/profile.html:675
+#: templates/profile.html:810
 msgid "Ücret"
 msgstr "هزینه"
 
-#: templates/profile.html:483 templates/profile.html:523
-#: templates/profile.html:564 templates/profile.html:714
-#: templates/profile.html:750
-msgid "İşlem Süresi"
-msgstr "زمان پردازش"
-
-#: templates/profile.html:487 templates/profile.html:527
-#: templates/profile.html:568 templates/profile.html:718
-#: templates/profile.html:754
-msgid "Minimum Tutar"
-msgstr "حداقل مبلغ"
-
-#: templates/profile.html:493 templates/profile.html:533
-#: templates/profile.html:575
-msgid "Para çekmek için lütfen aşağıdaki tüm gerekli alanları doldurun."
-msgstr "برای برداشت پول لطفاً تمام فیلدهای ضروری زیر را پر کنید."
-
-#: templates/profile.html:498 templates/profile.html:538
-#: templates/profile.html:580
-msgid "Çekmek İstenen Miktar"
-msgstr "مقدار مورد نظر برای برداشت"
-
-#: templates/profile.html:503 templates/profile.html:543
-#: templates/profile.html:585
-msgid "Hesap Adresi"
-msgstr "آدرس حساب"
-
-#: templates/profile.html:508 templates/profile.html:548
-#: templates/profile.html:590
-msgid "Para Çek"
-msgstr "برداشت پول"
-
-#: templates/profile.html:520 templates/profile.html:561
-#: templates/profile.html:747
+#: templates/profile.html:635 templates/profile.html:676
+#: templates/profile.html:811
 msgid "Ücretsiz"
 msgstr "رایگان"
 
-#: templates/profile.html:524 templates/profile.html:565
-#: templates/profile.html:751
+#: templates/profile.html:638 templates/profile.html:679
+#: templates/profile.html:814
+msgid "İşlem Süresi"
+msgstr "زمان پردازش"
+
+#: templates/profile.html:639 templates/profile.html:680
+#: templates/profile.html:815
 msgid "Anlık"
 msgstr "لحظه‌ای"
 
-#: templates/profile.html:596
+#: templates/profile.html:642 templates/profile.html:683
+#: templates/profile.html:818
+msgid "Minimum Tutar"
+msgstr "حداقل مبلغ"
+
+#: templates/profile.html:648 templates/profile.html:690
+msgid "Para çekmek için lütfen aşağıdaki tüm gerekli alanları doldurun."
+msgstr "برای برداشت پول لطفاً تمام فیلدهای ضروری زیر را پر کنید."
+
+#: templates/profile.html:653 templates/profile.html:695
+msgid "Çekmek İstenen Miktar"
+msgstr "مقدار مورد نظر برای برداشت"
+
+#: templates/profile.html:658 templates/profile.html:700
+msgid "Hesap Adresi"
+msgstr "آدرس حساب"
+
+#: templates/profile.html:663 templates/profile.html:705
+msgid "Para Çek"
+msgstr "برداشت پول"
+
+#: templates/profile.html:711
 msgid "Geçmiş İşlemler"
 msgstr "تراکنش‌های گذشته"
 
-#: templates/profile.html:614
-msgid "Kasa İşlemleri"
-msgstr "تراکنش‌های صندوق"
-
-#: templates/profile.html:620
-msgid "Partner Statüsü"
-msgstr "وضعیت شریک"
-
-#: templates/profile.html:621
-msgid "Komisyon Oranı"
-msgstr "نسبت کمیسیون"
-
-#: templates/profile.html:622
-msgid "Kasa Bakiyesi"
-msgstr "موجودی صندوق"
-
-#: templates/profile.html:623
-msgid "Kasa Kazancı"
-msgstr "درآمد صندوق"
-
-#: templates/profile.html:679
+#: templates/profile.html:727
 msgid "Yatırım Talebi"
 msgstr "درخواست سرمایه‌گذاری"
 
-#: templates/profile.html:689
-msgid "Min. Yatırım 100₺"
-msgstr "حداقل سرمایه‌گذاری 100₺"
+#: templates/profile.html:752 templates/profile.html:760
+msgid " Min. Yatırım: "
+msgstr "حداقل سرمایه‌گذاری"
 
-#: templates/profile.html:691
-msgid "Maks. Yatırım 50000₺"
-msgstr "حداکثر سرمایه‌گذاری 50000₺"
+#: templates/profile.html:784
+msgid "Min. Yatırım"
+msgstr "حداقل سرمایه‌گذاری"
 
-#: templates/profile.html:711 templates/profile.html:715
-#: templates/profile.html:719
-msgid "-"
-msgstr "-"
+#: templates/profile.html:787
+msgid "Maks. Yatırım"
+msgstr "حداکثر سرمایه‌گذاری"
 
-#: templates/profile.html:724 templates/profile.html:760
-msgid "Para yatırmak için lütfen aşağıdaki tüm gerekli alanları doldurun."
-msgstr "برای واریز پول لطفاً تمام فیلدهای ضروری زیر را پر کنید."
-
-#: templates/profile.html:728 templates/profile.html:774
-msgid "Yatırılacak Miktar"
-msgstr "مقدار سرمایه‌گذاری"
-
-#: templates/profile.html:734 templates/profile.html:780
-msgid "Yatırım Yap"
-msgstr "سرمایه‌گذاری کنید"
-
-#: templates/profile.html:755
+#: templates/profile.html:819
 msgid "100₺"
 msgstr "100₺"
 
-#: templates/profile.html:765
+#: templates/profile.html:824
+msgid "Para yatırmak için lütfen aşağıdaki tüm gerekli alanları doldurun."
+msgstr "برای واریز پول لطفاً تمام فیلدهای ضروری زیر را پر کنید."
+
+#: templates/profile.html:829
 msgid "Banka Seçin"
 msgstr "بانک را انتخاب کنید"
+
+#: templates/profile.html:838
+msgid "Yatırılacak Miktar"
+msgstr "مقدار سرمایه‌گذاری"
+
+#: templates/profile.html:844
+msgid "Yatırım Yap"
+msgstr "سرمایه‌گذاری کنید"
+
+#: templates/profile.html:856
+msgid "Kasa İşlemleri"
+msgstr "تراکنش‌های صندوق"
+
+#: templates/profile.html:862
+msgid "Partner Statüsü"
+msgstr "وضعیت شریک"
+
+#: templates/profile.html:863
+msgid "Komisyon Oranı"
+msgstr "نسبت کمیسیون"
+
+#: templates/profile.html:864
+msgid "Kasa Bakiyesi"
+msgstr "موجودی صندوق"
+
+#: templates/profile.html:865
+msgid "Kasa Kazancı"
+msgstr "درآمد صندوق"
 
 #: templates/signup.html:55
 msgid "TC Kimlik No"
@@ -508,4 +503,13 @@ msgstr "پیشنهادات ویژه"
 #: templates/signup.html:68
 msgid "Kayıt Ol "
 msgstr "ثبت نام"
+
+#~ msgid " Kullanıcı Adı "
+#~ msgstr "نام کاربری"
+
+#~ msgid "Yöntem Seçin"
+#~ msgstr "روش را انتخاب کنید"
+
+#~ msgid "-"
+#~ msgstr "-"
 
