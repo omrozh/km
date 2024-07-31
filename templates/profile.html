@@ -229,7 +229,6 @@
             <p style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left" onclick="document.location = '/'">
                 {% trans %} ANASAYFA {% endtrans %}
             </p>
-
             <p class="navbar-item" onclick="changeDivision('profile-information', this)" id="account-info">
                 {% trans %} HESAP BİLGİLERİM {% endtrans %}
             </p>
@@ -239,9 +238,9 @@
             <p class="navbar-item" style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left" onclick="changeDivision('withdraw-money', this)">
                 {% trans %} PARA ÇEK {% endtrans %}
             </p>
-	    <p class="navbar-item" style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left" onclick="changeDivision('history', this)">
-		   {% trans %} İŞLEM GEÇMİŞİ {% endtrans %}
-	    </p>
+            <p class="navbar-item" style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left" onclick="changeDivision('history', this)">
+               {% trans %} İŞLEM GEÇMİŞİ {% endtrans %}
+            </p>
             {% if current_user.site_partner %}
             <p class="navbar-item" style="padding: 15px 15px; box-sizing: border-box; color: white; background-color: rgba(255, 255, 255, 0.05); border-radius: 5px; width: 101%; text-align: left" onclick="changeDivision('partnership', this)">
                 {% trans %} KASA İŞLEMLERİ {% endtrans %}
