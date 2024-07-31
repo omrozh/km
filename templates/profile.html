@@ -19,14 +19,6 @@
     #navbar-main{
         padding: 10px; float: left; white-space: nowrap; width: 19.5%; margin-right: .5%; box-sizing: border-box; background-color: #2e2f33; margin-bottom: 10px; display: inline-block; text-align: left; border-radius: 5px; overflow-y: auto; height: 80vh
     }
-    table{
-        table-layout: fixed;
-        width: 100%;
-    }
-    td{
-        word-wrap: break-word;
-        white-space: normal;
-    }
 	.table.table-light thead th, .table .thead-light th{
 		color: white;
 		background-color: transparent;
@@ -518,12 +510,6 @@
                                 <td>
                                     {{ key }}
                                 </td>
-                                <td>
-                                    {%trans%}Min. Çekim{%endtrans%} 100₺
-                                </td>
-                                <td>
-                                    {%trans%}Maks. Çekim{%endtrans%} 50000₺
-                                </td>
                             </tr>
                     {% endif %}
 				{% endfor %}
@@ -651,12 +637,6 @@
                                 </td>
                                 <td>
                                     {{ key }}
-                                </td>
-                                <td>
-                                    {%trans%}Min. Yatırım{%endtrans%} 100₺
-                                </td>
-                                <td>
-                                    {%trans%}Maks. Yatırım{%endtrans%} 50000₺
                                 </td>
                             </tr>
 
