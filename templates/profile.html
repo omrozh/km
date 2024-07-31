@@ -510,6 +510,12 @@
                                 <td>
                                     {{ key }}
                                 </td>
+                                <td>
+                                    {%trans%}Min. Çekim{%endtrans%} 100₺
+                                </td>
+                                <td>
+                                    {%trans%}Maks. Çekim{%endtrans%} 50000₺
+                                </td>
                             </tr>
                     {% endif %}
 				{% endfor %}
@@ -634,9 +640,21 @@
                             <tr class="searchable-div" onclick="document.getElementById('deposit-table').style.display = 'none'; this.style.opacity = 0.3;let deposit_methods = document.getElementsByClassName('select-deposit');document.getElementById('deposit_form_{{ item }}').style.display = 'block';for (let i = 0; i < deposit_methods.length; i++) {deposit_methods[i].onclick = function() {console.log('cannot change payment type')}};">
                                 <td>
                                     <img src="/img/payment_methods/{{ item }}.jpg" style="height: 30px; width: 100px; display: inline-block; vertical-align: middle; max-width: 100px" alt="">
+                                    <br class="mobile-only">
+                                    <br class="mobile-only">
+                                    <span class="mobile-only">{%trans%}Min. Yatırım{%endtrans%} 100₺</span>
                                 </td>
                                 <td>
                                     {{ key }}
+                                    <br class="mobile-only">
+                                    <br class="mobile-only">
+                                    <span class="mobile-only">{%trans%}Maks. Yatırım{%endtrans%} 50000₺</span>
+                                </td>
+                                <td class="desktop-only">
+                                    {%trans%}Min. Yatırım{%endtrans%} 100₺
+                                </td>
+                                <td class="desktop-only">
+                                    {%trans%}Maks. Yatırım{%endtrans%} 50000₺
                                 </td>
                             </tr>
 
