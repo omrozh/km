@@ -631,30 +631,23 @@
                     </div>
                 </div>
             {% endfor %}
-            <table class="table table-hover table-nowrap" id="deposit-table">
-			    <thead class="thead-light">
-			    </thead>
-			    <tbody>
+            <div id="deposit-table">
+
 				{% for key, item in available_withdraw_methods.items() %}
-
-                            <tr class="searchable-div" onclick="document.getElementById('deposit-table').style.display = 'none'; this.style.opacity = 0.3;let deposit_methods = document.getElementsByClassName('select-deposit');document.getElementById('deposit_form_{{ item }}').style.display = 'block';for (let i = 0; i < deposit_methods.length; i++) {deposit_methods[i].onclick = function() {console.log('cannot change payment type')}};">
-                                <td>
+                            <center class="searchable-div" onclick="document.getElementById('deposit-table').style.display = 'none'; this.style.opacity = 0.3;let deposit_methods = document.getElementsByClassName('select-deposit');document.getElementById('deposit_form_{{ item }}').style.display = 'block';for (let i = 0; i < deposit_methods.length; i++) {deposit_methods[i].onclick = function() {console.log('cannot change payment type')}};" style="border-bottom: 1px solid white; color: white; width: 100%; padding: 10px; box-sizing: border-box">
+                                <span style="display: inline-block; float: left">
                                     <img src="/img/payment_methods/{{ item }}.jpg" style="height: 30px; width: 100px; display: inline-block; vertical-align: middle; max-width: 100px" alt="">
-                                </td>
-                                <td>
+                                </span>
+                                <span style="display: inline-block">
                                     {{ key }}
-                                </td>
-                                <td>
-                                    {%trans%}Min. Yatırım{%endtrans%} 100₺
-                                </td>
-                                <td>
-                                    {%trans%}Maks. Yatırım{%endtrans%} 50000₺
-                                </td>
-                            </tr>
-
+                                </span>
+                                <span style="display: inline-block; float: right">
+                                    100₺ - 50.000₺
+                                </span>
+                            </center>
 				{% endfor %}
 			    </tbody>
-			</table>
+			</div>
         </div>
         <br>
 
