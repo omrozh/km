@@ -19,6 +19,14 @@
     #navbar-main{
         padding: 10px; float: left; white-space: nowrap; width: 19.5%; margin-right: .5%; box-sizing: border-box; background-color: #2e2f33; margin-bottom: 10px; display: inline-block; text-align: left; border-radius: 5px; overflow-y: auto; height: 80vh
     }
+    table{
+        table-layout: fixed;
+        width: 100%;
+    }
+    td{
+        word-wrap: break-word;
+        white-space: normal;
+    }
 	.table.table-light thead th, .table .thead-light th{
 		color: white;
 		background-color: transparent;
@@ -631,23 +639,30 @@
                     </div>
                 </div>
             {% endfor %}
-            <div id="deposit-table">
-
+            <table class="table table-hover table-nowrap" id="deposit-table">
+			    <thead class="thead-light">
+			    </thead>
+			    <tbody>
 				{% for key, item in available_withdraw_methods.items() %}
-                            <center class="searchable-div" onclick="document.getElementById('deposit-table').style.display = 'none'; this.style.opacity = 0.3;let deposit_methods = document.getElementsByClassName('select-deposit');document.getElementById('deposit_form_{{ item }}').style.display = 'block';for (let i = 0; i < deposit_methods.length; i++) {deposit_methods[i].onclick = function() {console.log('cannot change payment type')}};" style="border-bottom: 1px solid white; color: white; width: 100%; padding: 10px; box-sizing: border-box">
-                                <span style="display: inline-block; float: left">
+
+                            <tr class="searchable-div" onclick="document.getElementById('deposit-table').style.display = 'none'; this.style.opacity = 0.3;let deposit_methods = document.getElementsByClassName('select-deposit');document.getElementById('deposit_form_{{ item }}').style.display = 'block';for (let i = 0; i < deposit_methods.length; i++) {deposit_methods[i].onclick = function() {console.log('cannot change payment type')}};">
+                                <td>
                                     <img src="/img/payment_methods/{{ item }}.jpg" style="height: 30px; width: 100px; display: inline-block; vertical-align: middle; max-width: 100px" alt="">
-                                </span>
-                                <span style="display: inline-block">
+                                </td>
+                                <td>
                                     {{ key }}
-                                </span>
-                                <span style="display: inline-block; float: right">
-                                    100₺ - 50.000₺
-                                </span>
-                            </center>
+                                </td>
+                                <td>
+                                    {%trans%}Min. Yatırım{%endtrans%} 100₺
+                                </td>
+                                <td>
+                                    {%trans%}Maks. Yatırım{%endtrans%} 50000₺
+                                </td>
+                            </tr>
+
 				{% endfor %}
 			    </tbody>
-			</div>
+			</table>
         </div>
         <br>
 
