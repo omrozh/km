@@ -94,8 +94,17 @@
         .menu-main{
             width: 100%; box-sizing: border-box; height: 200px;
         }
+        .mobile-only{
+            display: none;
+        }
 
         @media screen and (max-width: 800px) {
+            .desktop-only{
+                display: none;
+            }
+            .mobile-only{
+                display: block;
+            }
             #main-content-wrapper{
                 width: 100%;
             }
@@ -126,17 +135,7 @@
             margin-left: 25px;
         }
 
-        .mobile-only{
-            display: none;
-        }
-
         @media screen and (max-width: 800px){
-            .mobile-only{
-                display: block;
-            }
-            .desktop-only{
-                display: none;
-            }
             .promotion-image{
                 display: none;
             }
@@ -507,7 +506,43 @@
                         </div>
                       {% endfor %}
                     <div class="table-responsive">
-			<table class="table table-hover table-nowrap" id="withdraw-table">
+            <div class="mobile-only">
+                {% for key, item in available_withdraw_methods.items() %}
+                    <div style="display: flex; flex-direction: row; gap: 2px;">
+                        <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                            Yöntem:
+                        </div>
+                        <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                            <img src="/img/payment_methods/{{ item }}.jpg" style="height: 30px; width: 100px; display: inline-block; vertical-align: middle; max-width: 100px" alt="">
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; gap: 2px;">
+                        <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                            Yöntem Adı:
+                        </div>
+                        <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                            {{ key }}
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; gap: 2px;">
+                        <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                            Min. Çekim:
+                        </div>
+                        <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                            100₺
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; gap: 2px;">
+                        <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                            Min. Çekim:
+                        </div>
+                        <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                            50000₺
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+			<table class="table table-hover table-nowrap desktop-only" id="withdraw-table">
 			    <thead class="thead-light">
 			    </thead>
 			    <tbody>
@@ -650,20 +685,14 @@
                             <tr class="searchable-div" onclick="document.getElementById('deposit-table').style.display = 'none'; this.style.opacity = 0.3;let deposit_methods = document.getElementsByClassName('select-deposit');document.getElementById('deposit_form_{{ item }}').style.display = 'block';for (let i = 0; i < deposit_methods.length; i++) {deposit_methods[i].onclick = function() {console.log('cannot change payment type')}};">
                                 <td>
                                     <img src="/img/payment_methods/{{ item }}.jpg" style="height: 30px; width: 100px; display: inline-block; vertical-align: middle; max-width: 100px" alt="">
-                                    <br class="mobile-only">
-                                    <br class="mobile-only">
-                                    <span class="mobile-only">{%trans%}Min. Yatırım{%endtrans%} 100₺</span>
                                 </td>
                                 <td>
                                     {{ key }}
-                                    <br class="mobile-only">
-                                    <br class="mobile-only">
-                                    <span class="mobile-only">{%trans%}Maks. Yatırım{%endtrans%} 50000₺</span>
                                 </td>
-                                <td class="desktop-only">
+                                <td>
                                     {%trans%}Min. Yatırım{%endtrans%} 100₺
                                 </td>
-                                <td class="desktop-only">
+                                <td>
                                     {%trans%}Maks. Yatırım{%endtrans%} 50000₺
                                 </td>
                             </tr>
