@@ -679,7 +679,46 @@
                     </div>
                 </div>
             {% endfor %}
-            <table class="table table-hover table-nowrap" id="deposit-table">
+            <div class="mobile-only" id="deposit-mobile">
+                {% for key, item in available_withdraw_methods.items() %}
+                    <div onclick="document.getElementById('deposit-mobile').style.display = 'none'; this.style.opacity = 0.3;let deposit_methods = document.getElementsByClassName('select-deposit');document.getElementById('deposit_form_{{ item }}').style.display = 'block';for (let i = 0; i < deposit_methods.length; i++) {deposit_methods[i].onclick = function() {console.log('cannot change payment type')}};">
+                        <div style="display: flex; flex-direction: row; gap: 2px;">
+                            <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                                Yöntem:
+                            </div>
+                            <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                                <img src="/img/payment_methods/{{ item }}.jpg" style="height: 30px; width: 100px; display: inline-block; vertical-align: middle; max-width: 100px" alt="">
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: row; gap: 2px;">
+                            <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                                Yöntem Adı:
+                            </div>
+                            <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                                {{ key }}
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: row; gap: 2px;">
+                            <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                                Min. Yatırım:
+                            </div>
+                            <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                                100₺
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: row; gap: 2px;">
+                            <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                                Min. Yatırım:
+                            </div>
+                            <div style="background-color: rgba(255, 255, 255, 0.05); flex: 1; color: white; padding: 5px 15px">
+                                50000₺
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                {% endfor %}
+            </div>
+            <table class="table table-hover table-nowrap desktop-only" id="deposit-table">
 			    <thead class="thead-light">
 			    </thead>
 			    <tbody>
